@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dhf046g2jt3li"]
+
+[ext_resource type="Script" uid="uid://c2m7ndu8ds13o" path="res://scripts/play_scene.gd" id="1_21h8x"]
+[ext_resource type="PackedScene" uid="uid://cuktifpak1sih" path="res://scenes/entity/roger.tscn" id="1_ityjc"]
+[ext_resource type="Script" uid="uid://dec5i822attaq" path="res://scripts/camera_2d.gd" id="1_yi006"]
+[ext_resource type="Script" uid="uid://cikqc4tvnyt8e" path="res://scripts/entity/player.gd" id="3_ot0y2"]
+[ext_resource type="PackedScene" uid="uid://bop7nhccv5h2y" path="res://scenes/Levels/level_1-1.tscn" id="4_21h8x"]
+[ext_resource type="Texture2D" uid="uid://cbpdbetmpeg8i" path="res://assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="6_f8tyn"]
+[ext_resource type="Script" uid="uid://cojsthmd4d8cg" path="res://scripts/UI/counter.gd" id="6_yi006"]
+[ext_resource type="Texture2D" uid="uid://dap4wkodu1rd8" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/36.png" id="7_yi006"]
+[ext_resource type="Texture2D" uid="uid://tyxpt2vfgph3" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/27.png" id="8_ythbd"]
+[ext_resource type="Texture2D" uid="uid://bu6lljq260ltl" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/28.png" id="9_glj4c"]
+[ext_resource type="Texture2D" uid="uid://b84pyy2kqm3gp" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/29.png" id="10_0tjmk"]
+[ext_resource type="Texture2D" uid="uid://bgjjkc2w2s1k0" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/30.png" id="11_r4sqp"]
+[ext_resource type="Texture2D" uid="uid://d1vamcm5bbuow" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/31.png" id="12_vf7oa"]
+[ext_resource type="Texture2D" uid="uid://c2fbvj0g374ls" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/32.png" id="13_fwjv1"]
+[ext_resource type="Texture2D" uid="uid://1kqxg65crd8m" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/33.png" id="14_4f4ru"]
+[ext_resource type="Texture2D" uid="uid://bfud87w8f6jac" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/34.png" id="15_csp53"]
+[ext_resource type="Texture2D" uid="uid://dosha624iwoa1" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/35.png" id="16_6ojev"]
+[ext_resource type="Texture2D" uid="uid://bgsxas3f3dfuf" path="res://assets/Pirate Treasure/Sprites/Golden Skull/ui_skull.png" id="18_glj4c"]
+
+[node name="PlayScene" type="Node2D" unique_id=1588044648]
+script = ExtResource("1_21h8x")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1000559406 node_paths=PackedStringArray("_subject")]
+position = Vector2(-54, 196)
+zoom = Vector2(2.5, 2.5)
+script = ExtResource("1_yi006")
+_subject = NodePath("../Roger")
+following_offset = Vector2(2, -1)
+
+[node name="Roger" parent="." unique_id=84746356 instance=ExtResource("1_ityjc")]
+
+[node name="Player" type="Node" parent="Roger" unique_id=1901577138]
+script = ExtResource("3_ot0y2")
+
+[node name="Level" parent="." unique_id=1731219820 instance=ExtResource("4_21h8x")]
+
+[node name="UserInterFace" type="CanvasLayer" parent="." unique_id=1315942096]
+
+[node name="Coin Counter" type="HBoxContainer" parent="UserInterFace" unique_id=1914474422]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 66.0
+offset_bottom = 48.0
+scale = Vector2(3.5, 3.5)
+script = ExtResource("6_yi006")
+_digits = Array[Texture2D]([ExtResource("7_yi006"), ExtResource("8_ythbd"), ExtResource("9_glj4c"), ExtResource("10_0tjmk"), ExtResource("11_r4sqp"), ExtResource("12_vf7oa"), ExtResource("13_fwjv1"), ExtResource("14_4f4ru"), ExtResource("15_csp53"), ExtResource("16_6ojev")])
+
+[node name="Icon" type="TextureRect" parent="UserInterFace/Coin Counter" unique_id=381833022]
+layout_mode = 2
+texture = ExtResource("6_f8tyn")
+expand_mode = 3
+
+[node name="Tens" type="TextureRect" parent="UserInterFace/Coin Counter" unique_id=1056764026]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+texture = ExtResource("7_yi006")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="Ones" type="TextureRect" parent="UserInterFace/Coin Counter" unique_id=1546930085]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+texture = ExtResource("7_yi006")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="Lives Counter" type="HBoxContainer" parent="UserInterFace" unique_id=855971260]
+layout_direction = 3
+offset_left = 160.0
+offset_top = 32.0
+offset_right = 208.0
+offset_bottom = 44.0
+scale = Vector2(3.5, 3.5)
+script = ExtResource("6_yi006")
+_digits = Array[Texture2D]([ExtResource("7_yi006"), ExtResource("8_ythbd"), ExtResource("9_glj4c"), ExtResource("10_0tjmk"), ExtResource("11_r4sqp"), ExtResource("12_vf7oa"), ExtResource("13_fwjv1"), ExtResource("14_4f4ru"), ExtResource("15_csp53"), ExtResource("16_6ojev")])
+
+[node name="Icon" type="TextureRect" parent="UserInterFace/Lives Counter" unique_id=906634448]
+layout_mode = 2
+texture = ExtResource("18_glj4c")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Ones" type="TextureRect" parent="UserInterFace/Lives Counter" unique_id=1437257624]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+texture = ExtResource("7_yi006")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="Tens" type="TextureRect" parent="UserInterFace/Lives Counter" unique_id=835609076]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+texture = ExtResource("7_yi006")
+expand_mode = 5
+stretch_mode = 3

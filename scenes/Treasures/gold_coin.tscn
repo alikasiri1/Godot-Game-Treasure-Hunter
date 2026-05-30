@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://jo0prvvmvqqx"]
+
+[ext_resource type="Script" uid="uid://c8ncm4tap8aa1" path="res://scripts/Treasures/coin.gd" id="1_tddjp"]
+[ext_resource type="Texture2D" uid="uid://cbpdbetmpeg8i" path="res://assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_tddjp"]
+[ext_resource type="Texture2D" uid="uid://cvawsl214hbd0" path="res://assets/Pirate Treasure/Sprites/Gold Coin/02.png" id="3_ja776"]
+[ext_resource type="Texture2D" uid="uid://dooty0qsd4thy" path="res://assets/Pirate Treasure/Sprites/Gold Coin/03.png" id="4_s5mfq"]
+[ext_resource type="Texture2D" uid="uid://b4cx5nquby8wk" path="res://assets/Pirate Treasure/Sprites/Gold Coin/04.png" id="5_yurq0"]
+[ext_resource type="Texture2D" uid="uid://rt6xh0tuclqi" path="res://assets/Pirate Treasure/Sprites/Coin Effect/01.png" id="6_o44fx"]
+[ext_resource type="Texture2D" uid="uid://duekos4pex2l0" path="res://assets/Pirate Treasure/Sprites/Coin Effect/02.png" id="7_q16py"]
+[ext_resource type="Texture2D" uid="uid://mxssn7caoyu8" path="res://assets/Pirate Treasure/Sprites/Coin Effect/03.png" id="8_7molm"]
+[ext_resource type="AudioStream" uid="uid://ruiagd8lucav" path="res://sounds/699496__valenspire__coin_drop_01.wav" id="9_73dyw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kvhe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tddjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ja776")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s5mfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yurq0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o44fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q16py")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7molm")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6tgln"]
+radius = 5.0
+
+[node name="Gold Coin" type="RigidBody2D" unique_id=1323405605]
+collision_layer = 8
+collision_mask = 3
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_tddjp")
+_value = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=988893691]
+sprite_frames = SubResource("SpriteFrames_6kvhe")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=691649154]
+shape = SubResource("CircleShape2D_6tgln")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2035373674]
+stream = ExtResource("9_73dyw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

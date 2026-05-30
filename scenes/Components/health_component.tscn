@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c7oxqqup81xwi"]
+
+[ext_resource type="Script" uid="uid://bdnnws0k0r325" path="res://scripts/Components/health_component.gd" id="1_3uywa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2fejg"]
+radius = 8.0
+height = 24.0
+
+[node name="HealthComponent" type="Area2D" unique_id=989882209]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_3uywa")
+
+[node name="HurtBox" type="CollisionShape2D" parent="." unique_id=756354153]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_2fejg")
+debug_color = Color(4.0911138e-07, 0.64810693, 0.20071158, 0.41960785)

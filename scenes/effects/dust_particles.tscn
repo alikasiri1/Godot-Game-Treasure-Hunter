@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://c20xfdt163nw7"]
+
+[ext_resource type="Texture2D" uid="uid://fkec2uvaj01j" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Fall 01.png" id="1_1o51g"]
+[ext_resource type="Texture2D" uid="uid://cv8bdisji357u" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Fall 02.png" id="2_pl6et"]
+[ext_resource type="Texture2D" uid="uid://cxp083req6k6v" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Fall 03.png" id="3_f2vgu"]
+[ext_resource type="Texture2D" uid="uid://eyabnrmmbqpk" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Fall 04.png" id="4_kbwkb"]
+[ext_resource type="Texture2D" uid="uid://ul6jhvtrnruy" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Fall 05.png" id="5_csuko"]
+[ext_resource type="Texture2D" uid="uid://bauopmha3jaec" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Jump 01.png" id="6_ib8ju"]
+[ext_resource type="Script" uid="uid://du68oa2v3v0f5" path="res://scripts/effects/dust_particles.gd" id="6_pl6et"]
+[ext_resource type="Texture2D" uid="uid://do0qnapgo0vjw" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Jump 02.png" id="7_dffrr"]
+[ext_resource type="Texture2D" uid="uid://vkj66as0kh67" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Jump 03.png" id="8_psdaa"]
+[ext_resource type="Texture2D" uid="uid://dc0okc4fossuu" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Jump 04.png" id="9_tf0nb"]
+[ext_resource type="Texture2D" uid="uid://c5j4fnti22b3g" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Jump 05.png" id="10_58oqe"]
+[ext_resource type="Texture2D" uid="uid://bmj5noqo4kyv2" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Jump 06.png" id="11_okv4n"]
+[ext_resource type="Texture2D" uid="uid://ddbsyg3tyaeq5" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Run 01.png" id="12_okv4n"]
+[ext_resource type="Texture2D" uid="uid://cgqp43dfab7gc" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Run 02.png" id="13_shjt2"]
+[ext_resource type="Texture2D" uid="uid://cfbgvm56tnvf0" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Run 03.png" id="14_64tdx"]
+[ext_resource type="Texture2D" uid="uid://dvnjumsftcr1s" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Run 04.png" id="15_upbku"]
+[ext_resource type="Texture2D" uid="uid://d0487lb5hkejw" path="res://assets/Captain Clown Nose/Sprites/Dust Particles/Run 05.png" id="16_l4rp0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xueqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1o51g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pl6et")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f2vgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kbwkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_csuko")
+}],
+"loop": false,
+"name": &"ground",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ib8ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dffrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_psdaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tf0nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_58oqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_okv4n")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_okv4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_shjt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_64tdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_upbku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_l4rp0")
+}],
+"loop": false,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="Dust Particles" type="AnimatedSprite2D" unique_id=1360727557]
+sprite_frames = SubResource("SpriteFrames_xueqq")
+animation = &"ground"
+offset = Vector2(0, -10)
+script = ExtResource("6_pl6et")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

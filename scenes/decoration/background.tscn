@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://c7i0a8u1je3hg"]
+
+[ext_resource type="Script" uid="uid://cdul7wmlui6fu" path="res://scripts/paralax.gd" id="1_31v10"]
+[ext_resource type="Texture2D" uid="uid://cvg3b1vdtxhks" path="res://assets/Palm Tree Island/Sprites/Background/Additional Sky.png" id="1_rr3ae"]
+[ext_resource type="Texture2D" uid="uid://dwc7g7f6cs0uc" path="res://assets/Palm Tree Island/Sprites/Background/Additional Water.png" id="2_c6h32"]
+[ext_resource type="Texture2D" uid="uid://btnkkmi46raby" path="res://assets/Palm Tree Island/Sprites/Background/BG Image.png" id="3_prjwi"]
+[ext_resource type="Texture2D" uid="uid://6otxsajsi5n" path="res://assets/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="4_lmvl5"]
+[ext_resource type="Texture2D" uid="uid://cc2f0h5h63iwq" path="res://assets/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" id="5_53g20"]
+[ext_resource type="Texture2D" uid="uid://b73jfnq315b8p" path="res://assets/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png" id="6_jqh10"]
+[ext_resource type="Texture2D" uid="uid://bsav7x1r3fyt8" path="res://assets/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png" id="7_6yvs5"]
+[ext_resource type="Texture2D" uid="uid://nfdeadqq4nym" path="res://assets/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="9_31v10"]
+[ext_resource type="Texture2D" uid="uid://cm2sh1s0u6t63" path="res://assets/Palm Tree Island/Sprites/Background/medium Cloud 2.png" id="10_j52xk"]
+[ext_resource type="Texture2D" uid="uid://uj331fecflqr" path="res://assets/Palm Tree Island/Sprites/Background/larg Cloud 3.png" id="11_0qt1y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nmpt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lmvl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_53g20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jqh10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6yvs5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmvl5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lmvl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_53g20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jqh10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6yvs5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Background" type="Node2D" unique_id=336766300]
+z_index = -10
+script = ExtResource("1_31v10")
+_width = 1200.0
+
+[node name="AdditionalSky" type="Sprite2D" parent="." unique_id=1266064037]
+position = Vector2(-63.999878, -440)
+scale = Vector2(100, 14.500001)
+texture = ExtResource("1_rr3ae")
+
+[node name="AdditionalWater" type="Sprite2D" parent="." unique_id=1076310672]
+position = Vector2(-64.00006, 504)
+scale = Vector2(106, 7.5)
+texture = ExtResource("2_c6h32")
+
+[node name="BgImage" type="Sprite2D" parent="." unique_id=695719307]
+position = Vector2(-4.5776367e-05, 79.99997)
+scale = Vector2(7.9166656, 4.75)
+texture = ExtResource("3_prjwi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=851250375]
+position = Vector2(0, 198.75)
+scale = Vector2(3.7647057, 1.8499992)
+sprite_frames = SubResource("SpriteFrames_5nmpt")
+autoplay = "default"
+frame_progress = 0.25397867
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=1445527686]
+position = Vector2(-928.0001, 208.00002)
+scale = Vector2(3.7647057, 1.8499992)
+sprite_frames = SubResource("SpriteFrames_5nmpt")
+autoplay = "default"
+frame_progress = 0.13998492
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1806865654]
+position = Vector2(736, 192)
+scale = Vector2(2.3529408, 1)
+sprite_frames = SubResource("SpriteFrames_lmvl5")
+autoplay = "default"
+
+[node name="LargCloud3" type="Sprite2D" parent="." unique_id=1809305668]
+position = Vector2(80, 32)
+texture = ExtResource("11_0qt1y")
+
+[node name="LargCloud4" type="Sprite2D" parent="." unique_id=1337934070]
+position = Vector2(864, -32)
+texture = ExtResource("11_0qt1y")
+
+[node name="SmallCloud12" type="Sprite2D" parent="." unique_id=2034190234]
+position = Vector2(944, 128)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud13" type="Sprite2D" parent="." unique_id=1363262210]
+position = Vector2(544, 48)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud14" type="Sprite2D" parent="." unique_id=217668476]
+position = Vector2(-960, -48)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud15" type="Sprite2D" parent="." unique_id=1425111412]
+position = Vector2(-1136, 96)
+texture = ExtResource("9_31v10")
+
+[node name="MediumCloud2" type="Sprite2D" parent="." unique_id=711154677]
+position = Vector2(-688, 96)
+texture = ExtResource("10_j52xk")
+
+[node name="MediumCloud3" type="Sprite2D" parent="." unique_id=148055989]
+position = Vector2(-416, -32)
+texture = ExtResource("10_j52xk")
+
+[node name="MediumCloud4" type="Sprite2D" parent="." unique_id=855985803]
+position = Vector2(-288, -224)
+texture = ExtResource("10_j52xk")
+
+[node name="SmallCloud16" type="Sprite2D" parent="." unique_id=472023752]
+position = Vector2(704, -320)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud1" type="Sprite2D" parent="." unique_id=14354654]
+position = Vector2(1280, -32)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud2" type="Sprite2D" parent="." unique_id=304025370]
+position = Vector2(1200, -288)
+texture = ExtResource("9_31v10")
+
+[node name="MediumCloud5" type="Sprite2D" parent="." unique_id=2058007870]
+position = Vector2(-1168, -208)
+texture = ExtResource("10_j52xk")
+
+[node name="MediumCloud6" type="Sprite2D" parent="." unique_id=1769336555]
+position = Vector2(-832, -352)
+texture = ExtResource("10_j52xk")
+
+[node name="MediumCloud7" type="Sprite2D" parent="." unique_id=1567748279]
+position = Vector2(128, -288)
+texture = ExtResource("10_j52xk")
+
+[node name="LargCloud5" type="Sprite2D" parent="." unique_id=96376341]
+position = Vector2(448, -128)
+texture = ExtResource("11_0qt1y")
+
+[node name="MediumCloud8" type="Sprite2D" parent="." unique_id=1910973236]
+position = Vector2(976, -176)
+texture = ExtResource("10_j52xk")
+
+[node name="SmallCloud3" type="Sprite2D" parent="." unique_id=1021784654]
+position = Vector2(1440, 160)
+texture = ExtResource("9_31v10")

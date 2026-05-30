@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bo0vh3wtagw4w"]
+
+[ext_resource type="Script" uid="uid://o2n6ytfhi3hg" path="res://scripts/Treasures/skull.gd" id="1_d5y4l"]
+[ext_resource type="Texture2D" uid="uid://cole8hyox42v" path="res://assets/Pirate Treasure/Sprites/Skull Effect/01.png" id="2_5k88l"]
+[ext_resource type="Texture2D" uid="uid://bhcts7m1lc157" path="res://assets/Pirate Treasure/Sprites/Golden Skull/01.png" id="2_d5y4l"]
+[ext_resource type="Texture2D" uid="uid://cftn3he51ixng" path="res://assets/Pirate Treasure/Sprites/Skull Effect/02.png" id="3_2r7fx"]
+[ext_resource type="Texture2D" uid="uid://bicgby836bl" path="res://assets/Pirate Treasure/Sprites/Golden Skull/02.png" id="3_37cnq"]
+[ext_resource type="Texture2D" uid="uid://cvp3ykyc6bcpv" path="res://assets/Pirate Treasure/Sprites/Golden Skull/03.png" id="4_0yfsq"]
+[ext_resource type="Texture2D" uid="uid://diurehfgwtqwn" path="res://assets/Pirate Treasure/Sprites/Skull Effect/03.png" id="4_mnqk3"]
+[ext_resource type="Texture2D" uid="uid://dq0tgepx7lrv1" path="res://assets/Pirate Treasure/Sprites/Skull Effect/04.png" id="5_0wfwi"]
+[ext_resource type="Texture2D" uid="uid://j1vwmewx75nx" path="res://assets/Pirate Treasure/Sprites/Golden Skull/04.png" id="5_6chf7"]
+[ext_resource type="Texture2D" uid="uid://d0sx2eht43wu8" path="res://assets/Pirate Treasure/Sprites/Skull Effect/05.png" id="6_3l2d7"]
+[ext_resource type="Texture2D" uid="uid://dbh32v8tsshcc" path="res://assets/Pirate Treasure/Sprites/Golden Skull/05.png" id="6_xauju"]
+[ext_resource type="Texture2D" uid="uid://cc4cq7tyfpedw" path="res://assets/Pirate Treasure/Sprites/Golden Skull/06.png" id="7_16yfl"]
+[ext_resource type="Texture2D" uid="uid://dly54g0xxihtp" path="res://assets/Pirate Treasure/Sprites/Golden Skull/07.png" id="8_glvyw"]
+[ext_resource type="Texture2D" uid="uid://bov0nshbsqsbv" path="res://assets/Pirate Treasure/Sprites/Golden Skull/08.png" id="9_jsea7"]
+[ext_resource type="AudioStream" uid="uid://dcmj06gs4bven" path="res://sounds/699533__valenspire__coin_misc_04.wav" id="15_d5y4l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kvhe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d5y4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_37cnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0yfsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6chf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xauju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_16yfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_glvyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jsea7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5k88l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2r7fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mnqk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0wfwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3l2d7")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6tgln"]
+radius = 7.0
+
+[node name="Skull" type="RigidBody2D" unique_id=1323405605]
+collision_layer = 8
+collision_mask = 3
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_d5y4l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=988893691]
+sprite_frames = SubResource("SpriteFrames_6kvhe")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=691649154]
+position = Vector2(1, 5)
+shape = SubResource("CircleShape2D_6tgln")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2035373674]
+stream = ExtResource("15_d5y4l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

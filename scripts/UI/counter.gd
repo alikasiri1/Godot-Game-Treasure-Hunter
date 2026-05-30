@@ -1,0 +1,19 @@
+extends Control
+class_name CoinCounter
+
+@export var _digits : Array[Texture2D] 
+@onready var _ones : TextureRect = $Ones
+@onready var _tens : TextureRect = $Tens
+
+func _ready() -> void:
+	pass 
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func set_value(value : int):
+	value = clamp(value , 0 , 99)
+	_ones.texture = _digits[value % 10]
+	_tens.texture = _digits[value / 10]
