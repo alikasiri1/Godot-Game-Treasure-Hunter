@@ -1,17 +1,17 @@
-extends Area2D
+extends Node
 class_name HealthComponent
 
-
-@onready var _current_health : int 
-
+var _current_health : int 
+var character : Character
 signal on_damaged
 signal on_defeated
 
 func _ready() -> void:
-	_current_health = get_parent().max_health
+	character = get_parent()
+	_current_health = character.max_health
 	print(_current_health)
 	
-func apply_damage(damage : float):
+func apply_damage(damage : float , direction : Vector2):
 	if _current_health <= 0 : 
 		return
 		
@@ -19,5 +19,6 @@ func apply_damage(damage : float):
 	_current_health = max(0 , _current_health)
 	on_damaged.emit()
 	
+	character.velocity = direction * Global.ppt * 5
 	if _current_health == 0:
 		on_defeated.emit()

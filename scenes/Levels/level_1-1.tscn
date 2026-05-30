@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://jo0prvvmvqqx" path="res://scenes/Treasures/gold_coin.tscn" id="19_bl8em"]
 [ext_resource type="PackedScene" uid="uid://bo0vh3wtagw4w" path="res://scenes/Treasures/skull.tscn" id="20_hlvsq"]
 [ext_resource type="PackedScene" uid="uid://bnhdsvw15akqg" path="res://scenes/Traps/spikes.tscn" id="21_pb42k"]
+[ext_resource type="PackedScene" uid="uid://boogu3g7ljkw1" path="res://scenes/Treasures/middle.tscn" id="22_sygy4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vf7oa"]
 animations = [{
@@ -484,6 +485,9 @@ position = Vector2(800, 448)
 [node name="Palm Tree4" parent="Decoration" unique_id=1414266067 instance=ExtResource("5_bl8em")]
 position = Vector2(1056, 288)
 
+[node name="Spikes" parent="Decoration" unique_id=1196614941 instance=ExtResource("21_pb42k")]
+position = Vector2(1115, 496)
+
 [node name="Water" type="Area2D" parent="." unique_id=621839153]
 position = Vector2(522, 235)
 collision_layer = 16
@@ -605,8 +609,15 @@ position = Vector2(-2, 166)
 [node name="Skull" parent="Treasure" unique_id=1625674275 instance=ExtResource("20_hlvsq")]
 position = Vector2(190, 70)
 
-[node name="Spikes" parent="." unique_id=1196614941 instance=ExtResource("21_pb42k")]
-position = Vector2(485, 185)
+[node name="CheckPoints" type="Node2D" parent="." unique_id=1037344231]
+
+[node name="Start" type="Node2D" parent="CheckPoints" unique_id=588203195]
+position = Vector2(-213, 174)
+
+[node name="Middle" parent="CheckPoints" unique_id=236566663 instance=ExtResource("22_sygy4")]
+position = Vector2(-10, -102)
+collision_layer = 0
+collision_mask = 2
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]

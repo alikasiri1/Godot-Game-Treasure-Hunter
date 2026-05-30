@@ -1,5 +1,5 @@
 extends Control
-class_name CoinCounter
+class_name DataCounter
 
 @export var _digits : Array[Texture2D] 
 @onready var _ones : TextureRect = $Ones
@@ -9,7 +9,6 @@ func _ready() -> void:
 	pass 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 

@@ -1,9 +1,11 @@
 class_name Character
 extends CharacterBody2D
 
+@export_category("Combat")
 @export_range(1 , 100) var max_health : int = 1
+@export_range(0 , 5) var _invincible_duration = 0
 
-@export_category("sprite")
+@export_category("Sprite")
 @export var effect_sprite : PackedScene
 @export var _sprite_face_left : bool = false
 @export var _is_facing_left : bool
@@ -24,8 +26,10 @@ extends CharacterBody2D
 
 @onready var _sprite : Sprite2D = $Sprite2D
 @onready var health_component : HealthComponent = $HealthComponent
+@onready var animation : AnimationPlayer = $Sprite2D/AnimationPlayer
+@onready var _hurt_box_area : Area2D = $HurtBox
 
-
+var _invincible_timer : Timer 
 var _water_surface_height : float
 var _is_in_water : bool
 var _is_below_surface: bool
@@ -38,6 +42,12 @@ var _min_boundary : Vector2
 var _max_boundary : Vector2
 var _is_bound : bool
 
+var _is_hit : bool = false
+var is_dead : bool = false
+signal died()
+
+var _collision_layer : int = collision_layer
+var _collition_mask  : int = collision_mask
 func _ready() -> void:
 	_speed *= Global.ppt
 	_acceleration *= Global.ppt
@@ -48,26 +58,43 @@ func _ready() -> void:
 	
 	_is_facing_left = _sprite_face_left
 	
+	if _invincible_duration != 0 :
+		_invincible_timer = $Invincible
+	
 #region Public Methods
-
+func revive():
+	is_dead = false
+	health_component._current_health = max_health
+	_hurt_box_area.monitorable = true
+	collision_layer =  _collision_layer 
+	collision_mask = _collition_mask
+	
 func set_bounds(min_boundary: Vector2, max_boundary : Vector2):
 	_min_boundary = min_boundary
 	_max_boundary = max_boundary
 	_is_bound = true
 	
 func face_right():
+	if is_dead:
+		return
 	_sprite.flip_h =  _sprite_face_left
 	_is_facing_left = false
 	
 func face_left():
+	if is_dead:
+		return
 	_sprite.flip_h = not _sprite_face_left
 	_is_facing_left = true
 	
 func run(direction : float ):
+	if is_dead:
+		return
 	_direction = direction
 
 
 func jump():
+	if is_dead:
+		return
 	if _is_in_water:
 		if _is_below_surface:
 			velocity.y = _jump_velocity * _drag
@@ -155,10 +182,27 @@ func _spawn_effect(effect : PackedScene , animation: String):
 	get_parent().add_child(_effect)
 	
 
+func _change_hit(value : bool):
+	_is_hit = value
 
+func _becom_invincible(duration : float):
+	_hurt_box_area.set_deferred("monitorable" , false)
+	_invincible_timer.start(duration)
+	await _invincible_timer.timeout
+	_hurt_box_area.monitorable = true
+	
 func _on_health_component_on_damaged() -> void:
 	print(health_component._current_health)
-
-
+	_is_hit = true
+	
+	if _invincible_duration != 0:
+		_becom_invincible(_invincible_duration)
+	
 func _on_health_component_on_defeated() -> void:
 	print('you died')
+	is_dead = true
+	_hurt_box_area.set_deferred("monitorable" , false)
+	collision_layer = 0
+	collision_mask = 1
+	_direction = 0
+	died.emit()

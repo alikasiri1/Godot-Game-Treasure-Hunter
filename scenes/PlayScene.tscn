@@ -30,6 +30,7 @@ _subject = NodePath("../Roger")
 following_offset = Vector2(2, -1)
 
 [node name="Roger" parent="." unique_id=84746356 instance=ExtResource("1_ityjc")]
+max_health = 1
 
 [node name="Player" type="Node" parent="Roger" unique_id=1901577138]
 script = ExtResource("3_ot0y2")
@@ -95,3 +96,5 @@ layout_mode = 2
 texture = ExtResource("7_yi006")
 expand_mode = 5
 stretch_mode = 3
+
+[connection signal="died" from="Roger" to="." method="_on_player_died"]

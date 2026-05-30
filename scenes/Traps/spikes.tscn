@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_sygy4")
 [node name="HitBox" type="Area2D" parent="." unique_id=864263348]
 collision_layer = 64
 collision_mask = 32
+monitorable = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=2104189028]
 polygon = PackedVector2Array(-15, 7, -5, 0, 12, 2, 15, 7)

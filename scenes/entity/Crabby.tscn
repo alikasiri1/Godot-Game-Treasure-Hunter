@@ -242,6 +242,10 @@ transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransi
 radius = 9.0
 height = 20.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_blsel"]
+radius = 9.0
+height = 18.0
+
 [node name="Crabby" type="CharacterBody2D" unique_id=1264942995]
 collision_layer = 4
 collision_mask = 7
@@ -269,3 +273,12 @@ shape = SubResource("CapsuleShape2D_de1u8")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1848242567]
 
 [node name="HealthComponent" parent="." unique_id=989882209 instance=ExtResource("24_blsel")]
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1717025328]
+collision_layer = 128
+collision_mask = 66
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=420279888]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_blsel")
+debug_color = Color(4.813075e-08, 0.6413611, 0.34048158, 0.41960785)

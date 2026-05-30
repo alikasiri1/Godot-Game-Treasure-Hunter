@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://boogu3g7ljkw1"]
+
+[ext_resource type="Texture2D" uid="uid://bxdpn7wheb8g5" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 01.png" id="1_ptkvc"]
+[ext_resource type="Script" uid="uid://bf3vkagloqmun" path="res://scripts/Environment/checkpoint.gd" id="1_w6md6"]
+[ext_resource type="Texture2D" uid="uid://c6ik252cwtbud" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 02.png" id="2_w6md6"]
+[ext_resource type="Texture2D" uid="uid://dd6dtqav17uc6" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 03.png" id="3_4yq7i"]
+[ext_resource type="Texture2D" uid="uid://dyyiyk3j1qx5a" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 04.png" id="4_tlqii"]
+[ext_resource type="Texture2D" uid="uid://2l53v732b2ne" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 05.png" id="5_faih1"]
+[ext_resource type="Texture2D" uid="uid://6jd50qxxhb0c" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 06.png" id="6_byh4p"]
+[ext_resource type="Texture2D" uid="uid://d0ts0wppyuca4" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 07.png" id="7_1t5q6"]
+[ext_resource type="Texture2D" uid="uid://mm7mmb5o6eq1" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 08.png" id="8_lrs8w"]
+[ext_resource type="Texture2D" uid="uid://cgv467qjr01xu" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 09.png" id="9_r5qq3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yamxk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ptkvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w6md6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4yq7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tlqii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_faih1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_byh4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1t5q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lrs8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_r5qq3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xp4by"]
+a = Vector2(-15, 47)
+b = Vector2(-15, -49)
+
+[node name="Middle" type="Area2D" unique_id=236566663]
+script = ExtResource("1_w6md6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=470710601]
+sprite_frames = SubResource("SpriteFrames_yamxk")
+autoplay = "default"
+frame_progress = 0.43335378
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1910040998]
+shape = SubResource("SegmentShape2D_xp4by")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=563994509]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
