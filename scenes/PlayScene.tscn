@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cuktifpak1sih" path="res://scenes/entity/roger.tscn" id="1_ityjc"]
 [ext_resource type="Script" uid="uid://dec5i822attaq" path="res://scripts/camera_2d.gd" id="1_yi006"]
 [ext_resource type="Script" uid="uid://cikqc4tvnyt8e" path="res://scripts/entity/player.gd" id="3_ot0y2"]
-[ext_resource type="PackedScene" uid="uid://bop7nhccv5h2y" path="res://scenes/Levels/level_1.tscn" id="4_21h8x"]
 [ext_resource type="Texture2D" uid="uid://cbpdbetmpeg8i" path="res://assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="6_f8tyn"]
 [ext_resource type="Script" uid="uid://cojsthmd4d8cg" path="res://scripts/UI/counter.gd" id="6_yi006"]
 [ext_resource type="Texture2D" uid="uid://dap4wkodu1rd8" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/36.png" id="7_yi006"]
@@ -121,12 +120,9 @@ following_offset = Vector2(2, -1)
 
 [node name="Roger" parent="." unique_id=84746356 instance=ExtResource("1_ityjc")]
 position = Vector2(-49, 53)
-max_health = 1
 
 [node name="Player" type="Node" parent="Roger" unique_id=1901577138]
 script = ExtResource("3_ot0y2")
-
-[node name="Level" parent="." unique_id=1731219820 instance=ExtResource("4_21h8x")]
 
 [node name="UserInterFace" type="CanvasLayer" parent="." unique_id=1315942096]
 

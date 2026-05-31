@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://eppdjnjdf8vm" path="res://scenes/Treasures/silver_coin.tscn" id="18_0ynob"]
 [ext_resource type="PackedScene" uid="uid://jo0prvvmvqqx" path="res://scenes/Treasures/gold_coin.tscn" id="19_bl8em"]
 [ext_resource type="PackedScene" uid="uid://bo0vh3wtagw4w" path="res://scenes/Treasures/skull.tscn" id="20_hlvsq"]
+[ext_resource type="PackedScene" uid="uid://drjte6fbbbg6y" path="res://scenes/Treasures/sword.tscn" id="21_4xsrm"]
 [ext_resource type="PackedScene" uid="uid://bnhdsvw15akqg" path="res://scenes/Traps/spikes.tscn" id="21_pb42k"]
 [ext_resource type="PackedScene" uid="uid://ruiem0aq32yl" path="res://scenes/Treasures/end_map.tscn" id="22_psull"]
 [ext_resource type="PackedScene" uid="uid://boogu3g7ljkw1" path="res://scenes/Treasures/middle.tscn" id="22_sygy4"]
@@ -612,6 +613,9 @@ position = Vector2(-213, 174)
 position = Vector2(-10, -102)
 collision_layer = 0
 collision_mask = 2
+
+[node name="Sword" parent="." unique_id=591472409 instance=ExtResource("21_4xsrm")]
+position = Vector2(-74, 187)
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]

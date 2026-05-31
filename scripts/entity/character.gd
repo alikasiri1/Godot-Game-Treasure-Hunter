@@ -88,7 +88,7 @@ func set_bounds(min_boundary: Vector2, max_boundary : Vector2):
 	_is_bound = true
 	
 func face_right():
-	print(name , 'face right' , _sprite_face_left)
+	#print(name , 'face right' , _sprite_face_left)
 	if is_dead:
 		return
 	_is_facing_left = false
@@ -97,7 +97,7 @@ func face_right():
 	_hit_box_area.scale.x = -1 if _sprite_face_left else 1
 	
 func face_left():
-	print(name , 'face left' , _sprite_face_left)
+	#print(name , 'face left' , _sprite_face_left)
 	if is_dead:
 		return
 	_is_facing_left = true
@@ -225,16 +225,17 @@ func _on_health_component_on_damaged() -> void:
 	if _invincible_duration != 0:
 		_becom_invincible(_invincible_duration)
 	
-func _on_health_component_on_defeated() -> void:
-	print('you died')
+func _die():
 	is_dead = true
 	_hurt_box_area.set_deferred("monitorable" , false)
 	collision_layer = 0
 	collision_mask = 1
 	_direction = 0
 	died.emit()
-
-
+	
+func _on_health_component_on_defeated() -> void:
+	print('you died')
+	_die()
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	area.get_parent().health_component.apply_damage(_attack_damage,(area.global_position - global_position).normalized())

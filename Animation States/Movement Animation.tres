@@ -1,60 +1,60 @@
 [gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://digs0gnlukr32"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kqiv8"]
-animation = &"idle"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4aufk"]
+animation = &"idle_sword"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nxq03"]
-animation = &"run"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qtk8e"]
+animation = &"run_sword"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3gewq"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_blsel"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1f0ho"]
 advance_mode = 2
 advance_expression = "velocity.x != 0"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_owm5k"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rypmv"]
 advance_mode = 2
 advance_expression = "velocity.x == 0"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nwy8u"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rwfdk"]
 states/Start/position = Vector2(201.6, 105.92)
-states/idle/node = SubResource("AnimationNodeAnimation_kqiv8")
-states/idle/position = Vector2(378.8, 105.6)
-states/run/node = SubResource("AnimationNodeAnimation_nxq03")
-states/run/position = Vector2(561.2, 106.495995)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3gewq"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_blsel"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_owm5k")]
+states/idle_sword/node = SubResource("AnimationNodeAnimation_4aufk")
+states/idle_sword/position = Vector2(388.4, 106.336)
+states/run_sword/node = SubResource("AnimationNodeAnimation_qtk8e")
+states/run_sword/position = Vector2(568.4, 104.3328)
+transitions = ["idle_sword", "run_sword", SubResource("AnimationNodeStateMachineTransition_1f0ho"), "run_sword", "idle_sword", SubResource("AnimationNodeStateMachineTransition_rypmv"), "Start", "idle_sword", SubResource("AnimationNodeStateMachineTransition_nwy8u")]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wuvja"]
-animation = &"fall"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1f0ho"]
+animation = &"fall_sword"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jtx2l"]
-animation = &"ground"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rypmv"]
+animation = &"ground_sword"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ks8h"]
-animation = &"jump"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nwy8u"]
+animation = &"jump_sword"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bgmeq"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fakwa"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r4fud"]
 priority = 0
 advance_mode = 2
 advance_expression = "velocity.y < 0"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xjk4a"]
-advance_mode = 2
-advance_expression = "velocity.y >= 0"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_abq28"]
-advance_mode = 2
-advance_expression = "is_on_floor()"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pksl0"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mmiir"]
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0f8dm"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jvjpp"]
+advance_mode = 2
+advance_expression = "velocity.y >= 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fofp0"]
+advance_mode = 2
+advance_expression = "is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ih3ig"]
 advance_mode = 2
 advance_expression = "not is_on_floor()"
 
@@ -62,11 +62,11 @@ advance_expression = "not is_on_floor()"
 resource_local_to_scene = true
 states/Locomotion/node = SubResource("AnimationNodeStateMachine_rwfdk")
 states/Locomotion/position = Vector2(447.6, 100.96)
-states/fall/node = SubResource("AnimationNodeAnimation_wuvja")
-states/fall/position = Vector2(448.4, -54.24819)
-states/ground/node = SubResource("AnimationNodeAnimation_jtx2l")
-states/ground/position = Vector2(590.8, 6.231813)
-states/jump/node = SubResource("AnimationNodeAnimation_7ks8h")
-states/jump/position = Vector2(332.4, 5.751812)
-transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_bgmeq"), "Locomotion", "jump", SubResource("AnimationNodeStateMachineTransition_fakwa"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_xjk4a"), "fall", "ground", SubResource("AnimationNodeStateMachineTransition_abq28"), "ground", "Locomotion", SubResource("AnimationNodeStateMachineTransition_pksl0"), "Locomotion", "fall", SubResource("AnimationNodeStateMachineTransition_0f8dm")]
-graph_offset = Vector2(0, -19.222118)
+states/fall_sword/node = SubResource("AnimationNodeAnimation_1f0ho")
+states/fall_sword/position = Vector2(448.24, -104.1131)
+states/ground_sword/node = SubResource("AnimationNodeAnimation_rypmv")
+states/ground_sword/position = Vector2(650.00006, -16.534222)
+states/jump_sword/node = SubResource("AnimationNodeAnimation_nwy8u")
+states/jump_sword/position = Vector2(286.80002, -15.555279)
+transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_bgmeq"), "Locomotion", "jump_sword", SubResource("AnimationNodeStateMachineTransition_r4fud"), "ground_sword", "Locomotion", SubResource("AnimationNodeStateMachineTransition_mmiir"), "jump_sword", "fall_sword", SubResource("AnimationNodeStateMachineTransition_jvjpp"), "fall_sword", "ground_sword", SubResource("AnimationNodeStateMachineTransition_fofp0"), "Locomotion", "fall_sword", SubResource("AnimationNodeStateMachineTransition_ih3ig")]
+graph_offset = Vector2(0, -109.09503)

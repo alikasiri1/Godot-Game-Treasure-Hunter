@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://drjte6fbbbg6y"]
+
+[ext_resource type="Script" uid="uid://pi5wwbavavif" path="res://scripts/Treasures/sword.gd" id="1_01kxe"]
+[ext_resource type="Texture2D" uid="uid://do0itxtt10ipa" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 01.png" id="1_dm33f"]
+[ext_resource type="Texture2D" uid="uid://dxqv2dh1bc4jn" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 02.png" id="3_kpgug"]
+[ext_resource type="Texture2D" uid="uid://q5hm8lc76yf5" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 03.png" id="4_1b75h"]
+[ext_resource type="Texture2D" uid="uid://dfqj7s7or3n4m" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 04.png" id="5_wvian"]
+[ext_resource type="Texture2D" uid="uid://bg2kt054r108t" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 05.png" id="6_ascng"]
+[ext_resource type="Texture2D" uid="uid://cnffbnb27gnna" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 06.png" id="7_5y6ao"]
+[ext_resource type="Texture2D" uid="uid://cio211uft0rx2" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 07.png" id="8_xhs4u"]
+[ext_resource type="Texture2D" uid="uid://n8pcpq5vab6m" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 08.png" id="9_ambfr"]
+[ext_resource type="AudioStream" uid="uid://vluad7v8yq4g" path="res://sounds/209102__lukesharples__unshealth.wav" id="10_n7m7x"]
+
+[sub_resource type="Animation" id="Animation_wivmq"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5, 0.6, 0.70000005),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_dm33f"), ExtResource("3_kpgug"), ExtResource("4_1b75h"), ExtResource("5_wvian"), ExtResource("6_ascng"), ExtResource("7_5y6ao"), ExtResource("8_xhs4u"), ExtResource("9_ambfr")]
+}
+
+[sub_resource type="Animation" id="Animation_v8prl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_dm33f")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4l730"]
+_data = {
+&"Idle": SubResource("Animation_wivmq"),
+&"RESET": SubResource("Animation_v8prl")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ffc8m"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iuqad"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rjtn3"]
+states/Idle/node = SubResource("AnimationNodeAnimation_ffc8m")
+states/Idle/position = Vector2(388.4, 100.32)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_iuqad")]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uslsl"]
+radius = 3.0
+height = 18.0
+
+[node name="Sword" type="RigidBody2D" unique_id=1323405605]
+collision_layer = 512
+collision_mask = 3
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_01kxe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=798542340]
+texture = ExtResource("1_dm33f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=964903971]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_4l730")
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite2D/AnimationPlayer" unique_id=309665589]
+root_node = NodePath("../../..")
+tree_root = SubResource("AnimationNodeStateMachine_rjtn3")
+anim_player = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=691649154]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_uslsl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2035373674]
+stream = ExtResource("10_n7m7x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

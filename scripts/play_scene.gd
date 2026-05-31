@@ -3,21 +3,28 @@ class_name PlayScene
 
 @onready var _camera : Camera = $Camera
 @onready var _player : Character = $Roger
-@onready var _level : GameLevel = $Level
+
 @onready var _coin_counter : DataCounter = $"UserInterFace/Coin Counter"
 @onready var _lives_counter : DataCounter = $"UserInterFace/Lives Counter"
 @onready var _fade : LoadingPage = $UserInterFace/Fade
 @onready var _game_over_menu : Control = $UserInterFace/GameOverMenu
 
+var _level : GameLevel 
 func _ready() -> void:
 	_fade.visible = true
+	_load_level()
 	Global.player = _player
 	Global.play_scene = $"."
+	
+	_spawn_player()
+	await _fade.fade_to_clear(0.1)
+	_player.is_enable = true
+	
+func _load_level():
+	_level = load("res://scenes/Levels/level_" + str(File.data.level) + ".tscn").instantiate()
+	add_child(_level)
 	_init_boundaries()
 	_init_ui()
-	_spawn_player()
-	await _fade.fade_to_clear()
-	_player.is_enable = true
 	
 func _init_boundaries():
 	var _min_boundary : Vector2 = _level.get_min()
@@ -83,8 +90,7 @@ func _on_retry_pressed() -> void:
 	File.data.retry()
 	_level.queue_free()
 	# raload same level
-	_level = load("res://scenes/Levels/level_" + str(File.data.level) + ".tscn").instantiate()
-	add_child(_level)
+	_load_level()
 	
 	_spawn_player()
 	_player.is_enable = false
