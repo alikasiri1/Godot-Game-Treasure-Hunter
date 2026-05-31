@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cuktifpak1sih" path="res://scenes/entity/roger.tscn" id="1_ityjc"]
 [ext_resource type="Script" uid="uid://dec5i822attaq" path="res://scripts/camera_2d.gd" id="1_yi006"]
 [ext_resource type="Script" uid="uid://cikqc4tvnyt8e" path="res://scripts/entity/player.gd" id="3_ot0y2"]
-[ext_resource type="PackedScene" uid="uid://bop7nhccv5h2y" path="res://scenes/Levels/level_1-1.tscn" id="4_21h8x"]
+[ext_resource type="PackedScene" uid="uid://bop7nhccv5h2y" path="res://scenes/Levels/level_1.tscn" id="4_21h8x"]
 [ext_resource type="Texture2D" uid="uid://cbpdbetmpeg8i" path="res://assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="6_f8tyn"]
 [ext_resource type="Script" uid="uid://cojsthmd4d8cg" path="res://scripts/UI/counter.gd" id="6_yi006"]
 [ext_resource type="Texture2D" uid="uid://dap4wkodu1rd8" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/36.png" id="7_yi006"]
@@ -18,6 +18,96 @@
 [ext_resource type="Texture2D" uid="uid://bfud87w8f6jac" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/34.png" id="15_csp53"]
 [ext_resource type="Texture2D" uid="uid://dosha624iwoa1" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/35.png" id="16_6ojev"]
 [ext_resource type="Texture2D" uid="uid://bgsxas3f3dfuf" path="res://assets/Pirate Treasure/Sprites/Golden Skull/ui_skull.png" id="18_glj4c"]
+[ext_resource type="PackedScene" uid="uid://64e8sr16tute" path="res://scenes/UI/fade.tscn" id="19_0tjmk"]
+[ext_resource type="Texture2D" uid="uid://dxv2ydjrepjcd" path="res://assets/Wood and Paper UI/Sprites/Yellow Button/1.png" id="20_0e2e2"]
+[ext_resource type="Texture2D" uid="uid://dhvfuwvbm687m" path="res://assets/Wood and Paper UI/Sprites/Green Button/1.png" id="20_rh4y7"]
+[ext_resource type="Texture2D" uid="uid://c7trncv1m30wj" path="res://assets/Wood and Paper UI/Sprites/Small Banner/3.png" id="21_0e2e2"]
+[ext_resource type="Texture2D" uid="uid://dxlnyfgrsj82c" path="res://assets/Wood and Paper UI/Sprites/Small Banner/13.png" id="22_08wwx"]
+[ext_resource type="Texture2D" uid="uid://jn1ohwbabqv1" path="res://assets/Wood and Paper UI/Sprites/Prefabs/9.png" id="22_owweq"]
+[ext_resource type="Texture2D" uid="uid://crllxl58btlt7" path="res://assets/Wood and Paper UI/Sprites/Prefabs/3.png" id="23_blllo"]
+[ext_resource type="Texture2D" uid="uid://bagjbudb6m3k3" path="res://assets/Wood and Paper UI/Sprites/Small Banner/7.png" id="23_vn72d"]
+[ext_resource type="Texture2D" uid="uid://df4qdspjwiixk" path="res://assets/Wood and Paper UI/Sprites/Small Banner/2.png" id="24_mfc3m"]
+[ext_resource type="Texture2D" uid="uid://deimdayc5fnk7" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/7.png" id="25_4tl7s"]
+[ext_resource type="Texture2D" uid="uid://brc6qjikn2u50" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/1.png" id="26_qdhov"]
+[ext_resource type="Texture2D" uid="uid://dnl0i7rnbv27k" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/13.png" id="27_obr8r"]
+[ext_resource type="Texture2D" uid="uid://dpqbjydw67kv0" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/5.png" id="28_jd7we"]
+[ext_resource type="Texture2D" uid="uid://bru8bq1pomt5d" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/15.png" id="29_jdun6"]
+[ext_resource type="Texture2D" uid="uid://kcmofj1qisff" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/21.png" id="30_d4deg"]
+[ext_resource type="Texture2D" uid="uid://dbhbihx0tkhtl" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/18.png" id="31_dpnhy"]
+[ext_resource type="Texture2D" uid="uid://dbt8sphcda4w3" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Icons/2.png" id="33_mfc3m"]
+[ext_resource type="Texture2D" uid="uid://bw5ijb1bqj6pd" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Icons/1.png" id="34_4tl7s"]
+[ext_resource type="Texture2D" uid="uid://cfoq013ufogtf" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/20.png" id="34_dpnhy"]
+[ext_resource type="Texture2D" uid="uid://cr3sknjyjg5ph" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/25.png" id="35_68gqe"]
+[ext_resource type="Texture2D" uid="uid://cxcxus6eyq3q5" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Icons/15.png" id="35_qdhov"]
+[ext_resource type="Texture2D" uid="uid://bjxmm2831e102" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/12.png" id="37_owweq"]
+[ext_resource type="Texture2D" uid="uid://dnj6hi8sy5o4h" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/19.png" id="38_blllo"]
+[ext_resource type="Texture2D" uid="uid://ceu5i6y0gamah" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/3.png" id="39_h13cd"]
+[ext_resource type="Texture2D" uid="uid://btxyluxefo0pt" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/24.png" id="41_oiu4x"]
+[ext_resource type="Texture2D" uid="uid://byvykrmir2iqp" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/9.png" id="42_ng638"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0e2e2"]
+texture = ExtResource("20_rh4y7")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.5019608, 0.5019608, 0.5019608, 0.5019608)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08wwx"]
+texture = ExtResource("20_0e2e2")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vn72d"]
+texture = ExtResource("20_0e2e2")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_68gqe"]
+texture = ExtResource("20_rh4y7")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfc3m"]
+texture = ExtResource("20_0e2e2")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h13cd"]
+texture = ExtResource("22_owweq")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oiu4x"]
+texture = ExtResource("23_blllo")
+texture_margin_left = 16.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="Theme" id="Theme_owweq"]
+Button/styles/disabled = SubResource("StyleBoxTexture_0e2e2")
+Button/styles/focus = SubResource("StyleBoxTexture_08wwx")
+Button/styles/hover = SubResource("StyleBoxTexture_vn72d")
+Button/styles/normal = SubResource("StyleBoxTexture_68gqe")
+Button/styles/pressed = SubResource("StyleBoxTexture_mfc3m")
+Panel/styles/panel = SubResource("StyleBoxTexture_h13cd")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_oiu4x")
 
 [node name="PlayScene" type="Node2D" unique_id=1588044648]
 script = ExtResource("1_21h8x")
@@ -30,6 +120,7 @@ _subject = NodePath("../Roger")
 following_offset = Vector2(2, -1)
 
 [node name="Roger" parent="." unique_id=84746356 instance=ExtResource("1_ityjc")]
+position = Vector2(-49, 53)
 max_health = 1
 
 [node name="Player" type="Node" parent="Roger" unique_id=1901577138]
@@ -97,4 +188,267 @@ texture = ExtResource("7_yi006")
 expand_mode = 5
 stretch_mode = 3
 
+[node name="Fade" parent="UserInterFace" unique_id=782474236 instance=ExtResource("19_0tjmk")]
+
+[node name="GameOverMenu" type="Control" parent="UserInterFace" unique_id=868565806]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme = SubResource("Theme_owweq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterFace/GameOverMenu" unique_id=1988491879]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -64.0
+offset_right = 49.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Banner" type="Control" parent="UserInterFace/GameOverMenu/VBoxContainer" unique_id=1004260189]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner" unique_id=1636698417]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -20.0
+offset_right = -60.0
+offset_bottom = 20.0
+texture = ExtResource("21_0e2e2")
+
+[node name="TextureRect2" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner" unique_id=1310356538]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+texture = ExtResource("22_08wwx")
+
+[node name="TextureRect3" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner" unique_id=1200846021]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("23_vn72d")
+
+[node name="TextureRect4" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner" unique_id=476553568]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -26.0
+offset_right = 60.0
+offset_bottom = 14.0
+texture = ExtResource("22_08wwx")
+
+[node name="TextureRect5" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner" unique_id=627825325]
+layout_mode = 0
+offset_left = 59.833336
+offset_top = -25.666668
+offset_right = 99.833336
+offset_bottom = 14.333332
+texture = ExtResource("24_mfc3m")
+
+[node name="Game" type="HBoxContainer" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner" unique_id=2050435438]
+layout_mode = 0
+offset_left = -51.0
+offset_top = -4.0
+offset_right = -25.0
+offset_bottom = 2.0
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner/Game" unique_id=64508244]
+layout_mode = 2
+texture = ExtResource("25_4tl7s")
+
+[node name="TextureRect2" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner/Game" unique_id=2062479606]
+layout_mode = 2
+texture = ExtResource("26_qdhov")
+
+[node name="TextureRect3" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner/Game" unique_id=1258758510]
+layout_mode = 2
+texture = ExtResource("27_obr8r")
+
+[node name="TextureRect4" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner/Game" unique_id=1611479159]
+layout_mode = 2
+texture = ExtResource("28_jd7we")
+
+[node name="Over" type="HBoxContainer" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner" unique_id=1900301902]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -10.0
+offset_right = 51.0
+offset_bottom = -4.0
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner/Over" unique_id=281678616]
+layout_mode = 2
+texture = ExtResource("29_jdun6")
+
+[node name="TextureRect2" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner/Over" unique_id=360388067]
+layout_mode = 2
+texture = ExtResource("30_d4deg")
+
+[node name="TextureRect3" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner/Over" unique_id=1732601418]
+layout_mode = 2
+texture = ExtResource("28_jd7we")
+
+[node name="TextureRect4" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Banner/Over" unique_id=1090744228]
+layout_mode = 2
+texture = ExtResource("31_dpnhy")
+
+[node name="Wood" type="PanelContainer" parent="UserInterFace/GameOverMenu/VBoxContainer" unique_id=1345661164]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+
+[node name="Paper" type="Panel" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood" unique_id=452507822]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood" unique_id=1562167297]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Retry Button" type="HBoxContainer" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer" unique_id=1748099806]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Retry" type="Button" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Retry Button" unique_id=1355172977]
+layout_mode = 2
+icon = ExtResource("33_mfc3m")
+
+[node name="Label" type="HBoxContainer" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Retry Button" unique_id=848572248]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+
+[node name="R" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Retry Button/Label" unique_id=639123805]
+layout_mode = 2
+texture = ExtResource("31_dpnhy")
+
+[node name="R2" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Retry Button/Label" unique_id=1437957075]
+layout_mode = 2
+texture = ExtResource("28_jd7we")
+
+[node name="R3" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Retry Button/Label" unique_id=1644539157]
+layout_mode = 2
+texture = ExtResource("34_dpnhy")
+
+[node name="R4" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Retry Button/Label" unique_id=1018245672]
+layout_mode = 2
+texture = ExtResource("31_dpnhy")
+
+[node name="R5" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Retry Button/Label" unique_id=557397672]
+layout_mode = 2
+texture = ExtResource("35_68gqe")
+
+[node name="Level selection button" type="HBoxContainer" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer" unique_id=2054679592]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Level Select" type="Button" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button" unique_id=1905109703]
+layout_mode = 2
+icon = ExtResource("34_4tl7s")
+
+[node name="Label" type="HBoxContainer" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button" unique_id=1814578100]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+
+[node name="L" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=1819671033]
+layout_mode = 2
+texture = ExtResource("37_owweq")
+
+[node name="E" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=861923041]
+layout_mode = 2
+texture = ExtResource("28_jd7we")
+
+[node name="V" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=2113557005]
+layout_mode = 2
+texture = ExtResource("30_d4deg")
+
+[node name="E2" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=1765987551]
+layout_mode = 2
+texture = ExtResource("28_jd7we")
+
+[node name="L2" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=1029118698]
+layout_mode = 2
+texture = ExtResource("37_owweq")
+
+[node name="R6" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=606263753]
+layout_mode = 2
+
+[node name="S" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=898935239]
+layout_mode = 2
+texture = ExtResource("38_blllo")
+
+[node name="E3" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=1489189409]
+layout_mode = 2
+texture = ExtResource("28_jd7we")
+
+[node name="L3" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=546652347]
+layout_mode = 2
+texture = ExtResource("37_owweq")
+
+[node name="E4" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=207170956]
+layout_mode = 2
+texture = ExtResource("28_jd7we")
+
+[node name="C" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=79571560]
+layout_mode = 2
+texture = ExtResource("39_h13cd")
+
+[node name="T" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Label" unique_id=1713402211]
+layout_mode = 2
+texture = ExtResource("34_dpnhy")
+
+[node name="Exit Button" type="HBoxContainer" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer" unique_id=742202966]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Exit" type="Button" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Exit Button" unique_id=1607386109]
+layout_mode = 2
+icon = ExtResource("35_qdhov")
+
+[node name="Label" type="HBoxContainer" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Exit Button" unique_id=268763932]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+
+[node name="R2" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Exit Button/Label" unique_id=477974821]
+layout_mode = 2
+texture = ExtResource("28_jd7we")
+
+[node name="R3" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Exit Button/Label" unique_id=924970649]
+layout_mode = 2
+texture = ExtResource("41_oiu4x")
+
+[node name="R4" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Exit Button/Label" unique_id=1753270463]
+layout_mode = 2
+texture = ExtResource("42_ng638")
+
+[node name="R5" type="TextureRect" parent="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Exit Button/Label" unique_id=640409962]
+layout_mode = 2
+texture = ExtResource("34_dpnhy")
+
 [connection signal="died" from="Roger" to="." method="_on_player_died"]
+[connection signal="pressed" from="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Retry Button/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Level selection button/Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="UserInterFace/GameOverMenu/VBoxContainer/Wood/VBoxContainer/Exit Button/Exit" to="." method="_on_exit_pressed"]

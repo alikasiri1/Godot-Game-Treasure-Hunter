@@ -77,7 +77,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("8_pve0f")
+"stream": ExtResource("7_7mwut")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -470,6 +470,18 @@ height = 28.0
 radius = 9.0
 height = 28.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hkk4p"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34w7k"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Roger" type="CharacterBody2D" unique_id=84746356]
 collision_layer = 2
 collision_mask = 69
@@ -513,6 +525,22 @@ debug_color = Color(4.0911138e-07, 0.64810693, 0.20071158, 0.41960785)
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1684502373]
 max_polyphony = 2
+
+[node name="HitBox" type="Area2D" parent="." unique_id=629145099]
+collision_layer = 256
+collision_mask = 32
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=12337259]
+position = Vector2(-8, -16)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hkk4p")
+debug_color = Color(0.9758268, 0, 0.42003474, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox" unique_id=1004615911]
+position = Vector2(-26, -18)
+scale = Vector2(0.8181818, 0.7083333)
+sprite_frames = SubResource("SpriteFrames_34w7k")
 
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]

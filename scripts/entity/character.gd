@@ -4,11 +4,12 @@ extends CharacterBody2D
 @export_category("Combat")
 @export_range(1 , 100) var max_health : int = 1
 @export_range(0 , 5) var _invincible_duration = 0
+@export_range(0 , 5) var _attack_damage : int = 1
 
 @export_category("Sprite")
 @export var effect_sprite : PackedScene
 @export var _sprite_face_left : bool = false
-@export var _is_facing_left : bool
+var _is_facing_left : bool
 
 @export_category("Locomotion")
 @export var _speed = 8
@@ -28,6 +29,7 @@ extends CharacterBody2D
 @onready var health_component : HealthComponent = $HealthComponent
 @onready var animation : AnimationPlayer = $Sprite2D/AnimationPlayer
 @onready var _hurt_box_area : Area2D = $HurtBox
+@onready var _hit_box_area : Area2D = $HitBox
 
 var _invincible_timer : Timer 
 var _water_surface_height : float
@@ -44,10 +46,14 @@ var _is_bound : bool
 
 var _is_hit : bool = false
 var is_dead : bool = false
+var is_enable : bool = false
 signal died()
 
 var _collision_layer : int = collision_layer
 var _collition_mask  : int = collision_mask
+
+var _want_to_attack : bool = false
+
 func _ready() -> void:
 	_speed *= Global.ppt
 	_acceleration *= Global.ppt
@@ -56,12 +62,19 @@ func _ready() -> void:
 	
 	_jump_velocity = sqrt(_jump_height * gravity * 2 ) * -1
 	
-	_is_facing_left = _sprite_face_left
-	
+	#_is_facing_left = _sprite_face_left
+	print(name , _sprite_face_left)
+	face_left() if _sprite_face_left else face_right()
 	if _invincible_duration != 0 :
 		_invincible_timer = $Invincible
+
+	_hit_box_area.monitoring = false
 	
 #region Public Methods
+
+func attack():
+	_want_to_attack = true
+	
 func revive():
 	is_dead = false
 	health_component._current_health = max_health
@@ -75,16 +88,22 @@ func set_bounds(min_boundary: Vector2, max_boundary : Vector2):
 	_is_bound = true
 	
 func face_right():
+	print(name , 'face right' , _sprite_face_left)
 	if is_dead:
 		return
-	_sprite.flip_h =  _sprite_face_left
 	_is_facing_left = false
+	_sprite.flip_h = _sprite_face_left 
+	
+	_hit_box_area.scale.x = -1 if _sprite_face_left else 1
 	
 func face_left():
+	print(name , 'face left' , _sprite_face_left)
 	if is_dead:
 		return
-	_sprite.flip_h = not _sprite_face_left
 	_is_facing_left = true
+	_sprite.flip_h = not _sprite_face_left 
+	_hit_box_area.scale.x = 1 if _sprite_face_left else -1
+	
 	
 func run(direction : float ):
 	if is_dead:
@@ -126,10 +145,15 @@ func dive():
 #endregion
 
 func _physics_process(delta: float) -> void:
+	if not is_enable:
+		velocity = Vector2.ZERO
+		return
 	if not _is_facing_left and sign(_direction) == -1:
 		face_left()
+		
 	if _is_facing_left and sign(_direction) == 1:
 		face_right()
+
 		
 	if _is_in_water:
 		_water_physics(delta)
@@ -185,6 +209,9 @@ func _spawn_effect(effect : PackedScene , animation: String):
 func _change_hit(value : bool):
 	_is_hit = value
 
+func _change_want_attack(value : bool):
+	_want_to_attack = value
+	
 func _becom_invincible(duration : float):
 	_hurt_box_area.set_deferred("monitorable" , false)
 	_invincible_timer.start(duration)
@@ -206,3 +233,8 @@ func _on_health_component_on_defeated() -> void:
 	collision_mask = 1
 	_direction = 0
 	died.emit()
+
+
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	area.get_parent().health_component.apply_damage(_attack_damage,(area.global_position - global_position).normalized())

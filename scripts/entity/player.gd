@@ -4,6 +4,8 @@ extends Node
 
 
 func _input(event: InputEvent) -> void:
+	if not _character.is_enable:
+		return
 	if event.is_action_pressed("jump"):
 		_character.jump()
 
@@ -11,4 +13,6 @@ func _input(event: InputEvent) -> void:
 		_character.stop_jump()
 
 func _process(_delta: float) -> void:
+	if not _character.is_enable:
+		return
 	_character.run(Input.get_axis("run_left" , "run_right"))

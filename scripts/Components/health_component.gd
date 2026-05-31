@@ -17,8 +17,11 @@ func apply_damage(damage : float , direction : Vector2):
 		
 	_current_health -= damage
 	_current_health = max(0 , _current_health)
-	on_damaged.emit()
+	
 	
 	character.velocity = direction * Global.ppt * 5
 	if _current_health == 0:
 		on_defeated.emit()
+		return
+		
+	on_damaged.emit()

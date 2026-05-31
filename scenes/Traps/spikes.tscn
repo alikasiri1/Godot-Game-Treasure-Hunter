@@ -27,3 +27,4 @@ monitorable = false
 polygon = PackedVector2Array(-15, 7, -5, 0, 12, 2, 15, 7)
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
