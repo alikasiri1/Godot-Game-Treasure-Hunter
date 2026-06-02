@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bop7nhccv5h2y"]
 
 [ext_resource type="Script" uid="uid://dg2gmfnahu7xg" path="res://scripts/level.gd" id="1_lmnfa"]
+[ext_resource type="PackedScene" uid="uid://cjgwe3mfjkc2k" path="res://scenes/entity/partal.tscn" id="3_0r5j3"]
+[ext_resource type="PackedScene" uid="uid://d2kqqqo7ihbn7" path="res://scenes/entity/Crabby.tscn" id="3_hc568"]
 [ext_resource type="PackedScene" uid="uid://dnbm4rjfbq2ja" path="res://scenes/entity/Fierce Tooth.tscn" id="4_0ynob"]
 [ext_resource type="PackedScene" uid="uid://d0skswx1f0nre" path="res://scenes/decoration/palm_tree.tscn" id="5_bl8em"]
 [ext_resource type="Script" uid="uid://og51qf5tmi6d" path="res://scripts/water.gd" id="6_hlvsq"]
@@ -459,8 +461,16 @@ script = ExtResource("1_lmnfa")
 [node name="Enemies" type="Node2D" parent="." unique_id=273499571]
 position = Vector2(-630, -311)
 
+[node name="Crabby" parent="Enemies" unique_id=431264309 instance=ExtResource("3_hc568")]
+position = Vector2(960, 416)
+_speed = 1
+
+[node name="Patrol" parent="Enemies/Crabby" unique_id=1698246436 instance=ExtResource("3_0r5j3")]
+
 [node name="Fierce Tooth" parent="Enemies" unique_id=1264942995 instance=ExtResource("4_0ynob")]
-position = Vector2(604, 514)
+position = Vector2(257, 383)
+
+[node name="Patrol" parent="Enemies/Fierce Tooth" unique_id=989129301 instance=ExtResource("3_0r5j3")]
 
 [node name="Decoration" type="Node2D" parent="." unique_id=1171586266]
 position = Vector2(-630, -311)

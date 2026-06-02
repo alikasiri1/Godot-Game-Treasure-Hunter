@@ -1058,18 +1058,18 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rfsek"]
 advance_mode = 2
-advance_expression = "_want_to_attack and is_on_floor()"
+advance_expression = "_want_to_attack and is_one_floor()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_41uj8"]
 switch_mode = 2
 advance_mode = 2
-advance_expression = "_want_to_attack && is_on_floor()"
+advance_expression = "_want_to_attack && is_one_floor()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k6i5n"]
 priority = 0
 switch_mode = 2
 advance_mode = 2
-advance_expression = "_want_to_attack && is_on_floor()"
+advance_expression = "_want_to_attack && is_one_floor()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v3u24"]
 switch_mode = 2
@@ -1095,26 +1095,25 @@ states/attack_3/node = SubResource("AnimationNodeAnimation_0ww83")
 states/attack_3/position = Vector2(594, 203.91603)
 transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_mdodv"), "Movement", "attack_1", SubResource("AnimationNodeStateMachineTransition_rfsek"), "attack_1", "attack_2", SubResource("AnimationNodeStateMachineTransition_41uj8"), "attack_2", "attack_3", SubResource("AnimationNodeStateMachineTransition_k6i5n"), "attack_3", "Movement", SubResource("AnimationNodeStateMachineTransition_v3u24"), "attack_2", "Movement", SubResource("AnimationNodeStateMachineTransition_xbuw6"), "attack_1", "Movement", SubResource("AnimationNodeStateMachineTransition_wq0k8")]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n51ug"]
-animation = &"hit_sword"
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kii56"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0ylde"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_liyhv"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lipvo"]
 advance_mode = 2
 advance_expression = "_is_hit"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_urb3q"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u83y8"]
 advance_mode = 2
 advance_expression = "not _is_hit"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_os00p"]
 states/Attack/node = SubResource("AnimationNodeStateMachine_j4j7h")
-states/Attack/position = Vector2(436.52798, 100.294395)
-states/hit_sword/node = SubResource("AnimationNodeAnimation_n51ug")
-states/hit_sword/position = Vector2(436.3424, 3.8347816)
-transitions = ["Start", "Attack", SubResource("AnimationNodeStateMachineTransition_0ylde"), "Attack", "hit_sword", SubResource("AnimationNodeStateMachineTransition_liyhv"), "hit_sword", "Attack", SubResource("AnimationNodeStateMachineTransition_urb3q")]
+states/Attack/position = Vector2(436.4, 100.672)
+states/hit_sword/node = SubResource("AnimationNodeStateMachine_kii56")
+states/hit_sword/position = Vector2(436.56, -19.2)
+transitions = ["Start", "Attack", SubResource("AnimationNodeStateMachineTransition_0ylde"), "Attack", "hit_sword", SubResource("AnimationNodeStateMachineTransition_lipvo"), "hit_sword", "Attack", SubResource("AnimationNodeStateMachineTransition_u83y8")]
 graph_offset = Vector2(0, -26.565216)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_73gwe"]
@@ -1380,9 +1379,8 @@ frame = 3
 frame_progress = 1.0
 
 [node name="InputBuffer" type="Timer" parent="." unique_id=1688082380]
-wait_time = 0.35
+wait_time = 0.5
 one_shot = true
 
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
-[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

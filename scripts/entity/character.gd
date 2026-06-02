@@ -52,7 +52,9 @@ signal died()
 var _collision_layer : int = collision_layer
 var _collition_mask  : int = collision_mask
 
+#combat
 var _want_to_attack : bool = false
+var _is_attacking : bool = false
 
 func _ready() -> void:
 	_speed *= Global.ppt
@@ -63,12 +65,13 @@ func _ready() -> void:
 	_jump_velocity = sqrt(_jump_height * gravity * 2 ) * -1
 	
 	#_is_facing_left = _sprite_face_left
-	print(name , _sprite_face_left)
+
 	face_left() if _sprite_face_left else face_right()
 	if _invincible_duration != 0 :
 		_invincible_timer = $Invincible
 
 	_hit_box_area.monitoring = false
+	_is_attacking = false
 	
 #region Public Methods
 
@@ -81,6 +84,7 @@ func revive():
 	_hurt_box_area.monitorable = true
 	collision_layer =  _collision_layer 
 	collision_mask = _collition_mask
+	is_enable = true
 	
 func set_bounds(min_boundary: Vector2, max_boundary : Vector2):
 	_min_boundary = min_boundary
@@ -89,7 +93,7 @@ func set_bounds(min_boundary: Vector2, max_boundary : Vector2):
 	
 func face_right():
 	#print(name , 'face right' , _sprite_face_left)
-	if is_dead:
+	if is_dead or _is_attacking:
 		return
 	_is_facing_left = false
 	_sprite.flip_h = _sprite_face_left 
@@ -98,7 +102,7 @@ func face_right():
 	
 func face_left():
 	#print(name , 'face left' , _sprite_face_left)
-	if is_dead:
+	if is_dead or _is_attacking:
 		return
 	_is_facing_left = true
 	_sprite.flip_h = not _sprite_face_left 
@@ -106,13 +110,14 @@ func face_left():
 	
 	
 func run(direction : float ):
-	if is_dead:
-		return
-	_direction = direction
+	if is_dead or _is_attacking:
+		direction = 0
+	else:
+		_direction = direction
 
 
 func jump():
-	if is_dead:
+	if is_dead or _is_attacking:
 		return
 	if _is_in_water:
 		if _is_below_surface:
@@ -125,6 +130,8 @@ func jump():
 		_spawn_effect(effect_sprite , "jump")
 	
 func stop_jump():
+	if is_dead or _is_attacking:
+		return
 	if velocity.y < 0 and not _is_in_water:
 		velocity.y = 0
 		
@@ -142,12 +149,16 @@ func exit_water():
 func dive():
 	_is_below_surface = true
 	
+func is_facing_left():
+	return _is_facing_left
+	
 #endregion
 
 func _physics_process(delta: float) -> void:
-	if not is_enable:
-		velocity = Vector2.ZERO
-		return
+	#if not is_enable:
+		#velocity = Vector2.ZERO
+		#return
+
 	if not _is_facing_left and sign(_direction) == -1:
 		face_left()
 		
@@ -212,6 +223,10 @@ func _change_hit(value : bool):
 func _change_want_attack(value : bool):
 	_want_to_attack = value
 	
+func _change_is_attacking(value: bool):
+	#print(name, 'is attacking')
+	_is_attacking = value
+	
 func _becom_invincible(duration : float):
 	_hurt_box_area.set_deferred("monitorable" , false)
 	_invincible_timer.start(duration)
@@ -234,8 +249,11 @@ func _die():
 	died.emit()
 	
 func _on_health_component_on_defeated() -> void:
-	print('you died')
+	print(name,' died')
 	_die()
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
-	area.get_parent().health_component.apply_damage(_attack_damage,(area.global_position - global_position).normalized())
+	print(area.get_parent().name)
+	if not is_dead and _is_attacking:
+		#print((area.global_position - global_position).normalized())
+		area.get_parent().health_component.apply_damage(_attack_damage,(area.global_position - global_position).normalized())

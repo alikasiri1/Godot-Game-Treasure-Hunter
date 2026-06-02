@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cjgwe3mfjkc2k"]
+
+[ext_resource type="Script" uid="uid://hq8hbsf22l7q" path="res://scripts/entity/enemies/patrol.gd" id="1_xlg2w"]
+
+[node name="Portal" type="Node2D" unique_id=1698246436]
+script = ExtResource("1_xlg2w")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=800593798]
+position = Vector2(16, -8)
+target_position = Vector2(0, 18)
