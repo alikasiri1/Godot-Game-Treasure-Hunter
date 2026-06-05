@@ -8,11 +8,11 @@ class_name Data
 
 func _init() -> void:
 	coins = 0
-	lives = 3
+	lives = 0
 	checkpoint = 0
 	level = 1
 	
 func retry():
 	coins = 0 
-	lives = 3
+	lives = 0
 	checkpoint = 0

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c1qh2x7b7j3nx" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Idle/1.png" id="1_17ypc"]
 [ext_resource type="Script" uid="uid://dyp42mt43gmfn" path="res://scripts/entity/enemies/shooter.gd" id="1_570vp"]
+[ext_resource type="PackedScene" uid="uid://c86dxlykirqvm" path="res://scenes/projectiles/pearl.tscn" id="2_6uoji"]
 [ext_resource type="Texture2D" uid="uid://deqa3dal3wdqy" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Fire/1.png" id="2_ojk1h"]
 [ext_resource type="PackedScene" uid="uid://c7oxqqup81xwi" path="res://scenes/Components/health_component.tscn" id="2_vxuxw"]
 [ext_resource type="Texture2D" uid="uid://bpjddue1e7auu" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Fire/2.png" id="3_ifvkk"]
@@ -15,10 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://cak2jdpu1uysb" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Bite/1.png" id="8_3hr6r"]
 [ext_resource type="Texture2D" uid="uid://5gfqtyr0dm0g" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Bite/2.png" id="9_oidbu"]
 [ext_resource type="Texture2D" uid="uid://d2c5xi2m6ql1l" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Bite/3.png" id="10_fldso"]
+[ext_resource type="Texture2D" uid="uid://7dcrdkpq4k36" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Opening/1.png" id="10_oidbu"]
+[ext_resource type="Texture2D" uid="uid://btgex28wkww6v" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Opening/2.png" id="11_fldso"]
 [ext_resource type="Texture2D" uid="uid://c8pwg6ty84oka" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Bite/4.png" id="11_hhyhw"]
+[ext_resource type="Texture2D" uid="uid://c7v7o5hul7gmw" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Opening/3.png" id="12_hhyhw"]
 [ext_resource type="Texture2D" uid="uid://b7hxdui076qsa" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Bite/5.png" id="12_k554t"]
 [ext_resource type="Texture2D" uid="uid://bf5wrcy80e72y" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Bite/6.png" id="13_4e6x3"]
-[ext_resource type="Texture2D" uid="uid://crjir8e8ryu1h" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Destroyed/1.png" id="14_ifvkk"]
+[ext_resource type="Texture2D" uid="uid://dton1hq3btcx5" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Opening/4.png" id="13_k554t"]
+[ext_resource type="Texture2D" uid="uid://mjgkw0nlpkgc" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Opening/5.png" id="14_4e6x3"]
 [ext_resource type="Texture2D" uid="uid://bplmxk4tyqcvn" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Hit/1.png" id="14_jtiec"]
 [ext_resource type="Texture2D" uid="uid://b0at1ksii1ko0" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Hit/2.png" id="15_sy6d7"]
 [ext_resource type="Texture2D" uid="uid://o4ianobl6rg0" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Hit/3.png" id="16_mg5gf"]
@@ -85,7 +90,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_570vp"]
 resource_name = "destroyed"
-length = 0.2
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -93,14 +98,14 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("14_ifvkk")]
+"values": [ExtResource("10_oidbu"), ExtResource("11_fldso"), ExtResource("12_hhyhw"), ExtResource("13_k554t"), ExtResource("14_4e6x3")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("..:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -125,6 +130,34 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("2_ojk1h"), ExtResource("3_ifvkk"), ExtResource("4_570vp"), ExtResource("5_6uoji"), ExtResource("6_m6q3t"), ExtResource("7_5w784")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"_change_want_fire"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_spawn_projectile"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_nvpjs"]
@@ -175,12 +208,12 @@ animation = &"fire"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m6q3t"]
 advance_mode = 2
-advance_expression = "_wants_to_fire"
+advance_expression = "_want_to_fire"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5w784"]
 switch_mode = 2
 advance_mode = 2
-advance_expression = "not _wants_to_fire"
+advance_expression = "not _want_to_fire"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3hr6r"]
 advance_mode = 2
@@ -264,6 +297,9 @@ radius = 104.80935
 [node name="Seashell" type="CharacterBody2D" unique_id=682533279]
 collision_layer = 4
 script = ExtResource("1_570vp")
+_projectile = ExtResource("2_6uoji")
+max_health = 4.0
+_sprite_face_left = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1966939242]
 position = Vector2(0, -19)
@@ -298,7 +334,6 @@ shape = SubResource("CapsuleShape2D_hrw8a")
 debug_color = Color(4.813075e-08, 0.6413611, 0.34048158, 0.41960785)
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1808277440]
-visible = false
 position = Vector2(0, -5)
 collision_layer = 256
 collision_mask = 32
@@ -330,7 +365,7 @@ rotation = 1.5707964
 shape = SubResource("CircleShape2D_ifvkk")
 debug_color = Color(0.67085993, 0.5049203, 0.18601185, 0.41960785)
 
-[node name="Timer" type="Timer" parent="." unique_id=1072563906]
+[node name="AttackTimer" type="Timer" parent="." unique_id=1072563906]
 wait_time = 2.0
 autostart = true
 
@@ -350,4 +385,9 @@ target_position = Vector2(-106, 0)
 collision_mask = 3
 
 [node name="ProjectileOrigin" type="Node2D" parent="." unique_id=1503576984]
-position = Vector2(1, -8)
+position = Vector2(-1, -9)
+
+[connection signal="died" from="." to="." method="_on_died"]
+[connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
+[connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
+[connection signal="timeout" from="AttackTimer" to="." method="fire"]

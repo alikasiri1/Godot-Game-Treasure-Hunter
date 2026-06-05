@@ -389,7 +389,7 @@ radius = 107.11676
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_ce43l")
-max_health = 3.0
+max_health = 5
 effect_sprite = ExtResource("23_3gewq")
 _sprite_face_left = true
 
@@ -453,7 +453,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_t2t11")
 debug_color = Color(0.67085993, 0.5049203, 0.18601185, 0.41960785)
 
-[node name="AttackTimer" type="Timer" parent="." unique_id=1943179089]
+[node name="Timer" type="Timer" parent="." unique_id=1943179089]
 wait_time = 2.0
 autostart = true
 
@@ -477,7 +477,5 @@ collision_mask = 3
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="HitBox/Target" to="." method="_on_target_area_entered"]
-[connection signal="area_exited" from="HitBox/Target" to="." method="_on_target_area_exited"]
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]
 [connection signal="body_exited" from="Vision" to="." method="_on_vision_body_exited"]

@@ -2,9 +2,9 @@ class_name Character
 extends CharacterBody2D
 
 @export_category("Combat")
-@export_range(1 , 100) var max_health : int = 1
+@export_range(1 , 100) var max_health : float = 1
 @export_range(0 , 5) var _invincible_duration = 0
-@export_range(0 , 5) var _attack_damage : int = 1
+@export_range(0 , 5) var _attack_damage : float = 1
 
 @export_category("Sprite")
 @export var effect_sprite : PackedScene
@@ -48,6 +48,7 @@ var _is_hit : bool = false
 var is_dead : bool = false
 var is_enable : bool = false
 signal died()
+signal health_changed(percentage : float)
 
 var _collision_layer : int = collision_layer
 var _collition_mask  : int = collision_mask
@@ -85,6 +86,8 @@ func revive():
 	collision_layer =  _collision_layer 
 	collision_mask = _collition_mask
 	is_enable = true
+	if self is Hero:
+		recover(max_health)
 	
 func set_bounds(min_boundary: Vector2, max_boundary : Vector2):
 	_min_boundary = min_boundary
@@ -233,13 +236,6 @@ func _becom_invincible(duration : float):
 	await _invincible_timer.timeout
 	_hurt_box_area.monitorable = true
 	
-func _on_health_component_on_damaged() -> void:
-	print(health_component._current_health)
-	_is_hit = true
-	
-	if _invincible_duration != 0:
-		_becom_invincible(_invincible_duration)
-	
 func _die():
 	is_dead = true
 	_hurt_box_area.set_deferred("monitorable" , false)
@@ -248,7 +244,22 @@ func _die():
 	_direction = 0
 	died.emit()
 	
+func recover(amount : float):
+	health_component._current_health = min(health_component._current_health + amount , max_health )
+	health_changed.emit(health_component._current_health / max_health)
+	
+func _on_health_component_on_damaged() -> void:
+	print(health_component._current_health)
+	_is_hit = true
+	health_changed.emit(health_component._current_health / max_health)
+
+	if _invincible_duration != 0:
+		_becom_invincible(_invincible_duration)
+	
+
 func _on_health_component_on_defeated() -> void:
+	health_changed.emit(health_component._current_health / max_health)
+
 	print(name,' died')
 	_die()
 

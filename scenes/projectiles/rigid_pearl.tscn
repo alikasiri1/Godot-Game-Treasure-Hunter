@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cfkpwrk1a4g1v"]
+
+[ext_resource type="Script" uid="uid://do8kcjpgphfab" path="res://scripts/entity/enemies/projectile.gd" id="1_y6bc3"]
+[ext_resource type="Texture2D" uid="uid://cexlbanxvf1ac" path="res://assets/Shooter Traps/Sprites/Seashell/Pearl Idle/1.png" id="2_qsnf0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1biud"]
+radius = 3.1622777
+
+[node name="Pearl" type="RigidBody2D" unique_id=1883787941]
+collision_layer = 256
+collision_mask = 3
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_y6bc3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=698512733]
+texture = ExtResource("2_qsnf0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=991240625]
+shape = SubResource("CircleShape2D_1biud")
+debug_color = Color(0.95119375, 0.18116, 0.33698723, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=344866851]
+one_shot = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2054235467]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

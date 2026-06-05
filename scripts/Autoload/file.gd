@@ -1,15 +1,18 @@
 extends Node
 
 var data : Data
-
+const _path : String = "user://autosave.tres"
 func _ready() -> void:
 	new_game()
+	
+func save_file_exists() -> bool:
+	return ResourceLoader.exists(_path)
 	
 func new_game():
 	data = Data.new()
 
 func save_game():
-	pass
+	ResourceSaver.save(data, _path)
 	
 func load_game():
-	pass
+	data = ResourceLoader.load(_path)

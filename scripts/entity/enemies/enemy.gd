@@ -4,9 +4,14 @@ class_name Enemy
 @onready var _vision : Area2D = $Vision
 @onready var _line_of_sight : RayCast2D = $Vision/LineOfSight
 @onready var _patrol : Patrol = get_node_or_null("Patrol")
+@onready var _attack_timer : Timer = $AttackTimer
 
+#var _respawn_position : Vector2
 var _can_see_player : bool
 var _hero : Hero
+	
+#func _ready() -> void:
+	#_respawn_position = global_position
 	
 func _process(_delta: float) -> void:
 	if _hero:
@@ -60,3 +65,15 @@ func _on_vision_body_exited(body: Node2D) -> void:
 
 func _on_target_area_entered(area: Area2D) -> void:
 	attack()
+	_attack_timer.start()
+
+func _on_died() -> void:
+	await get_tree().create_timer(10).timeout
+	queue_free()
+
+
+func _on_attack_timer_timeout() -> void:
+	attack()
+
+func _on_target_area_exited(area: Area2D) -> void:
+	_attack_timer.stop()

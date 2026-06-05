@@ -1,0 +1,436 @@
+[gd_scene format=3 uid="uid://cnnkrg4cvyl56"]
+
+[ext_resource type="PackedScene" uid="uid://c7i0a8u1je3hg" path="res://scenes/decoration/background.tscn" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://d1c2sytxt2ii1" path="res://scripts/UI/title_manager.gd" id="1_on84s"]
+[ext_resource type="Texture2D" uid="uid://cyd8ususxc3qi" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/1.png" id="2_b3w7a"]
+[ext_resource type="Texture2D" uid="uid://dtlfuu8c7whq8" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/2.png" id="3_4rr2b"]
+[ext_resource type="PackedScene" uid="uid://wxgy5xgxb5qm" path="res://scenes/decoration/ship.tscn" id="3_owywo"]
+[ext_resource type="Texture2D" uid="uid://chmllonlqhm10" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/3.png" id="4_yql1r"]
+[ext_resource type="Texture2D" uid="uid://btkgfpynxrkls" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/4.png" id="5_ia1n6"]
+[ext_resource type="Texture2D" uid="uid://62g4ck1kciht" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" id="16_iq6fq"]
+[ext_resource type="Texture2D" uid="uid://bp2vein72gk7f" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png" id="17_mg5ff"]
+[ext_resource type="Texture2D" uid="uid://cyjucy7vls7ay" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png" id="18_52c44"]
+[ext_resource type="Texture2D" uid="uid://bkjncga73inwv" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 04.png" id="19_pqt7r"]
+[ext_resource type="Texture2D" uid="uid://c0j2cc8nn76v6" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 05.png" id="20_pv6bm"]
+[ext_resource type="Texture2D" uid="uid://55fdjk0jmx1w" path="res://assets/Wood and Paper UI/Sprites/Big Text/10.png" id="26_k1qkb"]
+[ext_resource type="Texture2D" uid="uid://c810xwdixumev" path="res://assets/Wood and Paper UI/Sprites/Big Text/15.png" id="27_2as01"]
+[ext_resource type="Texture2D" uid="uid://deq6eecdr0e7b" path="res://assets/Wood and Paper UI/Sprites/Big Text/12.png" id="28_iq6fq"]
+[ext_resource type="Texture2D" uid="uid://da2usv72lcebj" path="res://assets/Wood and Paper UI/Sprites/Big Text/25.png" id="29_mg5ff"]
+[ext_resource type="Texture2D" uid="uid://c48rmc8u32lth" path="res://assets/Wood and Paper UI/Sprites/Big Text/18.png" id="30_52c44"]
+[ext_resource type="Texture2D" uid="uid://na8l757pefeo" path="res://assets/Wood and Paper UI/Sprites/Big Text/5.png" id="31_pqt7r"]
+[ext_resource type="Theme" uid="uid://cpmainy4i2yo8" path="res://Wood_and_Paper_Button_theme.tres" id="32_6qeuo"]
+[ext_resource type="Texture2D" uid="uid://cwtglq028hhwd" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/14.png" id="33_hxnlc"]
+[ext_resource type="Texture2D" uid="uid://dpqbjydw67kv0" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/5.png" id="34_hgdh2"]
+[ext_resource type="Texture2D" uid="uid://b8pr20ow4p754" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/23.png" id="35_3xwc1"]
+[ext_resource type="Texture2D" uid="uid://deimdayc5fnk7" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/7.png" id="36_gd8d8"]
+[ext_resource type="Texture2D" uid="uid://brc6qjikn2u50" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/1.png" id="37_ebn1w"]
+[ext_resource type="Texture2D" uid="uid://dnl0i7rnbv27k" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/13.png" id="38_okl65"]
+[ext_resource type="Texture2D" uid="uid://ceu5i6y0gamah" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/3.png" id="39_okl65"]
+[ext_resource type="Texture2D" uid="uid://bru8bq1pomt5d" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/15.png" id="40_o1xik"]
+[ext_resource type="Texture2D" uid="uid://cfoq013ufogtf" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/20.png" id="41_on84s"]
+[ext_resource type="Texture2D" uid="uid://byvykrmir2iqp" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/9.png" id="42_ukwka"]
+[ext_resource type="Texture2D" uid="uid://kcmofj1qisff" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/21.png" id="43_6k5c1"]
+[ext_resource type="Texture2D" uid="uid://btxyluxefo0pt" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/24.png" id="44_na7tb"]
+[ext_resource type="PackedScene" uid="uid://64e8sr16tute" path="res://scenes/UI/fade.tscn" id="45_o1xik"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2as01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_iq6fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mg5ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_52c44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pqt7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pv6bm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hiwto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b3w7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4rr2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yql1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ia1n6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w65of"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b3w7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4rr2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yql1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ia1n6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Title" type="Node2D" unique_id=349752822]
+script = ExtResource("1_on84s")
+
+[node name="Background" parent="." unique_id=336766300 instance=ExtResource("1_4ignj")]
+position = Vector2(470, 241)
+_scroll_speed = -120
+
+[node name="Ship" parent="." unique_id=1043907902 instance=ExtResource("3_owywo")]
+position = Vector2(1055, 616)
+
+[node name="Roger" type="AnimatedSprite2D" parent="Ship" unique_id=340616930]
+z_index = -1
+position = Vector2(-15.333334, -20.666668)
+sprite_frames = SubResource("SpriteFrames_2as01")
+autoplay = "default"
+
+[node name="Water" type="Node2D" parent="." unique_id=402186595]
+position = Vector2(-727, -889)
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Water" unique_id=2006787281]
+position = Vector2(2, 512)
+sprite_frames = SubResource("SpriteFrames_hiwto")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Water" unique_id=416259790]
+position = Vector2(98, 512)
+sprite_frames = SubResource("SpriteFrames_hiwto")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Water" unique_id=1492826908]
+position = Vector2(194, 512)
+sprite_frames = SubResource("SpriteFrames_hiwto")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Water" unique_id=1412374905]
+position = Vector2(290, 512)
+sprite_frames = SubResource("SpriteFrames_hiwto")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Water" unique_id=784944546]
+position = Vector2(386, 512)
+sprite_frames = SubResource("SpriteFrames_hiwto")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Water" unique_id=1634423720]
+position = Vector2(482, 512)
+sprite_frames = SubResource("SpriteFrames_hiwto")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Water" unique_id=1112238446]
+position = Vector2(962, 512)
+sprite_frames = SubResource("SpriteFrames_w65of")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="Water" unique_id=1227831705]
+position = Vector2(1058, 512)
+sprite_frames = SubResource("SpriteFrames_w65of")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="Water" unique_id=1513094941]
+position = Vector2(1154, 512)
+sprite_frames = SubResource("SpriteFrames_w65of")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="Water" unique_id=1536295316]
+position = Vector2(1250, 512)
+sprite_frames = SubResource("SpriteFrames_w65of")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Water" unique_id=453784362]
+position = Vector2(866, 512)
+sprite_frames = SubResource("SpriteFrames_w65of")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Water" unique_id=800368454]
+position = Vector2(770, 512)
+sprite_frames = SubResource("SpriteFrames_w65of")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Water" unique_id=570950119]
+position = Vector2(674, 512)
+sprite_frames = SubResource("SpriteFrames_w65of")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Water" unique_id=1750028562]
+position = Vector2(578, 512)
+sprite_frames = SubResource("SpriteFrames_w65of")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=347590089]
+
+[node name="Title" type="VBoxContainer" parent="CanvasLayer" unique_id=83291482]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(7, 7)
+pivot_offset = Vector2(37, 16)
+
+[node name="Jolly" type="HBoxContainer" parent="CanvasLayer/Title" unique_id=2074464127]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Title/Jolly" unique_id=2080515341]
+layout_mode = 2
+texture = ExtResource("26_k1qkb")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Title/Jolly" unique_id=330292324]
+layout_mode = 2
+texture = ExtResource("27_2as01")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Title/Jolly" unique_id=1376048565]
+layout_mode = 2
+texture = ExtResource("28_iq6fq")
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/Title/Jolly" unique_id=541499495]
+layout_mode = 2
+texture = ExtResource("28_iq6fq")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/Title/Jolly" unique_id=1751394393]
+layout_mode = 2
+texture = ExtResource("29_mg5ff")
+
+[node name="Roger" type="HBoxContainer" parent="CanvasLayer/Title" unique_id=756852006]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Title/Roger" unique_id=1403800234]
+layout_mode = 2
+texture = ExtResource("30_52c44")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Title/Roger" unique_id=617770022]
+layout_mode = 2
+texture = ExtResource("27_2as01")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Title/Roger" unique_id=433138864]
+layout_mode = 2
+texture = ExtResource("26_k1qkb")
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/Title/Roger" unique_id=1884667374]
+layout_mode = 2
+texture = ExtResource("31_pqt7r")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/Title/Roger" unique_id=1197597747]
+layout_mode = 2
+texture = ExtResource("30_52c44")
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer" unique_id=634770106]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_top = 349.0
+offset_right = -30.0
+offset_bottom = 429.0
+grow_horizontal = 2
+scale = Vector2(3.5, 3.5)
+
+[node name="NewGame" type="Button" parent="CanvasLayer/Buttons" unique_id=307557421]
+custom_minimum_size = Vector2(64, 24)
+layout_mode = 2
+theme = ExtResource("32_6qeuo")
+
+[node name="Label" type="HBoxContainer" parent="CanvasLayer/Buttons/NewGame" unique_id=1889429782]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -3.0
+offset_right = 24.5
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Buttons/NewGame/Label" unique_id=396079407]
+layout_mode = 2
+texture = ExtResource("33_hxnlc")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Buttons/NewGame/Label" unique_id=1665513192]
+layout_mode = 2
+texture = ExtResource("34_hgdh2")
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Buttons/NewGame/Label" unique_id=137981107]
+layout_mode = 2
+texture = ExtResource("35_3xwc1")
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="CanvasLayer/Buttons/NewGame/Label" unique_id=679141938]
+layout_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/Buttons/NewGame/Label" unique_id=494966167]
+layout_mode = 2
+texture = ExtResource("36_gd8d8")
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/Buttons/NewGame/Label" unique_id=594721609]
+layout_mode = 2
+texture = ExtResource("37_ebn1w")
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/Buttons/NewGame/Label" unique_id=2017766027]
+layout_mode = 2
+texture = ExtResource("38_okl65")
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="CanvasLayer/Buttons/NewGame/Label" unique_id=1395203425]
+layout_mode = 2
+texture = ExtResource("34_hgdh2")
+stretch_mode = 4
+
+[node name="Continue" type="Button" parent="CanvasLayer/Buttons" unique_id=1857020666]
+custom_minimum_size = Vector2(60, 24)
+layout_mode = 2
+theme = ExtResource("32_6qeuo")
+disabled = true
+
+[node name="Label" type="HBoxContainer" parent="CanvasLayer/Buttons/Continue" unique_id=791066849]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -3.0
+offset_right = 27.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label" unique_id=1260390167]
+layout_mode = 2
+texture = ExtResource("39_okl65")
+stretch_mode = 4
+
+[node name="TextureRect9" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label" unique_id=868248478]
+layout_mode = 2
+texture = ExtResource("40_o1xik")
+stretch_mode = 4
+
+[node name="TextureRect10" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label" unique_id=1174833830]
+layout_mode = 2
+texture = ExtResource("33_hxnlc")
+stretch_mode = 4
+
+[node name="TextureRect11" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label" unique_id=1942220678]
+layout_mode = 2
+texture = ExtResource("41_on84s")
+stretch_mode = 4
+
+[node name="TextureRect12" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label" unique_id=1923963137]
+layout_mode = 2
+texture = ExtResource("42_ukwka")
+stretch_mode = 4
+
+[node name="TextureRect13" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label" unique_id=66054622]
+layout_mode = 2
+texture = ExtResource("33_hxnlc")
+stretch_mode = 4
+
+[node name="TextureRect14" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label" unique_id=1057451207]
+layout_mode = 2
+texture = ExtResource("43_6k5c1")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label" unique_id=807323315]
+layout_mode = 2
+texture = ExtResource("34_hgdh2")
+stretch_mode = 4
+
+[node name="Exit" type="Button" parent="CanvasLayer/Buttons" unique_id=1771694774]
+custom_minimum_size = Vector2(60, 24)
+layout_mode = 2
+theme = ExtResource("32_6qeuo")
+
+[node name="Label" type="HBoxContainer" parent="CanvasLayer/Buttons/Exit" unique_id=1215099239]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -3.0
+offset_right = 13.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Buttons/Exit/Label" unique_id=1433370136]
+layout_mode = 2
+texture = ExtResource("34_hgdh2")
+stretch_mode = 4
+
+[node name="TextureRect9" type="TextureRect" parent="CanvasLayer/Buttons/Exit/Label" unique_id=1179434575]
+layout_mode = 2
+texture = ExtResource("44_na7tb")
+stretch_mode = 4
+
+[node name="TextureRect10" type="TextureRect" parent="CanvasLayer/Buttons/Exit/Label" unique_id=1716534972]
+layout_mode = 2
+texture = ExtResource("42_ukwka")
+stretch_mode = 4
+
+[node name="TextureRect11" type="TextureRect" parent="CanvasLayer/Buttons/Exit/Label" unique_id=711047932]
+layout_mode = 2
+texture = ExtResource("41_on84s")
+stretch_mode = 4
+
+[node name="Fade" parent="CanvasLayer" unique_id=782474236 instance=ExtResource("45_o1xik")]
+
+[connection signal="pressed" from="CanvasLayer/Buttons/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Continue" to="." method="_on_continue_pressed"]

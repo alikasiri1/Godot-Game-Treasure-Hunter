@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://wxgy5xgxb5qm"]
+
+[ext_resource type="Texture2D" uid="uid://cq5x0yahlp2vf" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/1.png" id="1_iw38n"]
+[ext_resource type="Texture2D" uid="uid://bt6cacv22rbac" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/2.png" id="2_lmffy"]
+[ext_resource type="Texture2D" uid="uid://c6bqwa8qdnl7i" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/3.png" id="3_l2wvc"]
+[ext_resource type="Texture2D" uid="uid://bs2pbqqnlpdkq" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/4.png" id="4_ptr5e"]
+[ext_resource type="Texture2D" uid="uid://dl0lcvmjv14er" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/5.png" id="5_o7spf"]
+[ext_resource type="Texture2D" uid="uid://byjgsyccc5p68" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/6.png" id="6_rver4"]
+[ext_resource type="Texture2D" uid="uid://cnxwbppcsvouh" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/1.png" id="7_oban3"]
+[ext_resource type="Texture2D" uid="uid://b7b2u2tc31wt2" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/2.png" id="8_ugdli"]
+[ext_resource type="Texture2D" uid="uid://bm7otuys4eve0" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/3.png" id="9_pxljc"]
+[ext_resource type="Texture2D" uid="uid://2rtm2ew73j81" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/4.png" id="10_6l4x2"]
+[ext_resource type="Texture2D" uid="uid://duryjl1ilg7u3" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/5.png" id="11_rf3k5"]
+[ext_resource type="Texture2D" uid="uid://bjik65giqqw1w" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/6.png" id="12_2gf7o"]
+[ext_resource type="Texture2D" uid="uid://bx48br5335k1q" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/7.png" id="13_q0yt8"]
+[ext_resource type="Texture2D" uid="uid://c5wv45p53f0da" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/8.png" id="14_t3jhn"]
+[ext_resource type="Texture2D" uid="uid://d23icupq5ffgn" path="res://assets/Merchant Ship/Sprites/Ship/Anchor/1.png" id="20_rpgvv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ah8jo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iw38n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lmffy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l2wvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ptr5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o7spf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rver4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hxnlc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_oban3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ugdli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pxljc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6l4x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rf3k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2gf7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_q0yt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t3jhn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw38n"]
+size = Vector2(77.00001, 20)
+
+[node name="Ship" type="AnimatedSprite2D" unique_id=1043907902]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ah8jo")
+autoplay = "default"
+frame_progress = 0.39106116
+
+[node name="Sail" type="AnimatedSprite2D" parent="." unique_id=1228054719]
+position = Vector2(20.666666, -35.666668)
+sprite_frames = SubResource("SpriteFrames_hxnlc")
+autoplay = "default"
+frame_progress = 0.8230113
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1755141272]
+position = Vector2(-15.333333, 7)
+texture = ExtResource("20_rpgvv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1431989301]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=902603863]
+position = Vector2(-0.16666412, 0)
+shape = SubResource("RectangleShape2D_iw38n")

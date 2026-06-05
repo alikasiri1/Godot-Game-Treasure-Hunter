@@ -404,6 +404,7 @@ position = Vector2(0, 1)
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_6kgad")
+max_health = 2.0
 effect_sprite = ExtResource("2_40irr")
 _sprite_face_left = true
 _speed = 1
@@ -468,9 +469,8 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_6kgad")
 debug_color = Color(0.67085993, 0.5049203, 0.18601185, 0.41960785)
 
-[node name="Timer" type="Timer" parent="." unique_id=2081520317]
+[node name="AttackTimer" type="Timer" parent="." unique_id=2081520317]
 wait_time = 2.0
-autostart = true
 
 [node name="Vision" type="Area2D" parent="." unique_id=546318508]
 collision_layer = 2048
@@ -487,9 +487,12 @@ position = Vector2(0, -13)
 target_position = Vector2(-108, 2)
 collision_mask = 3
 
+[connection signal="died" from="." to="." method="_on_died"]
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="HitBox/Target" to="." method="_on_target_area_entered"]
+[connection signal="area_exited" from="HitBox/Target" to="." method="_on_target_area_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]
 [connection signal="body_exited" from="Vision" to="." method="_on_vision_body_exited"]

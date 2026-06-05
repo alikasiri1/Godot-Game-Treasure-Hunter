@@ -1,7 +1,7 @@
 extends Node
 class_name HealthComponent
 
-var _current_health : int 
+var _current_health : float 
 var character : Character
 signal on_damaged
 signal on_defeated

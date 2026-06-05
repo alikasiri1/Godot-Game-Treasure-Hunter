@@ -30,6 +30,6 @@ func _drop_sword():
 	_sword = null
 
 func _die():
-	if _has_sword:
-		_drop_sword()
+	#if _has_sword:
+		#_drop_sword()
 	super._die()

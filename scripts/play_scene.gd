@@ -8,23 +8,36 @@ class_name PlayScene
 @onready var _lives_counter : DataCounter = $"UserInterFace/Lives Counter"
 @onready var _fade : LoadingPage = $UserInterFace/Fade
 @onready var _game_over_menu : Control = $UserInterFace/GameOverMenu
+@onready var _pause_menu : Control = $UserInterFace/PauseMenu
 
 var _level : GameLevel 
 func _ready() -> void:
 	_fade.visible = true
+	#await _fade.fade_to_clear(0.1)
 	_load_level()
 	Global.player = _player
 	Global.play_scene = $"."
 	
 	_spawn_player()
-	await _fade.fade_to_clear(0.1)
-	_player.is_enable = true
 	
+	_player.is_enable = true
+	await get_tree().create_timer(1).timeout
+	await _fade.fade_to_clear(0.7)
 func _load_level():
 	_level = load("res://scenes/Levels/level_" + str(File.data.level) + ".tscn").instantiate()
+	
 	add_child(_level)
 	_init_boundaries()
 	_init_ui()
+	
+func _pause(should_be_paused : bool):
+	get_tree().paused = should_be_paused
+	_pause_menu.visible = should_be_paused
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		_pause(!get_tree().paused)
+
 	
 func _init_boundaries():
 	var _min_boundary : Vector2 = _level.get_min()
@@ -44,7 +57,10 @@ func _init_ui() -> void:
 func _spawn_player():
 	_player.global_position = _level.get_checkpoint_position(File.data.checkpoint)
 	_player.velocity = Vector2.ZERO
-	
+
+	#_camera.global_position = _player.global_position# + following_offset.y 
+	#_camera.global_position.x = _player.position.x #+ following_offset.x * (-1 if _subject._is_facing_left else 1)
+
 func collect_coin(value : int):
 	File.data.coins += value
 	if File.data.coins >= 100:
@@ -67,7 +83,10 @@ func collect_map():
 	
 func _on_player_died() -> void:
 	if File.data.lives == 0 :
-		_game_over()
+		#_game_over()
+		print('_game_over')
+		await get_tree().create_timer(1, true).timeout
+		_return_to_last_checkpoint()
 	else:
 		File.data.lives -=1 
 		_lives_counter.set_value(File.data.lives)
@@ -75,10 +94,17 @@ func _on_player_died() -> void:
 		_return_to_last_checkpoint()
 
 func _return_to_last_checkpoint():
-	_camera.position_smoothing_enabled = true
+	#_camera.position_smoothing_enabled = true
+	_fade.visible = true
+	await _fade.fade_to_black()
+	_level.queue_free()
+	
+	_load_level()
+	
 	_spawn_player()
 	_player.revive()
-	_camera.position_smoothing_enabled = true
+	await _fade.fade_to_clear()
+	#_camera.position_smoothing_enabled = true
 	
 func _game_over():
 	print("GAME OVER!")
