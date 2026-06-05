@@ -1,6 +1,7 @@
 extends Area2D
 class_name GameLevel
 
+@export var music : AudioStream
 @onready var _area : CollisionShape2D = $CollisionShape2D
 @onready var _half_area_size : Vector2 = _area.shape.get_rect().size / 2
 

@@ -31,7 +31,9 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name == "Level":
 		return
 	self.hide()
-	_collision_shape.disabled = true
+
+	_collision_shape.set_deferred("disabled" , true)
+	#_collision_shape.disabled = true
 	var _character = area.get_parent()
 	if _character is Character:
 		_character.health_component.apply_damage(_damage , (area.global_position - global_position).normalized())

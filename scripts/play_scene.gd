@@ -9,12 +9,15 @@ class_name PlayScene
 @onready var _fade : LoadingPage = $UserInterFace/Fade
 @onready var _game_over_menu : Control = $UserInterFace/GameOverMenu
 @onready var _pause_menu : Control = $UserInterFace/PauseMenu
+@onready var _health_guage: Control = $UserInterFace/HealthGuage
 
 var _level : GameLevel 
 func _ready() -> void:
 	_fade.visible = true
+	Music.desired_volume = 0.3
 	#await _fade.fade_to_clear(0.1)
 	_load_level()
+		
 	Global.player = _player
 	Global.play_scene = $"."
 	
@@ -23,20 +26,23 @@ func _ready() -> void:
 	_player.is_enable = true
 	await get_tree().create_timer(1).timeout
 	await _fade.fade_to_clear(0.7)
+	
 func _load_level():
-	_level = load("res://scenes/Levels/level_" + str(File.data.level) + ".tscn").instantiate()
+	_level = load("res://scenes/Levels/level_"+ str(File.data.world) + "_" + str(File.data.level) + ".tscn").instantiate()
 	
 	add_child(_level)
 	_init_boundaries()
 	_init_ui()
+	Music.start_track(_level.music, 3)
 	
 func _pause(should_be_paused : bool):
 	get_tree().paused = should_be_paused
 	_pause_menu.visible = should_be_paused
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
-		_pause(!get_tree().paused)
+	if File.data.level != 0 :
+		if event.is_action_pressed("pause"):
+			_pause(!get_tree().paused)
 
 	
 func _init_boundaries():
@@ -50,6 +56,13 @@ func _init_boundaries():
 	
 
 func _init_ui() -> void:
+	if File.data.level == 0 :
+		_health_guage.visible = false
+		_coin_counter.visible = false
+		_lives_counter.visible = false
+	else:
+		_camera.zoom = Vector2(2.5,2.5)
+		
 	_coin_counter.set_value(File.data.coins)
 	_lives_counter.set_value(File.data.lives)
 	_game_over_menu.visible = false
@@ -77,16 +90,24 @@ func collect_skull():
 func collect_map():
 	_player.is_enable = false
 	# game_finished.play() # Audio streamplayer2D
+	File.data.set_progress_marker(Data.Progress.COMPLETED)
+	File.data.set_progress_marker(Data.Progress.UNLOCKED, File.data.world , File.data.level+1)
 	#await game_finished.finished
+	await get_tree().create_timer(1, true).timeout
 	await _fade.fade_to_black()
 	# load level selection scene
+	if File.data.level >= File.data.progress[File.data.world].size():
+		File.data.world += 1
+	File.data.level = 0
+	_return_to_last_checkpoint()
+	#get_tree().change_scene_to_file("res://scenes/Levels/level_"+ str(File.data.world) + "_0"  + ".tscn")
 	
 func _on_player_died() -> void:
 	if File.data.lives == 0 :
-		#_game_over()
+		_game_over()
 		print('_game_over')
-		await get_tree().create_timer(1, true).timeout
-		_return_to_last_checkpoint()
+		#await get_tree().create_timer(1, true).timeout
+		#_return_to_last_checkpoint()
 	else:
 		File.data.lives -=1 
 		_lives_counter.set_value(File.data.lives)
@@ -129,7 +150,9 @@ func _on_level_select_pressed() -> void:
 	await _fade.fade_to_black()
 	File.data.retry()
 	print('Return to level selection')
-
+	File.data.level = 0
+	_return_to_last_checkpoint()
+	
 func _on_exit_pressed() -> void:
 	_game_over_menu.visible = false
 	await _fade.fade_to_black()

@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var _music : AudioStream
 @onready var _fade : LoadingPage = $CanvasLayer/Fade
 @onready var _continue : Button = $CanvasLayer/Buttons/Continue
 
@@ -7,6 +8,7 @@ func _ready() -> void:
 	_fade.visible = true
 	if File.save_file_exists():
 		_continue.disabled = false
+	Music.start_track(_music)
 	_fade.fade_to_clear(1)
 
 
@@ -19,6 +21,7 @@ func _on_new_game_pressed() -> void:
 		_start_new_game()
 	else:
 		#confirm
+		_start_new_game()
 		pass
 		
 func _start_new_game():
@@ -28,4 +31,10 @@ func _start_new_game():
 
 func _on_continue_pressed() -> void:
 	File.load_game()
+	File.data.level = 0
 	_change_scene("res://scenes/PlayScene.tscn")
+
+
+func _on_exit_pressed() -> void:
+	await _fade.fade_to_black()
+	get_tree().quit()
