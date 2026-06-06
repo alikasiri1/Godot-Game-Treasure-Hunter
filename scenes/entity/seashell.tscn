@@ -25,9 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://dton1hq3btcx5" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Opening/4.png" id="13_k554t"]
 [ext_resource type="Texture2D" uid="uid://mjgkw0nlpkgc" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Opening/5.png" id="14_4e6x3"]
 [ext_resource type="Texture2D" uid="uid://bplmxk4tyqcvn" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Hit/1.png" id="14_jtiec"]
+[ext_resource type="AudioStream" uid="uid://d8t2jmacys3r" path="res://sounds/795690__randbsoundbites__death-cry.wav" id="15_hhyhw"]
 [ext_resource type="Texture2D" uid="uid://b0at1ksii1ko0" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Hit/2.png" id="15_sy6d7"]
 [ext_resource type="Texture2D" uid="uid://o4ianobl6rg0" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Hit/3.png" id="16_mg5gf"]
 [ext_resource type="Texture2D" uid="uid://cffgupp1aifqo" path="res://assets/Shooter Traps/Sprites/Seashell/Seashell Hit/4.png" id="17_sprr8"]
+[ext_resource type="AudioStream" uid="uid://bbafk5048cft5" path="res://sounds/383787__deleted_user_7146007__man-sneezing-sneeze-3.wav" id="21_fldso"]
 
 [sub_resource type="Animation" id="Animation_ecpme"]
 resource_name = "Idle"
@@ -115,6 +117,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.2498,
+"start_offset": 0.1659,
+"stream": ExtResource("15_hhyhw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_gnfpk"]
 resource_name = "fire"
@@ -159,6 +176,21 @@ tracks/2/keys = {
 "method": &"_spawn_projectile"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 3.3774,
+"start_offset": 2.2903,
+"stream": ExtResource("21_fldso")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_nvpjs"]
 resource_name = "hit"
@@ -320,6 +352,8 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_uqpfa")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1927362094]
+volume_db = 4.0
+max_distance = 600.0
 
 [node name="HealthComponent" parent="." unique_id=2028035051 instance=ExtResource("2_vxuxw")]
 

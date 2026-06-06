@@ -9,7 +9,7 @@ class_name SelectLevel
 
 func _ready() -> void:
 	super._ready()
-	File.save_game()
+	
 	_fade.visible = true
 	var button = 0
 	print(_level_buttons)

@@ -1,6 +1,7 @@
 extends Node2D
 class_name Projectile
 
+
 @onready var _sprite : Sprite2D = $Sprite2D
 @onready var _timer : Timer = $Timer
 @onready var _collision_shape : CollisionShape2D = $CollisionShape2D

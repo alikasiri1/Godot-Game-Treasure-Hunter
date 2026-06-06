@@ -47,3 +47,4 @@ func retry():
 	coins = 0 
 	lives = 0
 	checkpoint = 0
+	

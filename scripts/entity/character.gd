@@ -46,7 +46,7 @@ var _is_bound : bool
 
 var _is_hit : bool = false
 var is_dead : bool = false
-var is_enable : bool = false
+var is_enable : bool = true
 signal died()
 signal health_changed(percentage : float)
 
@@ -158,9 +158,9 @@ func is_facing_left():
 #endregion
 
 func _physics_process(delta: float) -> void:
-	#if not is_enable:
-		#velocity = Vector2.ZERO
-		#return
+	if not is_enable:
+		velocity = Vector2.ZERO
+		return
 
 	if not _is_facing_left and sign(_direction) == -1:
 		face_left()

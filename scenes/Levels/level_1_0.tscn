@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bop7nhccv5h2y"]
 
 [ext_resource type="Script" uid="uid://d3pics4sugc0e" path="res://scenes/Levels/level_select.gd" id="1_1s084"]
-[ext_resource type="AudioStream" uid="uid://ckvdykbnuyoq0" path="res://sounds/320978__littlerobotsoundfactory__loop_the_seven_seas_00.wav" id="2_j8y0k"]
+[ext_resource type="AudioStream" uid="uid://dn0x38ghkcdsa" path="res://sounds/353416__squashy555__seagull-on-beach.mp3" id="2_j8y0k"]
 [ext_resource type="PackedScene" uid="uid://d2kqqqo7ihbn7" path="res://scenes/entity/Crabby.tscn" id="2_xciq1"]
 [ext_resource type="PackedScene" uid="uid://cjgwe3mfjkc2k" path="res://scenes/entity/partal.tscn" id="3_jtrdy"]
 [ext_resource type="PackedScene" uid="uid://dnbm4rjfbq2ja" path="res://scenes/entity/Fierce Tooth.tscn" id="4_4abiq"]
@@ -191,6 +191,7 @@ frame_7/duration = 1.0
 process_mode = 1
 position = Vector2(50, -150)
 script = ExtResource("1_1s084")
+desired_volume = 1.0
 music = ExtResource("2_j8y0k")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=273499571]

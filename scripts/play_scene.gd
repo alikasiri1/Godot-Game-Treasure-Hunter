@@ -1,6 +1,12 @@
 extends Node2D
 class_name PlayScene
 
+
+@export var _victory : AudioStream
+@export var _gameover : AudioStream
+@export var _death : AudioStream
+@onready var _fanfare : AudioStreamPlayer2D = $Fanfare
+
 @onready var _camera : Camera = $Camera
 @onready var _player : Character = $Roger
 
@@ -12,9 +18,13 @@ class_name PlayScene
 @onready var _health_guage: Control = $UserInterFace/HealthGuage
 
 var _level : GameLevel 
+var max_current_coin : int 
+var max_current_lives : int
 func _ready() -> void:
 	_fade.visible = true
-	Music.desired_volume = 0.3
+	max_current_coin = File.data.coins
+	max_current_lives = File.data.lives
+	#Music.desired_volume = 0.25
 	#await _fade.fade_to_clear(0.1)
 	_load_level()
 		
@@ -33,7 +43,8 @@ func _load_level():
 	add_child(_level)
 	_init_boundaries()
 	_init_ui()
-	Music.start_track(_level.music, 3)
+	Music.desired_volume = _level.desired_volume
+	Music.start_track(_level.music)
 	
 func _pause(should_be_paused : bool):
 	get_tree().paused = should_be_paused
@@ -60,6 +71,7 @@ func _init_ui() -> void:
 		_health_guage.visible = false
 		_coin_counter.visible = false
 		_lives_counter.visible = false
+		_camera.zoom = Vector2(1.5,1.5)
 	else:
 		_camera.zoom = Vector2(2.5,2.5)
 		
@@ -76,9 +88,9 @@ func _spawn_player():
 
 func collect_coin(value : int):
 	File.data.coins += value
-	if File.data.coins >= 100:
-		File.data.coins = 0
-		collect_skull()
+	#if File.data.coins >= 100:
+		#File.data.coins = 0
+		#collect_skull()
 		
 	_coin_counter.set_value(File.data.coins)
 
@@ -89,29 +101,45 @@ func collect_skull():
 	
 func collect_map():
 	_player.is_enable = false
-	# game_finished.play() # Audio streamplayer2D
+	_player.velocity = Vector2.ZERO
+	_fanfare.stream = _victory
+	_fanfare.play()
+
 	File.data.set_progress_marker(Data.Progress.COMPLETED)
 	File.data.set_progress_marker(Data.Progress.UNLOCKED, File.data.world , File.data.level+1)
-	#await game_finished.finished
-	await get_tree().create_timer(1, true).timeout
+	#await get_tree().create_timer(1, true).timeout
+	await  _fanfare.finished
 	await _fade.fade_to_black()
+	
 	# load level selection scene
 	if File.data.level >= File.data.progress[File.data.world].size():
 		File.data.world += 1
 	File.data.level = 0
+	File.data.lives = max_current_lives
+	File.save_game()
+	max_current_coin = File.data.coins
+	#max_current_lives = File.data.lives
 	_return_to_last_checkpoint()
 	#get_tree().change_scene_to_file("res://scenes/Levels/level_"+ str(File.data.world) + "_0"  + ".tscn")
 	
 func _on_player_died() -> void:
 	if File.data.lives == 0 :
-		_game_over()
-		print('_game_over')
-		#await get_tree().create_timer(1, true).timeout
-		#_return_to_last_checkpoint()
+		if File.data.level == 0:
+			await get_tree().create_timer(1, true).timeout
+			_return_to_last_checkpoint()
+		else:
+			_game_over()
+			print('_game_over')
+		
 	else:
 		File.data.lives -=1 
-		_lives_counter.set_value(File.data.lives)
-		await get_tree().create_timer(1, true).timeout
+		#_lives_counter.set_value(File.data.lives)
+		File.data.coins = max_current_coin
+
+		#_fanfare.stream = _death
+		#_fanfare.play()
+		#await  _fanfare.finished
+		await get_tree().create_timer(2, true).timeout
 		_return_to_last_checkpoint()
 
 func _return_to_last_checkpoint():
@@ -129,12 +157,20 @@ func _return_to_last_checkpoint():
 	
 func _game_over():
 	print("GAME OVER!")
+	Music.stop_track()
+	_fanfare.stream = _gameover
+	_fanfare.play()
+	await get_tree().create_timer(2, true).timeout
 	_game_over_menu.visible = true
 
 func _on_retry_pressed() -> void:
 	_game_over_menu.visible = false
 	await _fade.fade_to_black()
-	File.data.retry()
+	#File.data.retry()
+	File.data.coins = max_current_coin
+	File.data.lives = max_current_lives
+	print(File.data.coins)
+	print(File.data.coins)
 	_level.queue_free()
 	# raload same level
 	_load_level()
@@ -148,7 +184,9 @@ func _on_retry_pressed() -> void:
 func _on_level_select_pressed() -> void:
 	_game_over_menu.visible = false
 	await _fade.fade_to_black()
-	File.data.retry()
+	#File.data.retry()
+	File.data.coins = max_current_coin
+	File.data.lives = max_current_lives
 	print('Return to level selection')
 	File.data.level = 0
 	_return_to_last_checkpoint()

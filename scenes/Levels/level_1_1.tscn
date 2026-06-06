@@ -56,6 +56,7 @@ size = Vector2(2084, 810.83594)
 process_mode = 1
 position = Vector2(50, -150)
 script = ExtResource("1_0o6hc")
+desired_volume = 0.25
 music = ExtResource("2_h2v1l")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=273499571]

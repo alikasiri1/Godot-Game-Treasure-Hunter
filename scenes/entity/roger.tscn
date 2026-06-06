@@ -1412,6 +1412,7 @@ position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_c61kc")
 
 [node name="Voice" type="AudioStreamPlayer2D" parent="." unique_id=368589844]
+area_mask = 2
 
 [node name="HealthComponent" parent="." unique_id=989882209 instance=ExtResource("22_pso1p")]
 

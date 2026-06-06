@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://c2m7ndu8ds13o" path="res://scripts/play_scene.gd" id="1_21h8x"]
 [ext_resource type="PackedScene" uid="uid://cuktifpak1sih" path="res://scenes/entity/roger.tscn" id="1_ityjc"]
 [ext_resource type="Script" uid="uid://dec5i822attaq" path="res://scripts/camera_2d.gd" id="1_yi006"]
+[ext_resource type="AudioStream" uid="uid://c3h3nadi64yo4" path="res://sounds/677858__el_boss__game-success-fanfare-short.wav" id="2_jtfqy"]
+[ext_resource type="AudioStream" uid="uid://bchiw31h548bp" path="res://sounds/488963__dominictreis__sad-or-scary-scene-change-music.mp3" id="3_0k8f0"]
 [ext_resource type="Script" uid="uid://cikqc4tvnyt8e" path="res://scripts/entity/player.gd" id="3_ot0y2"]
+[ext_resource type="AudioStream" uid="uid://bu4yuxg146yq5" path="res://sounds/400664__dominictreis__scene-ending-music.mp3" id="4_mivc5"]
 [ext_resource type="Texture2D" uid="uid://cbpdbetmpeg8i" path="res://assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="6_f8tyn"]
 [ext_resource type="Script" uid="uid://cojsthmd4d8cg" path="res://scripts/UI/counter.gd" id="6_yi006"]
 [ext_resource type="Texture2D" uid="uid://dap4wkodu1rd8" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/36.png" id="7_yi006"]
@@ -53,6 +56,9 @@
 [node name="PlayScene" type="Node2D" unique_id=1588044648]
 process_mode = 3
 script = ExtResource("1_21h8x")
+_victory = ExtResource("2_jtfqy")
+_gameover = ExtResource("3_0k8f0")
+_death = ExtResource("4_mivc5")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1000559406 node_paths=PackedStringArray("_subject")]
 process_mode = 1
@@ -642,6 +648,10 @@ layout_mode = 2
 texture = ExtResource("34_dpnhy")
 
 [node name="Fade" parent="UserInterFace" unique_id=782474236 instance=ExtResource("19_0tjmk")]
+
+[node name="Fanfare" type="AudioStreamPlayer2D" parent="." unique_id=1376399127]
+volume_db = 5.0
+bus = &"fanfare"
 
 [connection signal="died" from="Roger" to="." method="_on_player_died"]
 [connection signal="health_changed" from="Roger" to="UserInterFace/HealthGuage" method="set_value"]
