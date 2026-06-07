@@ -459,6 +459,7 @@ shape = SubResource("CapsuleShape2D_de1u8")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1848242567]
 max_distance = 600.0
+bus = &"SFX"
 
 [node name="HealthComponent" parent="." unique_id=989882209 instance=ExtResource("24_qli46")]
 

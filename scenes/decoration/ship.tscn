@@ -81,7 +81,6 @@ size = Vector2(77.00001, 20)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ah8jo")
 autoplay = "default"
-frame_progress = 0.39106116
 
 [node name="Sail" type="AnimatedSprite2D" parent="." unique_id=1228054719]
 position = Vector2(20.666666, -35.666668)

@@ -7,6 +7,7 @@ var desired_volume : float = 1
 var _volume_l : float = 0
 
 func _ready():
+	#process_mode = Node.PROCESS_MODE_ALWAYS
 	volume_db = linear_to_db(_volume_l)
 
 func _fade(target_linear_volume : float, duration : float = 1):

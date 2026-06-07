@@ -330,6 +330,7 @@ radius = 104.80935
 collision_layer = 4
 script = ExtResource("1_570vp")
 _projectile = ExtResource("2_6uoji")
+_p_speed = 20.0
 max_health = 4.0
 _sprite_face_left = true
 

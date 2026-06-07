@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dyldg2yeohjra"]
+
+[ext_resource type="Script" uid="uid://do8kcjpgphfab" path="res://scripts/entity/enemies/projectile.gd" id="1_4i1lx"]
+[ext_resource type="Texture2D" uid="uid://drf0napr2yjwk" path="res://assets/Shooter Traps/Sprites/Cannon/Cannon Ball Idle/1.png" id="2_4i1lx"]
+[ext_resource type="Texture2D" uid="uid://bl8bl7wgqet1p" path="res://assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/1.png" id="3_xkcqv"]
+[ext_resource type="Texture2D" uid="uid://coeobn4yneols" path="res://assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/4.png" id="4_fmx7h"]
+[ext_resource type="Texture2D" uid="uid://6sopvpp05sxb" path="res://assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/5.png" id="5_6txem"]
+[ext_resource type="Texture2D" uid="uid://cp132g4dcuo2a" path="res://assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/6.png" id="6_6q6r3"]
+[ext_resource type="Texture2D" uid="uid://dm22doe3ppsp6" path="res://assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/7.png" id="7_c016o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k34rq"]
+radius = 7.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mq6y1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xkcqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fmx7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6txem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6q6r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c016o")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="CannonBall" type="Area2D" unique_id=1806290976]
+process_mode = 1
+collision_layer = 0
+collision_mask = 33
+script = ExtResource("1_4i1lx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=457826519]
+texture = ExtResource("2_4i1lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1525639226]
+shape = SubResource("CircleShape2D_k34rq")
+debug_color = Color(0.95119375, 0.18116, 0.33698723, 0.41960785)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=986347729]
+
+[node name="ExplosionEffect" type="AnimatedSprite2D" parent="." unique_id=1043633858]
+sprite_frames = SubResource("SpriteFrames_mq6y1")
+frame = 5
+frame_progress = 1.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

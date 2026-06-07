@@ -1,0 +1,62 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://b03wvke50yq0v"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_570vp"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6uoji"]
+animation = &"fire"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m6q3t"]
+advance_mode = 2
+advance_expression = "_want_to_fire"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5w784"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "not _want_to_fire"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3hr6r"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_oidbu"]
+states/Idle/node = SubResource("AnimationNodeAnimation_570vp")
+states/Idle/position = Vector2(402.8, 100)
+states/fire/node = SubResource("AnimationNodeAnimation_6uoji")
+states/fire/position = Vector2(402.47998, 16.800001)
+transitions = ["Idle", "fire", SubResource("AnimationNodeStateMachineTransition_m6q3t"), "fire", "Idle", SubResource("AnimationNodeStateMachineTransition_5w784"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_3hr6r")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fldso"]
+animation = &"destroyed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hhyhw"]
+animation = &"hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k554t"]
+advance_mode = 2
+advance_expression = "_is_hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4e6x3"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "not _is_hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jtiec"]
+advance_mode = 2
+advance_expression = "not is_dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sy6d7"]
+advance_mode = 2
+advance_expression = "is_dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mg5gf"]
+advance_mode = 2
+
+[resource]
+states/Attack/node = SubResource("AnimationNodeStateMachine_oidbu")
+states/Attack/position = Vector2(374.40964, 100.1408)
+states/destroyed/node = SubResource("AnimationNodeAnimation_fldso")
+states/destroyed/position = Vector2(375.24268, 195.2)
+states/hit/node = SubResource("AnimationNodeAnimation_hhyhw")
+states/hit/position = Vector2(374.32773, 15.999999)
+transitions = ["Attack", "hit", SubResource("AnimationNodeStateMachineTransition_k554t"), "hit", "Attack", SubResource("AnimationNodeStateMachineTransition_4e6x3"), "destroyed", "Attack", SubResource("AnimationNodeStateMachineTransition_jtiec"), "Attack", "destroyed", SubResource("AnimationNodeStateMachineTransition_sy6d7"), "Start", "Attack", SubResource("AnimationNodeStateMachineTransition_mg5gf")]
+graph_offset = Vector2(-18.974289, 0)

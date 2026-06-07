@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dexipde1h13ri"]
 
-[ext_resource type="Script" uid="uid://bamiigh72lbby" path="res://scripts/entity/character.gd" id="1_w4vvt"]
+[ext_resource type="Script" uid="uid://dq25ptqn6r6mg" path="res://scripts/entity/enemies/enemy.gd" id="1_02hp3"]
 [ext_resource type="Texture2D" uid="uid://cf4kt1763dj70" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="2_nuvbc"]
 [ext_resource type="Texture2D" uid="uid://bbjof3gkh4cys" path="res://assets/The Crusty Crew/Sprites/Pink Star/04-Fall/Fall 01.png" id="4_w4vvt"]
 [ext_resource type="Texture2D" uid="uid://cp7lv6v5hpbrp" path="res://assets/The Crusty Crew/Sprites/Pink Star/05-Ground/Ground 01.png" id="5_nuvbc"]
@@ -25,6 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://cyrgu7v5j1p0t" path="res://assets/The Crusty Crew/Sprites/Pink Star/02-Run/Run 06.png" id="23_6xejt"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://c07esv6n38dka" path="res://Animation States/Enemy_Animation.tres" id="24_lkcl0"]
 [ext_resource type="PackedScene" uid="uid://c7oxqqup81xwi" path="res://scenes/Components/health_component.tscn" id="24_nuvbc"]
+[ext_resource type="Texture2D" uid="uid://kalr8k0gja52" path="res://assets/The Crusty Crew/Sprites/Pink Star/11-Attack Effect/Attack Effect 01.png" id="26_02hp3"]
+[ext_resource type="Texture2D" uid="uid://b7uis1n31yff6" path="res://assets/The Crusty Crew/Sprites/Pink Star/11-Attack Effect/Attack Effect 02.png" id="27_7yhlv"]
+[ext_resource type="Texture2D" uid="uid://bo86l6v66r00n" path="res://assets/The Crusty Crew/Sprites/Pink Star/11-Attack Effect/Attack Effect 03.png" id="28_qq2ad"]
+[ext_resource type="Texture2D" uid="uid://cl8vaiddhvvg" path="res://assets/The Crusty Crew/Sprites/Pink Star/11-Attack Effect/Attack Effect 04.png" id="29_n2pk2"]
 
 [sub_resource type="Animation" id="Animation_by4lo"]
 length = 0.001
@@ -177,24 +181,47 @@ height = 20.0
 radius = 8.0
 height = 20.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lkcl0"]
-radius = 13.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_qq2ad"]
+radius = 13.038404
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_381mv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_n2pk2"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_02hp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7yhlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qq2ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_n2pk2")
+}, {
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
 "name": &"default",
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6r2h4"]
+radius = 20.0
+height = 54.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6xejt"]
+radius = 104.69002
+
 [node name="Pink Star" type="CharacterBody2D" unique_id=1264942995]
 collision_layer = 4
 collision_mask = 7
-script = ExtResource("1_w4vvt")
-max_health = 3
+script = ExtResource("1_02hp3")
+max_health = 5.0
 effect_sprite = ExtResource("6_oa7y8")
 _sprite_face_left = true
+_speed = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=954264021]
 position = Vector2(0, -13)
@@ -226,27 +253,55 @@ position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_nuvbc")
 debug_color = Color(4.813075e-08, 0.6413611, 0.34048158, 0.41960785)
 
-[node name="HitBox" type="Area2D" parent="." unique_id=20413231]
+[node name="HitBox" type="Area2D" parent="." unique_id=1752029076]
 collision_layer = 256
+collision_mask = 32
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=427479263]
+position = Vector2(0, -10)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_qq2ad")
+debug_color = Color(0.9758268, 0, 0.42003474, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox" unique_id=1213686980]
+position = Vector2(2, -6)
+scale = Vector2(1.5965908, 1.5208333)
+sprite_frames = SubResource("SpriteFrames_n2pk2")
+frame = 4
+frame_progress = 1.0
+
+[node name="Target" type="Area2D" parent="HitBox" unique_id=22162960]
+position = Vector2(0, -8)
+collision_layer = 4096
 collision_mask = 32
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1973880973]
-position = Vector2(0, -10)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox/Target" unique_id=1571645915]
 rotation = 1.5707964
-shape = SubResource("CircleShape2D_lkcl0")
-debug_color = Color(0.9758268, 0, 0.42003474, 0.41960785)
+shape = SubResource("CapsuleShape2D_6r2h4")
+debug_color = Color(0.67085993, 0.5049203, 0.18601185, 0.41960785)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox" unique_id=1437620853]
-position = Vector2(-26, -18)
-scale = Vector2(0.8181818, 0.7083333)
-sprite_frames = SubResource("SpriteFrames_381mv")
-
-[node name="Timer" type="Timer" parent="." unique_id=1891611012]
+[node name="AttackTimer" type="Timer" parent="." unique_id=1891611012]
 wait_time = 2.0
 autostart = true
 
+[node name="Vision" type="Area2D" parent="." unique_id=978488377]
+collision_layer = 2048
+collision_mask = 2
+monitorable = false
+
+[node name="FieldOfVision" type="CollisionShape2D" parent="Vision" unique_id=1009611408]
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_6xejt")
+debug_color = Color(0.80653954, 0.8157277, 0.8050327, 0.41960785)
+
+[node name="LineOfSight" type="RayCast2D" parent="Vision" unique_id=1190721928]
+position = Vector2(0, -12)
+target_position = Vector2(-106, 0)
+collision_mask = 3
+
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
-[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="attack"]
+[connection signal="timeout" from="AttackTimer" to="." method="attack"]

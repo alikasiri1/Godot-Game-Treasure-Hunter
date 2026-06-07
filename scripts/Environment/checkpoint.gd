@@ -17,4 +17,5 @@ func _on_body_entered(body: Node2D) -> void:
 	print(body)
 	_sfx.play()
 	collision_mask = 0
-	File.data.checkpoint = id
+	Global.play_scene.checkpoint = id
+	#File.data.checkpoint = id

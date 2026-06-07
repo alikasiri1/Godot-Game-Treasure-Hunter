@@ -11,6 +11,8 @@ class_name PlayScene
 @onready var _player : Character = $Roger
 
 @onready var _coin_counter : DataCounter = $"UserInterFace/Coin Counter"
+@onready var _diamon_counter : DataCounter = $"UserInterFace/Diamon Counter"
+
 @onready var _lives_counter : DataCounter = $"UserInterFace/Lives Counter"
 @onready var _fade : LoadingPage = $UserInterFace/Fade
 @onready var _game_over_menu : Control = $UserInterFace/GameOverMenu
@@ -19,13 +21,17 @@ class_name PlayScene
 
 var _level : GameLevel 
 var max_current_coin : int 
+var max_current_diamond : int
 var max_current_lives : int
+var checkpoint : int
+
 func _ready() -> void:
+	checkpoint = 0
 	_fade.visible = true
 	max_current_coin = File.data.coins
+	max_current_diamond = File.data.diamonds
 	max_current_lives = File.data.lives
-	#Music.desired_volume = 0.25
-	#await _fade.fade_to_clear(0.1)
+
 	_load_level()
 		
 	Global.player = _player
@@ -43,7 +49,8 @@ func _load_level():
 	add_child(_level)
 	_init_boundaries()
 	_init_ui()
-	Music.desired_volume = _level.desired_volume
+	#Music.desired_volume = _level.desired_volume
+	#print(_level.music," ", _level.desired_volume)
 	Music.start_track(_level.music)
 	
 func _pause(should_be_paused : bool):
@@ -70,17 +77,19 @@ func _init_ui() -> void:
 	if File.data.level == 0 :
 		_health_guage.visible = false
 		_coin_counter.visible = false
+		_diamon_counter.visible = false
 		_lives_counter.visible = false
 		_camera.zoom = Vector2(1.5,1.5)
 	else:
 		_camera.zoom = Vector2(2.5,2.5)
 		
 	_coin_counter.set_value(File.data.coins)
+	_diamon_counter.set_value(File.data.diamonds)
 	_lives_counter.set_value(File.data.lives)
 	_game_over_menu.visible = false
 	
 func _spawn_player():
-	_player.global_position = _level.get_checkpoint_position(File.data.checkpoint)
+	_player.global_position = _level.get_checkpoint_position(checkpoint)
 	_player.velocity = Vector2.ZERO
 
 	#_camera.global_position = _player.global_position# + following_offset.y 
@@ -94,7 +103,11 @@ func collect_coin(value : int):
 		
 	_coin_counter.set_value(File.data.coins)
 
+func collect_diamond(value : int):
+	File.data.diamonds += value
 
+	_diamon_counter.set_value(File.data.diamonds)
+	
 func collect_skull():
 	File.data.lives += 1
 	_lives_counter.set_value(File.data.lives)
@@ -118,6 +131,8 @@ func collect_map():
 	File.data.lives = max_current_lives
 	File.save_game()
 	max_current_coin = File.data.coins
+	max_current_diamond = File.data.diamonds
+	checkpoint = 0
 	#max_current_lives = File.data.lives
 	_return_to_last_checkpoint()
 	#get_tree().change_scene_to_file("res://scenes/Levels/level_"+ str(File.data.world) + "_0"  + ".tscn")
@@ -133,9 +148,11 @@ func _on_player_died() -> void:
 		
 	else:
 		File.data.lives -=1 
+		if File.data.lives == 0:
+			checkpoint = 0
 		#_lives_counter.set_value(File.data.lives)
 		File.data.coins = max_current_coin
-
+		File.data.diamonds = max_current_diamond
 		#_fanfare.stream = _death
 		#_fanfare.play()
 		#await  _fanfare.finished
@@ -153,14 +170,16 @@ func _return_to_last_checkpoint():
 	_spawn_player()
 	_player.revive()
 	await _fade.fade_to_clear()
+
 	#_camera.position_smoothing_enabled = true
 	
 func _game_over():
 	print("GAME OVER!")
+	checkpoint = 0
 	Music.stop_track()
 	_fanfare.stream = _gameover
 	_fanfare.play()
-	await get_tree().create_timer(2, true).timeout
+	await get_tree().create_timer(1, true).timeout
 	_game_over_menu.visible = true
 
 func _on_retry_pressed() -> void:
@@ -168,9 +187,8 @@ func _on_retry_pressed() -> void:
 	await _fade.fade_to_black()
 	#File.data.retry()
 	File.data.coins = max_current_coin
+	File.data.diamonds = max_current_diamond
 	File.data.lives = max_current_lives
-	print(File.data.coins)
-	print(File.data.coins)
 	_level.queue_free()
 	# raload same level
 	_load_level()
@@ -186,12 +204,21 @@ func _on_level_select_pressed() -> void:
 	await _fade.fade_to_black()
 	#File.data.retry()
 	File.data.coins = max_current_coin
+	File.data.diamonds = max_current_diamond
 	File.data.lives = max_current_lives
 	print('Return to level selection')
 	File.data.level = 0
 	_return_to_last_checkpoint()
 	
 func _on_exit_pressed() -> void:
+	checkpoint = 0
 	_game_over_menu.visible = false
 	await _fade.fade_to_black()
-	get_tree().quit()
+	_pause(false)
+	File.data.coins = max_current_coin
+	File.data.diamonds = max_current_diamond
+	File.data.lives = max_current_lives
+	print('Return to level selection')
+	File.data.level = 0
+	_return_to_last_checkpoint()
+	#get_tree().quit()

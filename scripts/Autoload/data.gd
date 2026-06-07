@@ -12,14 +12,16 @@ enum Progress{
 @export var level : int
 @export var world : int
 @export var coins : int 
+@export var diamonds: int
 @export var lives : int
-@export var checkpoint : int
+#@export var checkpoint : int
 @export var progress : Array[Array]
 
 func _init() -> void:
 	coins = 0
-	lives = 0
-	checkpoint = 0
+	diamonds = 0
+	lives = 1
+	#checkpoint = 0
 	world = 1
 	level = 1
 	progress = [[Progress.UNLOCKED, 0, 0, 0], [0, 0, 0, 0]]
@@ -45,6 +47,7 @@ func check_progress_marker(marker : Progress, world_id : int = world, level_id :
 	
 func retry():
 	coins = 0 
-	lives = 0
-	checkpoint = 0
+	diamonds = 0
+	lives = 1
+	#checkpoint = 0
 	

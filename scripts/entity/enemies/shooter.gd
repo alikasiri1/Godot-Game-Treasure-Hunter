@@ -10,6 +10,7 @@ class_name Shooter
 var _want_to_fire : bool 
 
 func fire():
+	await get_tree().create_timer(randf_range(0.5, 1.5)).timeout
 	_want_to_fire = true
 	
 func _ready() -> void:
@@ -17,7 +18,7 @@ func _ready() -> void:
 	_p_speed = Global.ppt * _p_speed
 	
 func _spawn_projectile():
-	var projectile : Projectile = _projectile.instantiate()
+	var projectile = _projectile.instantiate()
 	projectile.global_position = _p_origin.global_position
 	#get_parent().add_child(projectile)
 	Global.play_scene.add_child(projectile)

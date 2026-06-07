@@ -3,6 +3,7 @@ class_name GameLevel
 
 @export_range(0, 5) var desired_volume : float = 0.3
 @export var music : AudioStream
+@export var background_sound : AudioStream
 @onready var _area : CollisionShape2D = $CollisionShape2D
 @onready var _half_area_size : Vector2 = _area.shape.get_rect().size / 2
 

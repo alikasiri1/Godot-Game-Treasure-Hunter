@@ -58,18 +58,18 @@ script = ExtResource("1_31v10")
 _width = 1200.0
 
 [node name="AdditionalSky" type="Sprite2D" parent="." unique_id=1266064037]
-position = Vector2(-63.999878, -440)
-scale = Vector2(100, 14.500001)
+position = Vector2(2976, -440)
+scale = Vector2(297.99997, 14.500001)
 texture = ExtResource("1_rr3ae")
 
 [node name="AdditionalWater" type="Sprite2D" parent="." unique_id=1076310672]
-position = Vector2(-64.00006, 504)
-scale = Vector2(106, 7.5)
+position = Vector2(2991.9998, 504)
+scale = Vector2(297, 7.5)
 texture = ExtResource("2_c6h32")
 
 [node name="BgImage" type="Sprite2D" parent="." unique_id=695719307]
-position = Vector2(-4.5776367e-05, 79.99997)
-scale = Vector2(7.9166656, 4.75)
+position = Vector2(2984, 79.99997)
+scale = Vector2(24.791666, 4.75)
 texture = ExtResource("3_prjwi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=851250375]
@@ -92,6 +92,26 @@ scale = Vector2(2.3529408, 1)
 sprite_frames = SubResource("SpriteFrames_lmvl5")
 autoplay = "default"
 
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=578758128]
+position = Vector2(3520, 192)
+scale = Vector2(2.3529408, 1)
+sprite_frames = SubResource("SpriteFrames_lmvl5")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="." unique_id=823595167]
+position = Vector2(6480, 196)
+scale = Vector2(2.3529408, 1)
+sprite_frames = SubResource("SpriteFrames_lmvl5")
+autoplay = "default"
+frame_progress = 0.060779665
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="." unique_id=2059222151]
+position = Vector2(7403.0005, 199)
+scale = Vector2(2.3529408, 1)
+sprite_frames = SubResource("SpriteFrames_lmvl5")
+autoplay = "default"
+frame_progress = 0.61900413
+
 [node name="LargCloud3" type="Sprite2D" parent="." unique_id=1809305668]
 position = Vector2(80, 32)
 texture = ExtResource("11_0qt1y")
@@ -104,8 +124,48 @@ texture = ExtResource("11_0qt1y")
 position = Vector2(944, 128)
 texture = ExtResource("9_31v10")
 
+[node name="SmallCloud17" type="Sprite2D" parent="." unique_id=471165539]
+position = Vector2(3236, -166)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud19" type="Sprite2D" parent="." unique_id=1624860131]
+position = Vector2(4662, -474)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud20" type="Sprite2D" parent="." unique_id=1544688858]
+position = Vector2(99, -80)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud21" type="Sprite2D" parent="." unique_id=204926]
+position = Vector2(4856, -94)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud22" type="Sprite2D" parent="." unique_id=1702564882]
+position = Vector2(6555, -461)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud23" type="Sprite2D" parent="." unique_id=685454152]
+position = Vector2(5989, -157)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud24" type="Sprite2D" parent="." unique_id=512888487]
+position = Vector2(5433, -514)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud25" type="Sprite2D" parent="." unique_id=492594145]
+position = Vector2(7331, -115)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud26" type="Sprite2D" parent="." unique_id=332187470]
+position = Vector2(6723, -167)
+texture = ExtResource("9_31v10")
+
 [node name="SmallCloud13" type="Sprite2D" parent="." unique_id=1363262210]
 position = Vector2(544, 48)
+texture = ExtResource("9_31v10")
+
+[node name="SmallCloud18" type="Sprite2D" parent="." unique_id=147885685]
+position = Vector2(2256, -339)
 texture = ExtResource("9_31v10")
 
 [node name="SmallCloud14" type="Sprite2D" parent="." unique_id=217668476]
@@ -122,6 +182,14 @@ texture = ExtResource("10_j52xk")
 
 [node name="MediumCloud3" type="Sprite2D" parent="." unique_id=148055989]
 position = Vector2(-416, -32)
+texture = ExtResource("10_j52xk")
+
+[node name="MediumCloud9" type="Sprite2D" parent="." unique_id=940360646]
+position = Vector2(2514, -53)
+texture = ExtResource("10_j52xk")
+
+[node name="MediumCloud10" type="Sprite2D" parent="." unique_id=593981643]
+position = Vector2(4104, 69)
 texture = ExtResource("10_j52xk")
 
 [node name="MediumCloud4" type="Sprite2D" parent="." unique_id=855985803]
@@ -152,8 +220,32 @@ texture = ExtResource("10_j52xk")
 position = Vector2(128, -288)
 texture = ExtResource("10_j52xk")
 
+[node name="MediumCloud11" type="Sprite2D" parent="." unique_id=580927102]
+position = Vector2(5078, -317)
+texture = ExtResource("10_j52xk")
+
+[node name="MediumCloud12" type="Sprite2D" parent="." unique_id=392503501]
+position = Vector2(4204, -109)
+texture = ExtResource("10_j52xk")
+
 [node name="LargCloud5" type="Sprite2D" parent="." unique_id=96376341]
 position = Vector2(448, -128)
+texture = ExtResource("11_0qt1y")
+
+[node name="LargCloud6" type="Sprite2D" parent="." unique_id=1164347809]
+position = Vector2(4051, -321)
+texture = ExtResource("11_0qt1y")
+
+[node name="LargCloud7" type="Sprite2D" parent="." unique_id=65489961]
+position = Vector2(3270, -493)
+texture = ExtResource("11_0qt1y")
+
+[node name="LargCloud8" type="Sprite2D" parent="." unique_id=382222742]
+position = Vector2(1909, 30)
+texture = ExtResource("11_0qt1y")
+
+[node name="LargCloud9" type="Sprite2D" parent="." unique_id=341429762]
+position = Vector2(1802, -464)
 texture = ExtResource("11_0qt1y")
 
 [node name="MediumCloud8" type="Sprite2D" parent="." unique_id=1910973236]

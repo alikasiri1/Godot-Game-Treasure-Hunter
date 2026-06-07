@@ -10,6 +10,7 @@ size = Vector2(31, 9.5)
 collision_layer = 64
 collision_mask = 2
 script = ExtResource("1_asdda")
+damage = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=185285603]
 texture = ExtResource("1_10x8l")

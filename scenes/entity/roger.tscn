@@ -1412,6 +1412,7 @@ position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_c61kc")
 
 [node name="Voice" type="AudioStreamPlayer2D" parent="." unique_id=368589844]
+bus = &"SFX"
 area_mask = 2
 
 [node name="HealthComponent" parent="." unique_id=989882209 instance=ExtResource("22_pso1p")]
@@ -1430,6 +1431,7 @@ debug_color = Color(4.0911138e-07, 0.64810693, 0.20071158, 0.41960785)
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1684502373]
 max_polyphony = 2
+bus = &"SFX"
 
 [node name="HitBox" type="Area2D" parent="." unique_id=629145099]
 collision_layer = 1024

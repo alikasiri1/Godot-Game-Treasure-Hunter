@@ -1,105 +1,104 @@
-[gd_scene format=3 uid="uid://bop7nhccv5h2y"]
+[gd_scene format=3 uid="uid://cihhtkqyx0op2"]
 
-[ext_resource type="Script" uid="uid://d3pics4sugc0e" path="res://scenes/Levels/level_select.gd" id="1_1s084"]
-[ext_resource type="AudioStream" uid="uid://dn0x38ghkcdsa" path="res://sounds/353416__squashy555__seagull-on-beach.mp3" id="2_j8y0k"]
-[ext_resource type="PackedScene" uid="uid://d2kqqqo7ihbn7" path="res://scenes/entity/Crabby.tscn" id="2_xciq1"]
-[ext_resource type="PackedScene" uid="uid://cjgwe3mfjkc2k" path="res://scenes/entity/partal.tscn" id="3_jtrdy"]
-[ext_resource type="PackedScene" uid="uid://dnbm4rjfbq2ja" path="res://scenes/entity/Fierce Tooth.tscn" id="4_4abiq"]
-[ext_resource type="PackedScene" uid="uid://ctulh66v6y40n" path="res://scenes/entity/seashell.tscn" id="5_kuwyv"]
-[ext_resource type="PackedScene" uid="uid://d0skswx1f0nre" path="res://scenes/decoration/palm_tree.tscn" id="6_nqo75"]
-[ext_resource type="PackedScene" uid="uid://bnhdsvw15akqg" path="res://scenes/Traps/spikes.tscn" id="7_ut3ca"]
-[ext_resource type="PackedScene" uid="uid://wxgy5xgxb5qm" path="res://scenes/decoration/ship.tscn" id="8_jhb75"]
-[ext_resource type="Script" uid="uid://og51qf5tmi6d" path="res://scripts/water.gd" id="9_4eboe"]
-[ext_resource type="PackedScene" uid="uid://ik3vbikj54r8" path="res://scenes/decoration/back_palm_tree.tscn" id="9_aqmmm"]
-[ext_resource type="PackedScene" uid="uid://3rfqwsw0pnso" path="res://scenes/effects/water_particles.tscn" id="10_nkjxe"]
-[ext_resource type="Texture2D" uid="uid://c6qvqkphrvpkg" path="res://assets/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="11_pegnd"]
-[ext_resource type="Texture2D" uid="uid://cyd8ususxc3qi" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/1.png" id="12_yc2eu"]
-[ext_resource type="Texture2D" uid="uid://dtlfuu8c7whq8" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/2.png" id="13_d6288"]
-[ext_resource type="Texture2D" uid="uid://chmllonlqhm10" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/3.png" id="14_7dq4q"]
-[ext_resource type="Texture2D" uid="uid://btkgfpynxrkls" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/4.png" id="15_15ihg"]
-[ext_resource type="AudioStream" uid="uid://divaydxf05njy" path="res://sounds/406087__yin_yang_jake007__water-splash.wav" id="16_10jtw"]
-[ext_resource type="TileSet" uid="uid://q5mc6ybfbn3n" path="res://TileMap_set.tres" id="17_mtseq"]
-[ext_resource type="PackedScene" uid="uid://c7i0a8u1je3hg" path="res://scenes/decoration/background.tscn" id="18_j8y0k"]
-[ext_resource type="PackedScene" uid="uid://eppdjnjdf8vm" path="res://scenes/Treasures/silver_coin.tscn" id="19_jcbh2"]
-[ext_resource type="PackedScene" uid="uid://jo0prvvmvqqx" path="res://scenes/Treasures/gold_coin.tscn" id="20_aqmmm"]
-[ext_resource type="PackedScene" uid="uid://bo0vh3wtagw4w" path="res://scenes/Treasures/skull.tscn" id="21_r0r0x"]
-[ext_resource type="PackedScene" uid="uid://boogu3g7ljkw1" path="res://scenes/Treasures/middle.tscn" id="23_2qfkp"]
-[ext_resource type="Script" uid="uid://cojsthmd4d8cg" path="res://scripts/UI/counter.gd" id="24_d6288"]
-[ext_resource type="Theme" uid="uid://cpmainy4i2yo8" path="res://Wood_and_Paper_Button_theme.tres" id="24_g7qu4"]
-[ext_resource type="Texture2D" uid="uid://dap4wkodu1rd8" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/36.png" id="25_7dq4q"]
-[ext_resource type="Texture2D" uid="uid://tyxpt2vfgph3" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/27.png" id="26_15ihg"]
-[ext_resource type="Texture2D" uid="uid://bu6lljq260ltl" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/28.png" id="27_10jtw"]
-[ext_resource type="Texture2D" uid="uid://b84pyy2kqm3gp" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/29.png" id="28_mtseq"]
-[ext_resource type="Texture2D" uid="uid://b05lm2dpmq7ai" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/01.png" id="29_insmy"]
-[ext_resource type="Texture2D" uid="uid://bgjjkc2w2s1k0" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/30.png" id="29_j8y0k"]
-[ext_resource type="Texture2D" uid="uid://d1vamcm5bbuow" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/31.png" id="30_jcbh2"]
-[ext_resource type="Texture2D" uid="uid://c0tvg2bn8jj7a" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/02.png" id="30_yrtww"]
-[ext_resource type="Texture2D" uid="uid://setyw2rw0oq0" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/03.png" id="31_2kdie"]
-[ext_resource type="Texture2D" uid="uid://c2fbvj0g374ls" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/32.png" id="31_aqmmm"]
-[ext_resource type="Texture2D" uid="uid://68cm48ycguu8" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/04.png" id="32_3fj62"]
-[ext_resource type="Texture2D" uid="uid://1kqxg65crd8m" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/33.png" id="32_r0r0x"]
-[ext_resource type="Texture2D" uid="uid://iv51mr6k0wdr" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/05.png" id="33_a0clv"]
-[ext_resource type="Texture2D" uid="uid://bfud87w8f6jac" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/34.png" id="33_ahul8"]
-[ext_resource type="Texture2D" uid="uid://dosha624iwoa1" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/35.png" id="34_2qfkp"]
-[ext_resource type="Texture2D" uid="uid://bjfqir1t6mcg0" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/06.png" id="34_po4cq"]
-[ext_resource type="Texture2D" uid="uid://cbpdbetmpeg8i" path="res://assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="35_g7qu4"]
-[ext_resource type="Texture2D" uid="uid://dwvairq2vxvdf" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/07.png" id="35_y87x6"]
-[ext_resource type="Texture2D" uid="uid://bgsxas3f3dfuf" path="res://assets/Pirate Treasure/Sprites/Golden Skull/ui_skull.png" id="36_15ihg"]
-[ext_resource type="Texture2D" uid="uid://csrxhamejnx31" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/08.png" id="36_y6wnd"]
-[ext_resource type="Texture2D" uid="uid://bw5ijb1bqj6pd" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Icons/1.png" id="37_mtseq"]
-[ext_resource type="Texture2D" uid="uid://cgcp722hg5pc8" path="res://assets/Pirate Treasure/Sprites/Blue Diamond/01.png" id="37_r0r0x"]
-[ext_resource type="Texture2D" uid="uid://duxjpo8do4om3" path="res://assets/Wood and Paper UI/Sprites/Big Text/27.png" id="37_smmd7"]
-[ext_resource type="Texture2D" uid="uid://br8wbx85cjeum" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/01.png" id="38_pik83"]
-[ext_resource type="Texture2D" uid="uid://qxrwbeo1note" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/02.png" id="39_gtgtx"]
-[ext_resource type="Texture2D" uid="uid://ckx3hsfm8qofb" path="res://assets/Wood and Paper UI/Sprites/Big Text/23.png" id="39_jcbh2"]
-[ext_resource type="Texture2D" uid="uid://c810xwdixumev" path="res://assets/Wood and Paper UI/Sprites/Big Text/15.png" id="40_aqmmm"]
-[ext_resource type="Texture2D" uid="uid://bfwjhg3b4cmnb" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/03.png" id="40_vhlhw"]
-[ext_resource type="Texture2D" uid="uid://bs428xo3my4fg" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/04.png" id="41_esa6y"]
-[ext_resource type="Texture2D" uid="uid://c48rmc8u32lth" path="res://assets/Wood and Paper UI/Sprites/Big Text/18.png" id="41_r0r0x"]
-[ext_resource type="Texture2D" uid="uid://deq6eecdr0e7b" path="res://assets/Wood and Paper UI/Sprites/Big Text/12.png" id="42_ahul8"]
-[ext_resource type="Texture2D" uid="uid://dbt8sphcda4w3" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Icons/2.png" id="42_j8y0k"]
-[ext_resource type="Texture2D" uid="uid://ckikasq7rolnu" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/05.png" id="42_m2lqf"]
-[ext_resource type="Texture2D" uid="uid://p3qosdv0i2ph" path="res://assets/Wood and Paper UI/Sprites/Big Text/4.png" id="43_2qfkp"]
-[ext_resource type="Texture2D" uid="uid://duk1dkil53asi" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/06.png" id="43_gvcgt"]
-[ext_resource type="Texture2D" uid="uid://b0xxbfsngut7g" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/07.png" id="44_ddipq"]
-[ext_resource type="Texture2D" uid="uid://coul0rp2u4qv" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/08.png" id="45_tsi38"]
-[ext_resource type="Texture2D" uid="uid://bdg86bk0wkit5" path="res://assets/Wood and Paper UI/Sprites/Big Text/28.png" id="46_jpj64"]
-[ext_resource type="Texture2D" uid="uid://d0dsxt00muhwb" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/01.png" id="47_oqlve"]
-[ext_resource type="Texture2D" uid="uid://btrmkb4urdhr8" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/02.png" id="48_ciyk7"]
-[ext_resource type="Texture2D" uid="uid://dpv7q00m6pa7e" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/03.png" id="49_aa1e1"]
-[ext_resource type="Texture2D" uid="uid://eg6xoultfyls" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/04.png" id="50_sofjf"]
-[ext_resource type="Texture2D" uid="uid://b6qy021334v1y" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/05.png" id="51_4rykx"]
-[ext_resource type="Texture2D" uid="uid://ci5lbm76kvyue" path="res://assets/Wood and Paper UI/Sprites/Big Text/24.png" id="51_10jtw"]
-[ext_resource type="Texture2D" uid="uid://cipt24k1yo2vq" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/06.png" id="52_wnef7"]
-[ext_resource type="Texture2D" uid="uid://ergpyybgjs0o" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/07.png" id="53_verbu"]
-[ext_resource type="Texture2D" uid="uid://di2g8otnqsrfh" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/08.png" id="54_4kj45"]
-[ext_resource type="Texture2D" uid="uid://7l0j2cvitgt4" path="res://assets/Wood and Paper UI/Sprites/Big Text/29.png" id="55_bfwh7"]
-[ext_resource type="Texture2D" uid="uid://ddhpo5n4eioe2" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/01.png" id="56_oexc3"]
-[ext_resource type="Texture2D" uid="uid://d208phy5lt4s0" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/02.png" id="57_k1anr"]
-[ext_resource type="Texture2D" uid="uid://d25oit1gklabs" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/03.png" id="58_4yj0k"]
-[ext_resource type="Texture2D" uid="uid://b68oroqo2m0w1" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/04.png" id="59_562de"]
-[ext_resource type="Texture2D" uid="uid://bbcvfbr7f0ger" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/05.png" id="60_36i3r"]
-[ext_resource type="Texture2D" uid="uid://b8yau7bju5x4y" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/06.png" id="61_irvw1"]
-[ext_resource type="Texture2D" uid="uid://hapv6pdm7mcc" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/07.png" id="62_atmar"]
-[ext_resource type="Texture2D" uid="uid://c427ggy7beekv" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/08.png" id="63_x1dye"]
-[ext_resource type="Texture2D" uid="uid://d4chja7owh0un" path="res://assets/Wood and Paper UI/Sprites/Big Text/30.png" id="64_44o4b"]
-[ext_resource type="PackedScene" uid="uid://64e8sr16tute" path="res://scenes/UI/fade.tscn" id="65_5whll"]
-[ext_resource type="Texture2D" uid="uid://hcqnf2p1ghfp" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Icons/8.png" id="78_7dq4q"]
+[ext_resource type="Script" uid="uid://d3pics4sugc0e" path="res://scenes/Levels/level_select.gd" id="1_hxid6"]
+[ext_resource type="AudioStream" uid="uid://dn0x38ghkcdsa" path="res://sounds/353416__squashy555__seagull-on-beach.mp3" id="2_okach"]
+[ext_resource type="PackedScene" uid="uid://d2kqqqo7ihbn7" path="res://scenes/entity/Crabby.tscn" id="3_aniic"]
+[ext_resource type="PackedScene" uid="uid://cjgwe3mfjkc2k" path="res://scenes/entity/partal.tscn" id="4_p38is"]
+[ext_resource type="PackedScene" uid="uid://dnbm4rjfbq2ja" path="res://scenes/entity/Fierce Tooth.tscn" id="5_igloy"]
+[ext_resource type="PackedScene" uid="uid://ctulh66v6y40n" path="res://scenes/entity/seashell.tscn" id="6_ppmoo"]
+[ext_resource type="PackedScene" uid="uid://d0skswx1f0nre" path="res://scenes/decoration/palm_tree.tscn" id="7_x42m4"]
+[ext_resource type="PackedScene" uid="uid://bnhdsvw15akqg" path="res://scenes/Traps/spikes.tscn" id="8_82hrp"]
+[ext_resource type="PackedScene" uid="uid://wxgy5xgxb5qm" path="res://scenes/decoration/ship.tscn" id="9_mpdks"]
+[ext_resource type="Script" uid="uid://og51qf5tmi6d" path="res://scripts/water.gd" id="10_22bgp"]
+[ext_resource type="PackedScene" uid="uid://3rfqwsw0pnso" path="res://scenes/effects/water_particles.tscn" id="11_bs3sp"]
+[ext_resource type="Texture2D" uid="uid://c6qvqkphrvpkg" path="res://assets/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="12_cfj2e"]
+[ext_resource type="Texture2D" uid="uid://cyd8ususxc3qi" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/1.png" id="13_k68ao"]
+[ext_resource type="Texture2D" uid="uid://dtlfuu8c7whq8" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/2.png" id="14_qmai5"]
+[ext_resource type="Texture2D" uid="uid://chmllonlqhm10" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/3.png" id="15_eerrw"]
+[ext_resource type="Texture2D" uid="uid://btkgfpynxrkls" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/4.png" id="16_tyj6w"]
+[ext_resource type="AudioStream" uid="uid://divaydxf05njy" path="res://sounds/406087__yin_yang_jake007__water-splash.wav" id="17_g3w5u"]
+[ext_resource type="TileSet" uid="uid://q5mc6ybfbn3n" path="res://TileMap_set.tres" id="18_g7x8r"]
+[ext_resource type="PackedScene" uid="uid://c7i0a8u1je3hg" path="res://scenes/decoration/background.tscn" id="19_r6kp1"]
+[ext_resource type="PackedScene" uid="uid://eppdjnjdf8vm" path="res://scenes/Treasures/silver_coin.tscn" id="20_oeurp"]
+[ext_resource type="PackedScene" uid="uid://jo0prvvmvqqx" path="res://scenes/Treasures/gold_coin.tscn" id="21_kib0h"]
+[ext_resource type="PackedScene" uid="uid://bo0vh3wtagw4w" path="res://scenes/Treasures/skull.tscn" id="22_nf8oy"]
+[ext_resource type="PackedScene" uid="uid://boogu3g7ljkw1" path="res://scenes/Treasures/middle.tscn" id="23_clof0"]
+[ext_resource type="Script" uid="uid://cojsthmd4d8cg" path="res://scripts/UI/counter.gd" id="24_ccmik"]
+[ext_resource type="Texture2D" uid="uid://dap4wkodu1rd8" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/36.png" id="25_d2htr"]
+[ext_resource type="Texture2D" uid="uid://tyxpt2vfgph3" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/27.png" id="26_buqjf"]
+[ext_resource type="Texture2D" uid="uid://bu6lljq260ltl" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/28.png" id="27_5cce2"]
+[ext_resource type="Texture2D" uid="uid://b84pyy2kqm3gp" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/29.png" id="28_cee0y"]
+[ext_resource type="Texture2D" uid="uid://bgjjkc2w2s1k0" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/30.png" id="29_w1d5n"]
+[ext_resource type="Texture2D" uid="uid://d1vamcm5bbuow" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/31.png" id="30_aqowd"]
+[ext_resource type="Texture2D" uid="uid://c2fbvj0g374ls" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/32.png" id="31_mi2yi"]
+[ext_resource type="Texture2D" uid="uid://1kqxg65crd8m" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/33.png" id="32_e18wi"]
+[ext_resource type="Texture2D" uid="uid://bfud87w8f6jac" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/34.png" id="33_vwigq"]
+[ext_resource type="Texture2D" uid="uid://dosha624iwoa1" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Text/35.png" id="34_i2fkp"]
+[ext_resource type="Texture2D" uid="uid://cbpdbetmpeg8i" path="res://assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="35_b8p7k"]
+[ext_resource type="Texture2D" uid="uid://cgcp722hg5pc8" path="res://assets/Pirate Treasure/Sprites/Blue Diamond/01.png" id="36_aniic"]
+[ext_resource type="Texture2D" uid="uid://bgsxas3f3dfuf" path="res://assets/Pirate Treasure/Sprites/Golden Skull/ui_skull.png" id="36_b8gei"]
+[ext_resource type="Theme" uid="uid://cpmainy4i2yo8" path="res://Wood_and_Paper_Button_theme.tres" id="37_f5kn5"]
+[ext_resource type="Texture2D" uid="uid://bw5ijb1bqj6pd" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Icons/1.png" id="38_wo3yg"]
+[ext_resource type="Texture2D" uid="uid://ckx3hsfm8qofb" path="res://assets/Wood and Paper UI/Sprites/Big Text/23.png" id="39_okach"]
+[ext_resource type="Texture2D" uid="uid://c810xwdixumev" path="res://assets/Wood and Paper UI/Sprites/Big Text/15.png" id="40_aniic"]
+[ext_resource type="Texture2D" uid="uid://c48rmc8u32lth" path="res://assets/Wood and Paper UI/Sprites/Big Text/18.png" id="41_p38is"]
+[ext_resource type="Texture2D" uid="uid://deq6eecdr0e7b" path="res://assets/Wood and Paper UI/Sprites/Big Text/12.png" id="42_igloy"]
+[ext_resource type="Texture2D" uid="uid://p3qosdv0i2ph" path="res://assets/Wood and Paper UI/Sprites/Big Text/4.png" id="43_ppmoo"]
+[ext_resource type="Texture2D" uid="uid://dbt8sphcda4w3" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Icons/2.png" id="43_u6jai"]
+[ext_resource type="Texture2D" uid="uid://b05lm2dpmq7ai" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/01.png" id="44_eel21"]
+[ext_resource type="Texture2D" uid="uid://c0tvg2bn8jj7a" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/02.png" id="45_8rpt7"]
+[ext_resource type="Texture2D" uid="uid://setyw2rw0oq0" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/03.png" id="46_p31wo"]
+[ext_resource type="Texture2D" uid="uid://68cm48ycguu8" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/04.png" id="47_86xkv"]
+[ext_resource type="Texture2D" uid="uid://iv51mr6k0wdr" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/05.png" id="48_ktd1k"]
+[ext_resource type="Texture2D" uid="uid://bjfqir1t6mcg0" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/06.png" id="49_xx42r"]
+[ext_resource type="Texture2D" uid="uid://dwvairq2vxvdf" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/07.png" id="50_ou6ms"]
+[ext_resource type="Texture2D" uid="uid://csrxhamejnx31" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 1/08.png" id="51_nw656"]
+[ext_resource type="Texture2D" uid="uid://duxjpo8do4om3" path="res://assets/Wood and Paper UI/Sprites/Big Text/27.png" id="52_vl78c"]
+[ext_resource type="Texture2D" uid="uid://ci5lbm76kvyue" path="res://assets/Wood and Paper UI/Sprites/Big Text/24.png" id="53_qep3l"]
+[ext_resource type="Texture2D" uid="uid://br8wbx85cjeum" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/01.png" id="54_kd65v"]
+[ext_resource type="Texture2D" uid="uid://qxrwbeo1note" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/02.png" id="55_i41pm"]
+[ext_resource type="Texture2D" uid="uid://bfwjhg3b4cmnb" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/03.png" id="56_lscwf"]
+[ext_resource type="Texture2D" uid="uid://bs428xo3my4fg" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/04.png" id="57_sngy2"]
+[ext_resource type="Texture2D" uid="uid://ckikasq7rolnu" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/05.png" id="58_hu7nn"]
+[ext_resource type="Texture2D" uid="uid://duk1dkil53asi" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/06.png" id="59_u8bi5"]
+[ext_resource type="Texture2D" uid="uid://b0xxbfsngut7g" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/07.png" id="60_14sqg"]
+[ext_resource type="Texture2D" uid="uid://coul0rp2u4qv" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 2/08.png" id="61_ut6vk"]
+[ext_resource type="Texture2D" uid="uid://bdg86bk0wkit5" path="res://assets/Wood and Paper UI/Sprites/Big Text/28.png" id="62_os2h0"]
+[ext_resource type="Texture2D" uid="uid://d0dsxt00muhwb" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/01.png" id="63_oird0"]
+[ext_resource type="Texture2D" uid="uid://btrmkb4urdhr8" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/02.png" id="64_vt4gl"]
+[ext_resource type="Texture2D" uid="uid://dpv7q00m6pa7e" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/03.png" id="65_yukuv"]
+[ext_resource type="Texture2D" uid="uid://eg6xoultfyls" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/04.png" id="66_te5a6"]
+[ext_resource type="Texture2D" uid="uid://b6qy021334v1y" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/05.png" id="67_t438y"]
+[ext_resource type="Texture2D" uid="uid://cipt24k1yo2vq" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/06.png" id="68_kvyqf"]
+[ext_resource type="Texture2D" uid="uid://ergpyybgjs0o" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/07.png" id="69_22gkx"]
+[ext_resource type="Texture2D" uid="uid://di2g8otnqsrfh" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 3/08.png" id="70_vaxqb"]
+[ext_resource type="Texture2D" uid="uid://7l0j2cvitgt4" path="res://assets/Wood and Paper UI/Sprites/Big Text/29.png" id="71_sevao"]
+[ext_resource type="Texture2D" uid="uid://ddhpo5n4eioe2" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/01.png" id="72_4m18p"]
+[ext_resource type="Texture2D" uid="uid://d208phy5lt4s0" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/02.png" id="73_fikij"]
+[ext_resource type="Texture2D" uid="uid://d25oit1gklabs" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/03.png" id="74_5133b"]
+[ext_resource type="Texture2D" uid="uid://b68oroqo2m0w1" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/04.png" id="75_3h3xj"]
+[ext_resource type="Texture2D" uid="uid://bbcvfbr7f0ger" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/05.png" id="76_owy6y"]
+[ext_resource type="Texture2D" uid="uid://b8yau7bju5x4y" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/06.png" id="77_78l3j"]
+[ext_resource type="Texture2D" uid="uid://hapv6pdm7mcc" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/07.png" id="78_w0e5m"]
+[ext_resource type="Texture2D" uid="uid://c427ggy7beekv" path="res://assets/Pirate Treasure/Sprites/Small Maps/Small Map 4/08.png" id="79_8tsm3"]
+[ext_resource type="Texture2D" uid="uid://d4chja7owh0un" path="res://assets/Wood and Paper UI/Sprites/Big Text/30.png" id="80_d53a1"]
+[ext_resource type="PackedScene" uid="uid://64e8sr16tute" path="res://scenes/UI/fade.tscn" id="81_j6brw"]
+[ext_resource type="Texture2D" uid="uid://hcqnf2p1ghfp" path="res://assets/Wood and Paper UI/Sprites/Small Text/Small Icons/8.png" id="82_eh1h4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vf7oa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_yc2eu")
+"texture": ExtResource("13_k68ao")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_d6288")
+"texture": ExtResource("14_qmai5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_7dq4q")
+"texture": ExtResource("15_eerrw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_15ihg")
+"texture": ExtResource("16_tyj6w")
 }],
 "loop": true,
 "name": &"default",
@@ -117,135 +116,123 @@ size = Vector2(2084, 810.83594)
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_e110l"]
 frames = 8
 speed_scale = 10.0
-frame_0/texture = ExtResource("29_insmy")
-frame_1/texture = ExtResource("30_yrtww")
+frame_0/texture = ExtResource("44_eel21")
+frame_1/texture = ExtResource("45_8rpt7")
 frame_1/duration = 1.0
-frame_2/texture = ExtResource("31_2kdie")
+frame_2/texture = ExtResource("46_p31wo")
 frame_2/duration = 1.0
-frame_3/texture = ExtResource("32_3fj62")
+frame_3/texture = ExtResource("47_86xkv")
 frame_3/duration = 1.0
-frame_4/texture = ExtResource("33_a0clv")
+frame_4/texture = ExtResource("48_ktd1k")
 frame_4/duration = 1.0
-frame_5/texture = ExtResource("34_po4cq")
+frame_5/texture = ExtResource("49_xx42r")
 frame_5/duration = 1.0
-frame_6/texture = ExtResource("35_y87x6")
+frame_6/texture = ExtResource("50_ou6ms")
 frame_6/duration = 1.0
-frame_7/texture = ExtResource("36_y6wnd")
+frame_7/texture = ExtResource("51_nw656")
 frame_7/duration = 1.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_1nqop"]
 frames = 8
 speed_scale = 10.0
-frame_0/texture = ExtResource("38_pik83")
-frame_1/texture = ExtResource("39_gtgtx")
+frame_0/texture = ExtResource("54_kd65v")
+frame_1/texture = ExtResource("55_i41pm")
 frame_1/duration = 1.0
-frame_2/texture = ExtResource("40_vhlhw")
+frame_2/texture = ExtResource("56_lscwf")
 frame_2/duration = 1.0
-frame_3/texture = ExtResource("41_esa6y")
+frame_3/texture = ExtResource("57_sngy2")
 frame_3/duration = 1.0
-frame_4/texture = ExtResource("42_m2lqf")
+frame_4/texture = ExtResource("58_hu7nn")
 frame_4/duration = 1.0
-frame_5/texture = ExtResource("43_gvcgt")
+frame_5/texture = ExtResource("59_u8bi5")
 frame_5/duration = 1.0
-frame_6/texture = ExtResource("44_ddipq")
+frame_6/texture = ExtResource("60_14sqg")
 frame_6/duration = 1.0
-frame_7/texture = ExtResource("45_tsi38")
+frame_7/texture = ExtResource("61_ut6vk")
 frame_7/duration = 1.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_arql4"]
 frames = 8
 speed_scale = 10.0
-frame_0/texture = ExtResource("47_oqlve")
-frame_1/texture = ExtResource("48_ciyk7")
+frame_0/texture = ExtResource("63_oird0")
+frame_1/texture = ExtResource("64_vt4gl")
 frame_1/duration = 1.0
-frame_2/texture = ExtResource("49_aa1e1")
+frame_2/texture = ExtResource("65_yukuv")
 frame_2/duration = 1.0
-frame_3/texture = ExtResource("50_sofjf")
+frame_3/texture = ExtResource("66_te5a6")
 frame_3/duration = 1.0
-frame_4/texture = ExtResource("51_4rykx")
+frame_4/texture = ExtResource("67_t438y")
 frame_4/duration = 1.0
-frame_5/texture = ExtResource("52_wnef7")
+frame_5/texture = ExtResource("68_kvyqf")
 frame_5/duration = 1.0
-frame_6/texture = ExtResource("53_verbu")
+frame_6/texture = ExtResource("69_22gkx")
 frame_6/duration = 1.0
-frame_7/texture = ExtResource("54_4kj45")
+frame_7/texture = ExtResource("70_vaxqb")
 frame_7/duration = 1.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_6twnj"]
 frames = 8
 speed_scale = 10.0
-frame_0/texture = ExtResource("56_oexc3")
-frame_1/texture = ExtResource("57_k1anr")
+frame_0/texture = ExtResource("72_4m18p")
+frame_1/texture = ExtResource("73_fikij")
 frame_1/duration = 1.0
-frame_2/texture = ExtResource("58_4yj0k")
+frame_2/texture = ExtResource("74_5133b")
 frame_2/duration = 1.0
-frame_3/texture = ExtResource("59_562de")
+frame_3/texture = ExtResource("75_3h3xj")
 frame_3/duration = 1.0
-frame_4/texture = ExtResource("60_36i3r")
+frame_4/texture = ExtResource("76_owy6y")
 frame_4/duration = 1.0
-frame_5/texture = ExtResource("61_irvw1")
+frame_5/texture = ExtResource("77_78l3j")
 frame_5/duration = 1.0
-frame_6/texture = ExtResource("62_atmar")
+frame_6/texture = ExtResource("78_w0e5m")
 frame_6/duration = 1.0
-frame_7/texture = ExtResource("63_x1dye")
+frame_7/texture = ExtResource("79_8tsm3")
 frame_7/duration = 1.0
 
-[node name="Level_1_0" type="Area2D" unique_id=1731219820]
+[node name="Level_2_0" type="Area2D" unique_id=1731219820]
 process_mode = 1
 position = Vector2(50, -150)
-script = ExtResource("1_1s084")
-desired_volume = 0.9
-music = ExtResource("2_j8y0k")
+script = ExtResource("1_hxid6")
+world_id = 2
+desired_volume = 2.0
+music = ExtResource("2_okach")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=273499571]
 position = Vector2(-630, -311)
 
-[node name="Crabby" parent="Enemies" unique_id=431264309 instance=ExtResource("2_xciq1")]
+[node name="Crabby" parent="Enemies" unique_id=431264309 instance=ExtResource("3_aniic")]
 position = Vector2(761, 512)
 _speed = 1
 
-[node name="Patrol" parent="Enemies/Crabby" unique_id=1698246436 instance=ExtResource("3_jtrdy")]
+[node name="Patrol" parent="Enemies/Crabby" unique_id=1698246436 instance=ExtResource("4_p38is")]
 
-[node name="Fierce Tooth" parent="Enemies" unique_id=1264942995 instance=ExtResource("4_4abiq")]
-position = Vector2(450, 257)
+[node name="Fierce Tooth" parent="Enemies" unique_id=1264942995 instance=ExtResource("5_igloy")]
+position = Vector2(534, 512)
 
-[node name="Patrol" parent="Enemies/Fierce Tooth" unique_id=989129301 instance=ExtResource("3_jtrdy")]
+[node name="Patrol" parent="Enemies/Fierce Tooth" unique_id=989129301 instance=ExtResource("4_p38is")]
 
-[node name="Seashell" parent="Enemies" unique_id=682533279 instance=ExtResource("5_kuwyv")]
-position = Vector2(815, 447)
+[node name="Seashell" parent="Enemies" unique_id=682533279 instance=ExtResource("6_ppmoo")]
+position = Vector2(816, 442)
 
 [node name="Decoration" type="Node2D" parent="." unique_id=1171586266]
 position = Vector2(-630, -311)
 
-[node name="Palm Tree" parent="Decoration" unique_id=1514967889 instance=ExtResource("6_nqo75")]
+[node name="Palm Tree" parent="Decoration" unique_id=1514967889 instance=ExtResource("7_x42m4")]
 position = Vector2(352, 416)
 
-[node name="Palm Tree2" parent="Decoration" unique_id=1224314430 instance=ExtResource("6_nqo75")]
+[node name="Palm Tree2" parent="Decoration" unique_id=1224314430 instance=ExtResource("7_x42m4")]
 position = Vector2(959, 288)
 
-[node name="Palm Tree3" parent="Decoration" unique_id=2103008624 instance=ExtResource("6_nqo75")]
+[node name="Palm Tree3" parent="Decoration" unique_id=2103008624 instance=ExtResource("7_x42m4")]
 position = Vector2(800, 448)
 
-[node name="Palm Tree4" parent="Decoration" unique_id=1414266067 instance=ExtResource("6_nqo75")]
+[node name="Palm Tree4" parent="Decoration" unique_id=1414266067 instance=ExtResource("7_x42m4")]
 position = Vector2(1056, 288)
 
-[node name="Spikes" parent="Decoration" unique_id=1196614941 instance=ExtResource("7_ut3ca")]
+[node name="Spikes" parent="Decoration" unique_id=1196614941 instance=ExtResource("8_82hrp")]
 position = Vector2(1115, 496)
 
-[node name="BackPalmTree" parent="Decoration" unique_id=1734950235 instance=ExtResource("9_aqmmm")]
-position = Vector2(198, 485)
-
-[node name="BackPalmTree2" parent="Decoration" unique_id=955178357 instance=ExtResource("9_aqmmm")]
-position = Vector2(1550, 303)
-animation = &"default"
-autoplay = "default"
-frame_progress = 0.0
-
-[node name="BackPalmTree3" parent="Decoration" unique_id=534528880 instance=ExtResource("9_aqmmm")]
-position = Vector2(1283, 489)
-frame_progress = 0.36957905
-
-[node name="Ship" parent="." unique_id=1043907902 instance=ExtResource("8_jhb75")]
+[node name="Ship" parent="." unique_id=1043907902 instance=ExtResource("9_mpdks")]
 position = Vector2(-611, 223)
 scale = Vector2(2, 2)
 
@@ -253,13 +240,13 @@ scale = Vector2(2, 2)
 position = Vector2(522, 235)
 collision_layer = 16
 collision_mask = 14
-script = ExtResource("9_4eboe")
-_water_particle = ExtResource("10_nkjxe")
+script = ExtResource("10_22bgp")
+_water_particle = ExtResource("11_bs3sp")
 
 [node name="Bottom" type="Sprite2D" parent="Water" unique_id=1764259451]
 position = Vector2(-1673, 124.9375)
 scale = Vector2(25.000002, 12.5859375)
-texture = ExtResource("11_pegnd")
+texture = ExtResource("12_cfj2e")
 offset = Vector2(48, 8)
 
 [node name="Surface" type="Node2D" parent="Water" unique_id=1413272664]
@@ -340,11 +327,11 @@ position = Vector2(-1345, 8)
 shape = SubResource("RectangleShape2D_d0wj5")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Water" unique_id=1750694599]
-stream = ExtResource("16_10jtw")
+stream = ExtResource("17_g3w5u")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1885243991]
 position = Vector2(-630, -311)
-tile_set = ExtResource("17_mtseq")
+tile_set = ExtResource("18_g7x8r")
 format = 2
 layer_0/name = "Terrain"
 layer_0/tile_data = PackedInt32Array(1048592, 65536, 0, 1048593, 65536, 0, 1048594, 65536, 0, 1048591, 65536, 0, 1048590, 65536, 0, 1048589, 65536, 0, 1048595, 65536, 0, 1048596, 65536, 0, 1048597, 65536, 0, 1048598, 65536, 0, 1114134, 65536, 1, 1179670, 65536, 1, 1179669, 65536, 1, 1179668, 65536, 1, 1179667, 65536, 1, 1179666, 65536, 1, 1179665, 65536, 1, 1179664, 65536, 1, 1179663, 65536, 1, 1179662, 65536, 1, 1179661, 65536, 1, 1114125, 65536, 1, 1114126, 65536, 1, 1114127, 65536, 1, 1114128, 65536, 1, 1114129, 65536, 1, 1114130, 65536, 1, 1114131, 65536, 1, 1114132, 65536, 1, 1114133, 65536, 1, 1048588, 65536, 0, 1048587, 65536, 0, 1048586, 393216, 1, 1048585, 65536, 1, 1048584, 65536, 1, 1048583, 458752, 1, 1048582, 65536, 0, 1048581, 65536, 0, 917511, 0, 0, 983047, 0, 1, 917512, 65536, 0, 917513, 65536, 0, 917514, 131072, 0, 983050, 131072, 1, 983049, 65536, 1, 983048, 65536, 1, 1048579, 0, 0, 1048580, 65536, 0, 1048599, 65536, 0, 1048600, 65536, 0, 1048601, 65536, 0, 1048602, 65536, 0, 1048603, 458752, 1, 589851, 458752, 0, 524315, 65536, 0, 524314, 65536, 0, 524313, 65536, 0, 524312, 65536, 0, 524311, 65536, 0, 524310, 65536, 0, 524309, 65536, 0, 524308, 65536, 0, 524307, 65536, 0, 524306, 65536, 0, 524305, 65536, 0, 524304, 65536, 0, 524303, 65536, 0, 524302, 65536, 0, 524301, 65536, 0, 524300, 65536, 0, 524299, 65536, 0, 524298, 65536, 0, 524297, 65536, 0, 524296, 655360, 3, 524295, 0, 4, 589832, 0, 2, 589833, 65536, 2, 589834, 65536, 2, 589835, 65536, 2, 589836, 65536, 2, 589837, 65536, 2, 589850, 65536, 2, 589849, 65536, 2, 589848, 65536, 2, 589847, 65536, 2, 589846, 65536, 2, 589845, 65536, 2, 589844, 65536, 2, 589843, 65536, 2, 589842, 65536, 2, 589841, 65536, 2, 589840, 65536, 2, 589839, 65536, 2, 589838, 65536, 2, 524316, 65536, 0, 1048604, 65536, 1, 917535, 131072, 0, 917534, 65536, 0, 917533, 65536, 0, 917532, 65536, 0, 1048605, 65536, 1, 1048606, 65536, 1, 1048607, 393216, 1, 1048608, 65536, 0, 1048609, 65536, 0, 1048610, 65536, 0, 1114140, 65536, 1, 1114139, 65536, 1, 1114138, 65536, 1, 1114137, 65536, 1, 1114136, 65536, 1, 1114135, 65536, 1, 1114124, 65536, 1, 1114123, 65536, 1, 1114122, 65536, 1, 1114121, 65536, 1, 1114120, 65536, 1, 1114119, 65536, 1, 1114118, 65536, 1, 1114117, 65536, 1, 1114116, 65536, 1, 1114115, 0, 1, 1048611, 65536, 0, 1114147, 65536, 1, 720929, 0, 0, 720930, 65536, 0, 720931, 65536, 0, 720932, 65536, 0, 720933, 131072, 0, 786469, 131072, 2, 786468, 65536, 2, 786467, 65536, 2, 786466, 65536, 2, 786465, 655360, 4, 851978, 65537, 2, 983051, 65537, 2, 983052, 65537, 2, 983053, 65537, 2, 983054, 65537, 2, 983055, 65537, 2, 983056, 65537, 2, 983057, 65537, 2, 983058, 65537, 2, 983059, 65537, 2, 983060, 65537, 2, 983061, 65537, 2, 983062, 65537, 2, 983063, 65537, 2, 983064, 65537, 2, 983065, 65537, 2, 983066, 65537, 2, 458759, 65537, 2, 458760, 65537, 2, 458761, 65537, 2, 458762, 65537, 2, 458763, 65537, 2, 458764, 65537, 2, 458765, 65537, 2, 458766, 65537, 2, 458767, 65537, 2, 458768, 65537, 2, 458769, 65537, 2, 458770, 65537, 2, 458771, 65537, 2, 458772, 65537, 2, 458773, 65537, 2, 1179683, 65536, 1, 1179682, 65536, 1, 1179681, 65536, 1, 1179680, 65536, 1, 1179679, 65536, 1, 1179678, 65536, 1, 1179677, 65536, 1, 1179676, 65536, 1, 1179675, 65536, 1, 1179674, 65536, 1, 1179673, 65536, 1, 1179672, 65536, 1, 1179671, 65536, 1, 1179660, 65536, 1, 1179659, 65536, 1, 1179658, 65536, 1, 1179657, 65536, 1, 1179656, 65536, 1, 1179655, 65536, 1, 1179654, 65536, 1, 1179653, 65536, 1, 1179652, 65536, 1, 1179651, 0, 1, 1114146, 65536, 1, 1114145, 65536, 1, 1114144, 65536, 1, 1114143, 65536, 1, 1114142, 65536, 1, 1114141, 65536, 1, 1245204, 65536, 1, 1245203, 65536, 1, 1245202, 65536, 1, 1245200, 65536, 1, 1245201, 65536, 1, 1245199, 65536, 1, 1245198, 65536, 1, 1245196, 65536, 1, 1245197, 65536, 1, 1245195, 65536, 1, 1245194, 65536, 1, 1245193, 65536, 1, 1245192, 65536, 1, 1245191, 65536, 1, 1245190, 65536, 1, 1245189, 65536, 1, 1245188, 65536, 1, 1245187, 0, 1, 720938, 0, 0, 720939, 65536, 0, 720940, 65536, 0, 720941, 65536, 0, 786477, 65536, 2, 786476, 65536, 2, 786475, 65536, 2, 786474, 0, 2, 786478, 65536, 2, 786479, 65536, 2, 720943, 65536, 0, 720942, 65536, 0, 720944, 65536, 0, 786480, 65536, 2, 786481, 65536, 2, 720945, 458752, 1, 655409, 0, 1, 589873, 0, 1, 524337, 0, 1, 458801, 0, 1, 393265, 0, 1, 327729, 0, 1, 262193, 0, 0, 262194, 65536, 0, 262195, 65536, 0, 327731, 65536, 1, 393267, 65536, 1, 458803, 65536, 1, 524339, 65536, 1, 589875, 65536, 1, 655411, 65536, 1, 720947, 65536, 1, 786483, 65536, 2, 786482, 65536, 2, 720946, 65536, 1, 655410, 65536, 1, 589874, 65536, 1, 524338, 65536, 1, 458802, 65536, 1, 393266, 65536, 1, 327730, 65536, 1, 262196, 65536, 0, 327732, 65536, 1, 393268, 65536, 1, 458804, 65536, 1, 524340, 65536, 1, 589876, 65536, 1, 655412, 65536, 1, 720948, 65536, 1, 786484, 65536, 2, 1048612, 65536, 0, 1048613, 65536, 0, 1048614, 65536, 0, 1048615, 65536, 0, 1048616, 65536, 0, 1048617, 65536, 0, 1048618, 65536, 0, 1048619, 65536, 0, 1048620, 65536, 0, 1048621, 65536, 0, 1048622, 65536, 0, 1048623, 65536, 0, 1048624, 65536, 0, 1048625, 65536, 0, 1048626, 65536, 0, 1048627, 65536, 0, 1048628, 65536, 0, 1114164, 65536, 1, 1179700, 65536, 1, 1179699, 65536, 1, 1179698, 65536, 1, 1179697, 65536, 1, 1179696, 65536, 1, 1179695, 65536, 1, 1179694, 65536, 1, 1179693, 65536, 1, 1179692, 65536, 1, 1179691, 65536, 1, 1179690, 65536, 1, 1179689, 65536, 1, 1179688, 65536, 1, 1179687, 65536, 1, 1179686, 65536, 1, 1179685, 65536, 1, 1179684, 65536, 1, 1114148, 65536, 1, 1114149, 65536, 1, 1114150, 65536, 1, 1114151, 65536, 1, 1114152, 65536, 1, 1114153, 65536, 1, 1114154, 65536, 1, 1114155, 65536, 1, 1114156, 65536, 1, 1114157, 65536, 1, 1114158, 65536, 1, 1114159, 65536, 1, 1114160, 65536, 1, 1114161, 65536, 1, 1114162, 65536, 1, 1114163, 65536, 1, 1048629, 131072, 0, 1114165, 131072, 1, 1179701, 131072, 1, 786485, 131072, 2, 720949, 131072, 1, 655413, 131072, 1, 589877, 131072, 1, 524341, 131072, 1, 458805, 131072, 1, 393269, 131072, 1, 327733, 131072, 1, 262197, 131072, 0, 1310723, 0, 1, 1376259, 0, 1, 1441795, 0, 1, 1507331, 0, 1, 1572867, 0, 1, 1638403, 0, 1, 1638404, 65536, 1, 1638405, 65536, 1, 1638406, 65536, 1, 1638407, 65536, 1, 1638408, 65536, 1, 1638409, 65536, 1, 1638410, 65536, 1, 1638411, 65536, 1, 1638412, 65536, 1, 1638413, 65536, 1, 1638414, 65536, 1, 1638415, 65536, 1, 1638416, 65536, 1, 1638417, 65536, 1, 1638418, 65536, 1, 1638419, 65536, 1, 1638420, 65536, 1, 1638421, 65536, 1, 1638422, 65536, 1, 1638423, 65536, 1, 1638424, 65536, 1, 1572902, 65536, 1, 1507366, 65536, 1, 1441830, 65536, 1, 1376294, 65536, 1, 1310758, 65536, 1, 1572901, 65536, 1, 1507365, 65536, 1, 1441829, 65536, 1, 1376293, 65536, 1, 1310757, 65536, 1, 1572900, 65536, 1, 1507364, 65536, 1, 1441828, 65536, 1, 1376292, 65536, 1, 1310756, 65536, 1, 1572899, 65536, 1, 1507363, 65536, 1, 1441827, 65536, 1, 1376291, 65536, 1, 1310755, 65536, 1, 1572898, 65536, 1, 1507362, 65536, 1, 1441826, 65536, 1, 1376290, 65536, 1, 1310754, 65536, 1, 1572897, 65536, 1, 1507361, 65536, 1, 1441825, 65536, 1, 1376289, 65536, 1, 1310753, 65536, 1, 1572896, 65536, 1, 1507360, 65536, 1, 1441824, 65536, 1, 1376288, 65536, 1, 1310752, 65536, 1, 1572895, 65536, 1, 1507359, 65536, 1, 1441823, 65536, 1, 1376287, 65536, 1, 1310751, 65536, 1, 1572894, 65536, 1, 1507358, 65536, 1, 1441822, 65536, 1, 1376286, 65536, 1, 1310750, 65536, 1, 1572893, 65536, 1, 1507357, 65536, 1, 1441821, 65536, 1, 1376285, 65536, 1, 1310749, 65536, 1, 1572892, 65536, 1, 1507356, 65536, 1, 1441820, 65536, 1, 1376284, 65536, 1, 1310748, 65536, 1, 1572891, 65536, 1, 1507355, 65536, 1, 1441819, 65536, 1, 1376283, 65536, 1, 1310747, 65536, 1, 1572890, 65536, 1, 1507354, 65536, 1, 1441818, 65536, 1, 1376282, 65536, 1, 1310746, 65536, 1, 1572889, 65536, 1, 1507353, 65536, 1, 1441817, 65536, 1, 1376281, 65536, 1, 1310745, 65536, 1, 1572888, 65536, 1, 1507352, 65536, 1, 1441816, 65536, 1, 1376280, 65536, 1, 1310744, 65536, 1, 1572887, 65536, 1, 1507351, 65536, 1, 1441815, 65536, 1, 1376279, 65536, 1, 1310743, 65536, 1, 1572886, 65536, 1, 1507350, 65536, 1, 1441814, 65536, 1, 1376278, 65536, 1, 1310742, 65536, 1, 1572885, 65536, 1, 1507349, 65536, 1, 1441813, 65536, 1, 1376277, 65536, 1, 1310741, 65536, 1, 1572884, 65536, 1, 1507348, 65536, 1, 1441812, 65536, 1, 1376276, 65536, 1, 1310740, 65536, 1, 1572883, 65536, 1, 1507347, 65536, 1, 1441811, 65536, 1, 1376275, 65536, 1, 1310739, 65536, 1, 1572882, 65536, 1, 1507346, 65536, 1, 1441810, 65536, 1, 1376274, 65536, 1, 1310738, 65536, 1, 1572881, 65536, 1, 1507345, 65536, 1, 1441809, 65536, 1, 1376273, 65536, 1, 1310737, 65536, 1, 1572880, 65536, 1, 1507344, 65536, 1, 1441808, 65536, 1, 1376272, 65536, 1, 1310736, 65536, 1, 1572879, 65536, 1, 1507343, 65536, 1, 1441807, 65536, 1, 1376271, 65536, 1, 1310735, 65536, 1, 1572878, 65536, 1, 1507342, 65536, 1, 1441806, 65536, 1, 1376270, 65536, 1, 1310734, 65536, 1, 1572877, 65536, 1, 1507341, 65536, 1, 1441805, 65536, 1, 1376269, 65536, 1, 1310733, 65536, 1, 1572876, 65536, 1, 1507340, 65536, 1, 1441804, 65536, 1, 1376268, 65536, 1, 1310732, 65536, 1, 1572875, 65536, 1, 1507339, 65536, 1, 1441803, 65536, 1, 1376267, 65536, 1, 1310731, 65536, 1, 1572874, 65536, 1, 1507338, 65536, 1, 1441802, 65536, 1, 1376266, 65536, 1, 1310730, 65536, 1, 1572873, 65536, 1, 1507337, 65536, 1, 1441801, 65536, 1, 1376265, 65536, 1, 1310729, 65536, 1, 1572872, 65536, 1, 1507336, 65536, 1, 1441800, 65536, 1, 1376264, 65536, 1, 1310728, 65536, 1, 1572871, 65536, 1, 1507335, 65536, 1, 1441799, 65536, 1, 1376263, 65536, 1, 1310727, 65536, 1, 1572870, 65536, 1, 1507334, 65536, 1, 1441798, 65536, 1, 1376262, 65536, 1, 1310726, 65536, 1, 1572869, 65536, 1, 1507333, 65536, 1, 1441797, 65536, 1, 1376261, 65536, 1, 1310725, 65536, 1, 1572868, 65536, 1, 1507332, 65536, 1, 1441796, 65536, 1, 1376260, 65536, 1, 1310724, 65536, 1, 1900597, 131072, 2, 1835061, 131072, 1, 1769525, 131072, 1, 1703989, 131072, 1, 1638453, 131072, 1, 1572917, 131072, 1, 1507381, 131072, 1, 1441845, 131072, 1, 1376309, 131072, 1, 1310773, 131072, 1, 1245237, 131072, 1, 1900596, 65536, 2, 1835060, 65536, 1, 1769524, 65536, 1, 1703988, 65536, 1, 1638452, 65536, 1, 1572916, 65536, 1, 1507380, 65536, 1, 1441844, 65536, 1, 1376308, 65536, 1, 1310772, 65536, 1, 1245236, 65536, 1, 1900595, 65536, 2, 1835059, 65536, 1, 1769523, 65536, 1, 1703987, 65536, 1, 1638451, 65536, 1, 1572915, 65536, 1, 1507379, 65536, 1, 1441843, 65536, 1, 1376307, 65536, 1, 1310771, 65536, 1, 1245235, 65536, 1, 1900594, 65536, 2, 1835058, 65536, 1, 1769522, 65536, 1, 1703986, 65536, 1, 1638450, 65536, 1, 1572914, 65536, 1, 1507378, 65536, 1, 1441842, 65536, 1, 1376306, 65536, 1, 1310770, 65536, 1, 1245234, 65536, 1, 1900593, 65536, 2, 1835057, 65536, 1, 1769521, 65536, 1, 1703985, 65536, 1, 1638449, 65536, 1, 1572913, 65536, 1, 1507377, 65536, 1, 1441841, 65536, 1, 1376305, 65536, 1, 1310769, 65536, 1, 1245233, 65536, 1, 1900592, 65536, 2, 1835056, 65536, 1, 1769520, 65536, 1, 1703984, 65536, 1, 1638448, 65536, 1, 1572912, 65536, 1, 1507376, 65536, 1, 1441840, 65536, 1, 1376304, 65536, 1, 1310768, 65536, 1, 1245232, 65536, 1, 1900591, 65536, 2, 1835055, 65536, 1, 1769519, 65536, 1, 1703983, 65536, 1, 1638447, 65536, 1, 1572911, 65536, 1, 1507375, 65536, 1, 1441839, 65536, 1, 1376303, 65536, 1, 1310767, 65536, 1, 1245231, 65536, 1, 1900590, 65536, 2, 1835054, 65536, 1, 1769518, 65536, 1, 1703982, 65536, 1, 1638446, 65536, 1, 1572910, 65536, 1, 1507374, 65536, 1, 1441838, 65536, 1, 1376302, 65536, 1, 1310766, 65536, 1, 1245230, 65536, 1, 1900589, 65536, 2, 1835053, 65536, 1, 1769517, 65536, 1, 1703981, 65536, 1, 1638445, 65536, 1, 1572909, 65536, 1, 1507373, 65536, 1, 1441837, 65536, 1, 1376301, 65536, 1, 1310765, 65536, 1, 1245229, 65536, 1, 1900588, 65536, 2, 1835052, 65536, 1, 1769516, 65536, 1, 1703980, 65536, 1, 1638444, 65536, 1, 1572908, 65536, 1, 1507372, 65536, 1, 1441836, 65536, 1, 1376300, 65536, 1, 1310764, 65536, 1, 1245228, 65536, 1, 1900587, 65536, 2, 1835051, 65536, 1, 1769515, 65536, 1, 1703979, 65536, 1, 1638443, 65536, 1, 1572907, 65536, 1, 1507371, 65536, 1, 1441835, 65536, 1, 1376299, 65536, 1, 1310763, 65536, 1, 1245227, 65536, 1, 1900586, 65536, 2, 1835050, 65536, 1, 1769514, 65536, 1, 1703978, 65536, 1, 1638442, 65536, 1, 1572906, 65536, 1, 1507370, 65536, 1, 1441834, 65536, 1, 1376298, 65536, 1, 1310762, 65536, 1, 1245226, 65536, 1, 1900585, 65536, 2, 1835049, 65536, 1, 1769513, 65536, 1, 1703977, 65536, 1, 1638441, 65536, 1, 1572905, 65536, 1, 1507369, 65536, 1, 1441833, 65536, 1, 1376297, 65536, 1, 1310761, 65536, 1, 1245225, 65536, 1, 1900584, 65536, 2, 1835048, 65536, 1, 1769512, 65536, 1, 1703976, 65536, 1, 1638440, 65536, 1, 1572904, 65536, 1, 1507368, 65536, 1, 1441832, 65536, 1, 1376296, 65536, 1, 1310760, 65536, 1, 1245224, 65536, 1, 1900583, 65536, 2, 1835047, 65536, 1, 1769511, 65536, 1, 1703975, 65536, 1, 1638439, 65536, 1, 1572903, 65536, 1, 1507367, 65536, 1, 1441831, 65536, 1, 1376295, 65536, 1, 1310759, 65536, 1, 1245223, 65536, 1, 1900582, 65536, 2, 1835046, 65536, 1, 1769510, 65536, 1, 1703974, 65536, 1, 1638438, 65536, 1, 1245222, 65536, 1, 1900581, 65536, 2, 1835045, 65536, 1, 1769509, 65536, 1, 1703973, 65536, 1, 1638437, 65536, 1, 1245221, 65536, 1, 1900580, 65536, 2, 1835044, 65536, 1, 1769508, 65536, 1, 1703972, 65536, 1, 1638436, 65536, 1, 1245220, 65536, 1, 1900579, 65536, 2, 1835043, 65536, 1, 1769507, 65536, 1, 1703971, 65536, 1, 1638435, 65536, 1, 1245219, 65536, 1, 1900578, 65536, 2, 1835042, 65536, 1, 1769506, 65536, 1, 1703970, 65536, 1, 1638434, 65536, 1, 1245218, 65536, 1, 1900577, 65536, 2, 1835041, 65536, 1, 1769505, 65536, 1, 1703969, 65536, 1, 1638433, 65536, 1, 1245217, 65536, 1, 1900576, 65536, 2, 1835040, 65536, 1, 1769504, 65536, 1, 1703968, 65536, 1, 1638432, 65536, 1, 1245216, 65536, 1, 1900575, 65536, 2, 1835039, 65536, 1, 1769503, 65536, 1, 1703967, 65536, 1, 1638431, 65536, 1, 1245215, 65536, 1, 1900574, 65536, 2, 1835038, 65536, 1, 1769502, 65536, 1, 1703966, 65536, 1, 1638430, 65536, 1, 1245214, 65536, 1, 1900573, 65536, 2, 1835037, 65536, 1, 1769501, 65536, 1, 1703965, 65536, 1, 1638429, 65536, 1, 1245213, 65536, 1, 1900572, 65536, 2, 1835036, 65536, 1, 1769500, 65536, 1, 1703964, 65536, 1, 1638428, 65536, 1, 1245212, 65536, 1, 1900571, 65536, 2, 1835035, 65536, 1, 1769499, 65536, 1, 1703963, 65536, 1, 1638427, 65536, 1, 1245211, 65536, 1, 1900570, 65536, 2, 1835034, 65536, 1, 1769498, 65536, 1, 1703962, 65536, 1, 1638426, 65536, 1, 1245210, 65536, 1, 1900569, 65536, 2, 1835033, 65536, 1, 1769497, 65536, 1, 1703961, 65536, 1, 1638425, 65536, 1, 1245209, 65536, 1, 1900568, 65536, 2, 1835032, 65536, 1, 1769496, 65536, 1, 1703960, 65536, 1, 1245208, 65536, 1, 1900567, 65536, 2, 1835031, 65536, 1, 1769495, 65536, 1, 1703959, 65536, 1, 1245207, 65536, 1, 1900566, 65536, 2, 1835030, 65536, 1, 1769494, 65536, 1, 1703958, 65536, 1, 1245206, 65536, 1, 1900565, 65536, 2, 1835029, 65536, 1, 1769493, 65536, 1, 1703957, 65536, 1, 1245205, 65536, 1, 1900564, 65536, 2, 1835028, 65536, 1, 1769492, 65536, 1, 1703956, 65536, 1, 1900563, 65536, 2, 1835027, 65536, 1, 1769491, 65536, 1, 1703955, 65536, 1, 1900562, 65536, 2, 1835026, 65536, 1, 1769490, 65536, 1, 1703954, 65536, 1, 1900561, 65536, 2, 1835025, 65536, 1, 1769489, 65536, 1, 1703953, 65536, 1, 1900560, 65536, 2, 1835024, 65536, 1, 1769488, 65536, 1, 1703952, 65536, 1, 1900559, 65536, 2, 1835023, 65536, 1, 1769487, 65536, 1, 1703951, 65536, 1, 1900558, 65536, 2, 1835022, 65536, 1, 1769486, 65536, 1, 1703950, 65536, 1, 1900557, 65536, 2, 1835021, 65536, 1, 1769485, 65536, 1, 1703949, 65536, 1, 1900556, 65536, 2, 1835020, 65536, 1, 1769484, 65536, 1, 1703948, 65536, 1, 1900555, 65536, 2, 1835019, 65536, 1, 1769483, 65536, 1, 1703947, 65536, 1, 1900554, 65536, 2, 1835018, 65536, 1, 1769482, 65536, 1, 1703946, 65536, 1, 1900553, 65536, 2, 1835017, 65536, 1, 1769481, 65536, 1, 1703945, 65536, 1, 1900552, 65536, 2, 1835016, 65536, 1, 1769480, 65536, 1, 1703944, 65536, 1, 1900551, 65536, 2, 1835015, 65536, 1, 1769479, 65536, 1, 1703943, 65536, 1, 1900550, 65536, 2, 1835014, 65536, 1, 1769478, 65536, 1, 1703942, 65536, 1, 1900549, 65536, 2, 1835013, 65536, 1, 1769477, 65536, 1, 1703941, 65536, 1, 1900548, 65536, 2, 1835012, 65536, 1, 1769476, 65536, 1, 1703940, 65536, 1, 1900547, 0, 2, 1835011, 0, 1, 1769475, 0, 1, 1703939, 0, 1, 917531, 0, 0, 983071, 131072, 1, 983070, 65536, 1, 983069, 65536, 1, 983068, 65536, 1, 983067, 0, 1, 786464, 65536, 4, 786463, 0, 4, 655388, 65536, 2, 655387, 0, 2, 589852, 65536, 1, 655389, 131072, 2, 589853, 131072, 1, 524317, 131072, 0)
@@ -358,19 +345,19 @@ shape = SubResource("RectangleShape2D_lmnfa")
 disabled = true
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
-[node name="Background" parent="." unique_id=336766300 instance=ExtResource("18_j8y0k")]
+[node name="Background" parent="." unique_id=336766300 instance=ExtResource("19_r6kp1")]
 position = Vector2(0, 40)
 
 [node name="Treasure" type="Node2D" parent="." unique_id=1279968572]
 
-[node name="Silver Coin" parent="Treasure" unique_id=1323405605 instance=ExtResource("19_jcbh2")]
+[node name="Silver Coin" parent="Treasure" unique_id=1323405605 instance=ExtResource("20_oeurp")]
 position = Vector2(126, 166)
 freeze = false
 
-[node name="Gold Coin" parent="Treasure" unique_id=1360776932 instance=ExtResource("20_aqmmm")]
+[node name="Gold Coin" parent="Treasure" unique_id=1360776932 instance=ExtResource("21_kib0h")]
 position = Vector2(-2, 166)
 
-[node name="Skull" parent="Treasure" unique_id=1625674275 instance=ExtResource("21_r0r0x")]
+[node name="Skull" parent="Treasure" unique_id=1625674275 instance=ExtResource("22_nf8oy")]
 position = Vector2(190, 70)
 
 [node name="CheckPoints" type="Node2D" parent="." unique_id=1037344231]
@@ -378,7 +365,7 @@ position = Vector2(190, 70)
 [node name="Start" type="Node2D" parent="CheckPoints" unique_id=588203195]
 position = Vector2(-260, 96)
 
-[node name="Middle" parent="CheckPoints" unique_id=236566663 instance=ExtResource("23_2qfkp")]
+[node name="Middle" parent="CheckPoints" unique_id=236566663 instance=ExtResource("23_clof0")]
 position = Vector2(-10, -102)
 collision_layer = 0
 collision_mask = 2
@@ -397,53 +384,53 @@ offset_top = 26.0
 offset_right = 70.0
 offset_bottom = 42.0
 scale = Vector2(2.5, 2.5)
-script = ExtResource("24_d6288")
-_digits = Array[Texture2D]([ExtResource("25_7dq4q"), ExtResource("26_15ihg"), ExtResource("27_10jtw"), ExtResource("28_mtseq"), ExtResource("29_j8y0k"), ExtResource("30_jcbh2"), ExtResource("31_aqmmm"), ExtResource("32_r0r0x"), ExtResource("33_ahul8"), ExtResource("34_2qfkp")])
+script = ExtResource("24_ccmik")
+_digits = Array[Texture2D]([ExtResource("25_d2htr"), ExtResource("26_buqjf"), ExtResource("27_5cce2"), ExtResource("28_cee0y"), ExtResource("29_w1d5n"), ExtResource("30_aqowd"), ExtResource("31_mi2yi"), ExtResource("32_e18wi"), ExtResource("33_vwigq"), ExtResource("34_i2fkp")])
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/Coin Counter" unique_id=1831423140]
 layout_mode = 2
-texture = ExtResource("35_g7qu4")
+texture = ExtResource("35_b8p7k")
 expand_mode = 3
 
 [node name="Tens" type="TextureRect" parent="CanvasLayer/Coin Counter" unique_id=2019400928]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-texture = ExtResource("25_7dq4q")
+texture = ExtResource("25_d2htr")
 expand_mode = 5
 stretch_mode = 3
 
 [node name="Ones" type="TextureRect" parent="CanvasLayer/Coin Counter" unique_id=407247999]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-texture = ExtResource("25_7dq4q")
+texture = ExtResource("25_d2htr")
 expand_mode = 5
 stretch_mode = 3
 
-[node name="Blue Diamond" type="HBoxContainer" parent="CanvasLayer" unique_id=1274261214]
+[node name="Blue Diamond" type="HBoxContainer" parent="CanvasLayer" unique_id=1296791560]
 offset_left = 26.0
 offset_top = 63.0
 offset_right = 70.0
 offset_bottom = 79.0
 scale = Vector2(2.5, 2.5)
-script = ExtResource("24_d6288")
-_digits = Array[Texture2D]([ExtResource("25_7dq4q"), ExtResource("26_15ihg"), ExtResource("27_10jtw"), ExtResource("28_mtseq"), ExtResource("29_j8y0k"), ExtResource("30_jcbh2"), ExtResource("31_aqmmm"), ExtResource("32_r0r0x"), ExtResource("33_ahul8"), ExtResource("34_2qfkp")])
+script = ExtResource("24_ccmik")
+_digits = Array[Texture2D]([ExtResource("25_d2htr"), ExtResource("26_buqjf"), ExtResource("27_5cce2"), ExtResource("28_cee0y"), ExtResource("29_w1d5n"), ExtResource("30_aqowd"), ExtResource("31_mi2yi"), ExtResource("32_e18wi"), ExtResource("33_vwigq"), ExtResource("34_i2fkp")])
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/Blue Diamond" unique_id=789362693]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Blue Diamond" unique_id=365915554]
 layout_mode = 2
-texture = ExtResource("37_r0r0x")
+texture = ExtResource("36_aniic")
 expand_mode = 3
 
-[node name="Tens" type="TextureRect" parent="CanvasLayer/Blue Diamond" unique_id=749360213]
+[node name="Tens" type="TextureRect" parent="CanvasLayer/Blue Diamond" unique_id=861373404]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-texture = ExtResource("25_7dq4q")
+texture = ExtResource("25_d2htr")
 expand_mode = 5
 stretch_mode = 3
 
-[node name="Ones" type="TextureRect" parent="CanvasLayer/Blue Diamond" unique_id=1380709895]
+[node name="Ones" type="TextureRect" parent="CanvasLayer/Blue Diamond" unique_id=314518351]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-texture = ExtResource("25_7dq4q")
+texture = ExtResource("25_d2htr")
 expand_mode = 5
 stretch_mode = 3
 
@@ -455,12 +442,12 @@ offset_right = 71.0
 offset_bottom = 38.0
 scale = Vector2(2.5, 2.5)
 alignment = 1
-script = ExtResource("24_d6288")
-_digits = Array[Texture2D]([ExtResource("25_7dq4q"), ExtResource("26_15ihg"), ExtResource("27_10jtw"), ExtResource("28_mtseq"), ExtResource("29_j8y0k"), ExtResource("30_jcbh2"), ExtResource("31_aqmmm"), ExtResource("32_r0r0x"), ExtResource("33_ahul8"), ExtResource("34_2qfkp")])
+script = ExtResource("24_ccmik")
+_digits = Array[Texture2D]([ExtResource("25_d2htr"), ExtResource("26_buqjf"), ExtResource("27_5cce2"), ExtResource("28_cee0y"), ExtResource("29_w1d5n"), ExtResource("30_aqowd"), ExtResource("31_mi2yi"), ExtResource("32_e18wi"), ExtResource("33_vwigq"), ExtResource("34_i2fkp")])
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/Lives Counter" unique_id=621101206]
 layout_mode = 2
-texture = ExtResource("36_15ihg")
+texture = ExtResource("36_b8gei")
 expand_mode = 3
 stretch_mode = 5
 
@@ -472,14 +459,14 @@ text = "234"
 [node name="Tens" type="TextureRect" parent="CanvasLayer/Lives Counter" unique_id=1321634697]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-texture = ExtResource("25_7dq4q")
+texture = ExtResource("25_d2htr")
 expand_mode = 5
 stretch_mode = 3
 
 [node name="Ones" type="TextureRect" parent="CanvasLayer/Lives Counter" unique_id=1579098241]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-texture = ExtResource("25_7dq4q")
+texture = ExtResource("25_d2htr")
 expand_mode = 5
 stretch_mode = 3
 
@@ -497,7 +484,7 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(3, 3)
 pivot_offset = Vector2(95.5, 42)
-theme = ExtResource("24_g7qu4")
+theme = ExtResource("37_f5kn5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer" unique_id=558127538]
 layout_mode = 2
@@ -511,42 +498,42 @@ alignment = 1
 [node name="BackButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1814825603]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-icon = ExtResource("37_mtseq")
+icon = ExtResource("38_wo3yg")
 
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=356911397]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=905846360]
 layout_mode = 2
-texture = ExtResource("39_jcbh2")
+texture = ExtResource("39_okach")
 stretch_mode = 5
 
-[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1865648286]
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=357334436]
 layout_mode = 2
-texture = ExtResource("40_aqmmm")
+texture = ExtResource("40_aniic")
 stretch_mode = 5
 
-[node name="TextureRect7" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=108966462]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=96447201]
 layout_mode = 2
-texture = ExtResource("41_r0r0x")
+texture = ExtResource("41_p38is")
 stretch_mode = 5
 
-[node name="TextureRect8" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1545686375]
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1918402014]
 layout_mode = 2
-texture = ExtResource("42_ahul8")
+texture = ExtResource("42_igloy")
 stretch_mode = 5
 
-[node name="TextureRect9" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1590259821]
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=2117276832]
 layout_mode = 2
-texture = ExtResource("43_2qfkp")
+texture = ExtResource("43_ppmoo")
 stretch_mode = 5
 
-[node name="TextureRect10" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1026985399]
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1319796740]
 layout_mode = 2
-texture = ExtResource("37_smmd7")
+texture = ExtResource("62_os2h0")
 stretch_mode = 5
 
 [node name="NextButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=863258826]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-icon = ExtResource("42_j8y0k")
+icon = ExtResource("43_u6jai")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=1657549172]
 layout_mode = 2
@@ -567,13 +554,13 @@ icon_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_1" unique_id=740577242]
 layout_mode = 2
-texture = ExtResource("37_smmd7")
+texture = ExtResource("52_vl78c")
 stretch_mode = 5
 
 [node name="Lock" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_1" unique_id=1431281154]
 visible = false
 layout_mode = 2
-texture = ExtResource("51_10jtw")
+texture = ExtResource("53_qep3l")
 stretch_mode = 5
 
 [node name="Level_2" type="VBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer" unique_id=1280414756]
@@ -590,13 +577,13 @@ icon_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_2" unique_id=200050092]
 layout_mode = 2
-texture = ExtResource("46_jpj64")
+texture = ExtResource("62_os2h0")
 stretch_mode = 5
 
 [node name="Lock" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_2" unique_id=1264794481]
 visible = false
 layout_mode = 2
-texture = ExtResource("51_10jtw")
+texture = ExtResource("53_qep3l")
 stretch_mode = 5
 
 [node name="Level_3" type="VBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer" unique_id=395394811]
@@ -613,13 +600,13 @@ icon_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_3" unique_id=1577579870]
 layout_mode = 2
-texture = ExtResource("55_bfwh7")
+texture = ExtResource("71_sevao")
 stretch_mode = 5
 
 [node name="Lock" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_3" unique_id=1400409712]
 visible = false
 layout_mode = 2
-texture = ExtResource("51_10jtw")
+texture = ExtResource("53_qep3l")
 stretch_mode = 5
 
 [node name="Level_4" type="VBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer" unique_id=1730078761]
@@ -636,16 +623,16 @@ icon_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_4" unique_id=775970587]
 layout_mode = 2
-texture = ExtResource("64_44o4b")
+texture = ExtResource("80_d53a1")
 stretch_mode = 5
 
 [node name="Lock" type="TextureRect" parent="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_4" unique_id=515033614]
 visible = false
 layout_mode = 2
-texture = ExtResource("51_10jtw")
+texture = ExtResource("53_qep3l")
 stretch_mode = 5
 
-[node name="Fade" parent="CanvasLayer" unique_id=782474236 instance=ExtResource("65_5whll")]
+[node name="Fade" parent="CanvasLayer" unique_id=782474236 instance=ExtResource("81_j6brw")]
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=163755852]
 anchors_preset = 1
@@ -657,11 +644,12 @@ offset_right = -53.0
 offset_bottom = 46.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
-theme = ExtResource("24_g7qu4")
-icon = ExtResource("78_7dq4q")
+theme = ExtResource("37_f5kn5")
+icon = ExtResource("82_eh1h4")
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3/BackButton" to="." method="_change_world" binds= [-1]]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3/NextButton" to="." method="_change_world" binds= [1]]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_1/Button" to="." method="_on_level_selected" binds= [1, 1]]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/GridContainer/Level_2/Button" to="." method="_on_level_selected" binds= [1, 2]]

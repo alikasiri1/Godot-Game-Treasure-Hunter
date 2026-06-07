@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://ik3vbikj54r8"]
+
+[ext_resource type="Texture2D" uid="uid://ddew7x01ylusb" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 01.png" id="1_rs2a8"]
+[ext_resource type="Texture2D" uid="uid://dnxcumkxrj38l" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 02.png" id="2_aotx2"]
+[ext_resource type="Texture2D" uid="uid://b2h8733bn7g6j" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 03.png" id="3_1q2jm"]
+[ext_resource type="Texture2D" uid="uid://msalj45p1y65" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 04.png" id="4_ouofx"]
+[ext_resource type="Texture2D" uid="uid://0qqeublush82" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 01.png" id="5_jdjvm"]
+[ext_resource type="Texture2D" uid="uid://df4ro3omd0y31" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 02.png" id="6_cggk7"]
+[ext_resource type="Texture2D" uid="uid://sy6p81jwogf3" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 03.png" id="7_gd3q6"]
+[ext_resource type="Texture2D" uid="uid://bqg4j0typtvg5" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 04.png" id="8_uhrca"]
+[ext_resource type="Texture2D" uid="uid://ctq3pjk0ngxln" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 01.png" id="9_noerm"]
+[ext_resource type="Texture2D" uid="uid://dylnrnssapbrx" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 02.png" id="10_bcx74"]
+[ext_resource type="Texture2D" uid="uid://buxabmauu2bwh" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 03.png" id="11_8tfnv"]
+[ext_resource type="Texture2D" uid="uid://dmbq4gy4filoq" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 04.png" id="12_p1rmt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvcgt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rs2a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aotx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1q2jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ouofx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jdjvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cggk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gd3q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uhrca")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_noerm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bcx74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8tfnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p1rmt")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 10.0
+}]
+
+[node name="BackPalmTree" type="AnimatedSprite2D" unique_id=1734950235]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_gvcgt")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.6316715

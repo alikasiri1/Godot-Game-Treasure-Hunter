@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://64e8sr16tute" path="res://scenes/UI/fade.tscn" id="19_0tjmk"]
 [ext_resource type="Script" uid="uid://cpyh3x727wgl2" path="res://scripts/UI/health_guage.gd" id="19_ng638"]
 [ext_resource type="Texture2D" uid="uid://cilipsl4e0nn4" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="19_oiu4x"]
+[ext_resource type="Texture2D" uid="uid://bf5m4c74sso77" path="res://assets/Pirate Treasure/Sprites/Blue Diamond/02.png" id="20_0k8f0"]
 [ext_resource type="Texture2D" uid="uid://de2mcyqcl2uck" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="20_ng638"]
 [ext_resource type="Texture2D" uid="uid://c7trncv1m30wj" path="res://assets/Wood and Paper UI/Sprites/Small Banner/3.png" id="21_0e2e2"]
 [ext_resource type="Texture2D" uid="uid://bx210uumbk7qc" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="21_hdpp8"]
@@ -102,6 +103,34 @@ expand_mode = 5
 stretch_mode = 3
 
 [node name="Ones" type="TextureRect" parent="UserInterFace/Coin Counter" unique_id=1546930085]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+texture = ExtResource("7_yi006")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="Diamon Counter" type="HBoxContainer" parent="UserInterFace" unique_id=1666485495]
+offset_left = 62.0
+offset_top = 98.0
+offset_right = 106.0
+offset_bottom = 114.0
+scale = Vector2(2, 2)
+script = ExtResource("6_yi006")
+_digits = Array[Texture2D]([ExtResource("7_yi006"), ExtResource("8_ythbd"), ExtResource("9_glj4c"), ExtResource("10_0tjmk"), ExtResource("11_r4sqp"), ExtResource("12_vf7oa"), ExtResource("13_fwjv1"), ExtResource("14_4f4ru"), ExtResource("15_csp53"), ExtResource("16_6ojev")])
+
+[node name="Icon" type="TextureRect" parent="UserInterFace/Diamon Counter" unique_id=76402432]
+layout_mode = 2
+texture = ExtResource("20_0k8f0")
+expand_mode = 3
+
+[node name="Tens" type="TextureRect" parent="UserInterFace/Diamon Counter" unique_id=20226471]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+texture = ExtResource("7_yi006")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="Ones" type="TextureRect" parent="UserInterFace/Diamon Counter" unique_id=1601962931]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 texture = ExtResource("7_yi006")
@@ -651,7 +680,7 @@ texture = ExtResource("34_dpnhy")
 
 [node name="Fanfare" type="AudioStreamPlayer2D" parent="." unique_id=1376399127]
 volume_db = 5.0
-bus = &"fanfare"
+bus = &"Music"
 
 [connection signal="died" from="Roger" to="." method="_on_player_died"]
 [connection signal="health_changed" from="Roger" to="UserInterFace/HealthGuage" method="set_value"]
